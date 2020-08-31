@@ -6,7 +6,10 @@ body {
 body.marata {
     background: #fff;
 }
+.marata .pagination a:nth-child(n+14):nth-child(-n+24) {
+    display: none;
 
+}
 body a {
     transition: all .3s
 }
@@ -867,7 +870,7 @@ a:hover.pcategory {
     
 }
 
-#explistout {
+#explistout, .tomatoeidh-exp, .xymoi-exp {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -973,4 +976,4 @@ footer {
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd; color: #333; font-weight: bold;}
-.dots {pointer-events: none;}
+.dots {pointer-events: none; display: none;}
