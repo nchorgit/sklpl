@@ -11,6 +11,10 @@ body.marata {
     display: none;
 }
 
+.sklavenitis .pagination a:nth-child(n+18):nth-child(-n+24) {
+    display: none;
+}
+
 body a {
     transition: all .3s
 }
