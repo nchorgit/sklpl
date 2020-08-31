@@ -1,15 +1,16 @@
 body {
     margin: 0 auto;
     font-family: google sans, Arial, Helvetica, sans-serif;
-
 }
+
 body.marata {
     background: #fff;
 }
+
 .marata .pagination a:nth-child(n+14):nth-child(-n+24) {
     display: none;
-
 }
+
 body a {
     transition: all .3s
 }
@@ -309,7 +310,8 @@ a.cat {
     border-radius: 2px;
 }
 
-a:hover.home, a:hover.cat {
+a:hover.home,
+a:hover.cat {
     background: #333;
 }
 
@@ -498,7 +500,6 @@ a:hover.home, a:hover.cat {
 
 #flagtext {
     margin-left: 10px;
-
     line-height: 18px;
 }
 
@@ -543,7 +544,6 @@ a:hover.pcategory {
 }
 
 @media only screen and (max-width: 480px) {
-
     #barcode,
     #varos {
         width: 100%;
@@ -574,7 +574,7 @@ a:hover.pcategory {
 }
 
 #diatable tr:last-child td {
-    border-bottom: 0 border-right:0;
+    border-bottom: 0 border-right: 0;
 }
 
 #diatable tr th {
@@ -615,12 +615,7 @@ a:hover.pcategory {
     font-weight: bold;
 }
 
-
-
-
-
 .wrapper {
-    
     max-width: 1300px;
     padding: 15px;
     margin: 100px auto;
@@ -630,14 +625,12 @@ a:hover.pcategory {
 .left {
     width: 68%;
     float: left;
-
 }
 
 .right {
     width: 20%;
     float: right;
     background: red;
-
 }
 
 .pimg {
@@ -656,16 +649,25 @@ a:hover.pcategory {
 }
 
 @keyframes example {
-    from {top: -100%;} 
-    to{top:0px;} 
-   }
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0px;
+    }
+}
 
 @keyframes example2 {
- 0% {opacity:0;}
-55% {opacity:0;}
-100% {opacity:1;}
-   }
-
+    0% {
+        opacity: 0;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .pimg2 {
     position: fixed;
@@ -698,8 +700,8 @@ a:hover.pcategory {
     width: 100%;
     border: 0;
     outline: 0;
-    
 }
+
 .closep {
     position: absolute;
     font-size: 56px;
@@ -726,15 +728,11 @@ a:hover.pcategory {
 
 .imgcaption {
     position: relative;
-   
     bottom: 100px;
     left: 0;
     text-align: center;
     animation-name: example2;
     animation-duration: 2s;
-    
-   
-
 }
 
 .cattitle {
@@ -766,7 +764,6 @@ a:hover.pcategory {
     border: 2px solid #eee;
     border-radius: 4px;
     background: #eee;
-    
 }
 
 .explist a {
@@ -782,7 +779,6 @@ a:hover.pcategory {
 .exptitle {
     display: flex;
     padding: 20px;
-    
     text-decoration: none;
     color: #444;
     font-weight: bold;
@@ -846,13 +842,12 @@ a:hover.pcategory {
     justify-content: center;
     border-radius: 0 0 4px 4px;
     margin: -4px -2px -2px -2px;
-    
 }
 
 .explabel i {
     font-size: 13px;
     opacity: .6;
-    margin-right: 2px;
+    margin-right: 4px;
 }
 
 .explabel span a {
@@ -865,12 +860,13 @@ a:hover.pcategory {
 }
 
 .explabel span a:hover {
-    background:#d04703;
+    background: #d04703;
     opacity: 1;
-    
 }
 
-#explistout, .tomatoeidh-exp, .xymoi-exp {
+#explistout,
+.tomatoeidh-exp,
+.xymoi-exp {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -968,12 +964,20 @@ footer {
 }
 
 .pagination a.active {
-  background-color: #ff5500;
-  color: white;
-  border: 2px solid #ff5500;
+    background-color: #ff5500;
+    color: white;
+    border: 2px solid #ff5500;
     font-weight: bold;
     line-height: 39px;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd; color: #333; font-weight: bold;}
-.dots {pointer-events: none; display: none;}
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    color: #333;
+    font-weight: bold;
+}
+
+.dots {
+    pointer-events: none;
+    display: none;
+}
