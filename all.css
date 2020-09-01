@@ -15,6 +15,10 @@ body.marata {
     display: none;
 }
 
+.bonora .pagination a:nth-child(n+7):nth-child(-n+24) {
+    display: none;
+}
+
 body a {
     transition: all .3s
 }
