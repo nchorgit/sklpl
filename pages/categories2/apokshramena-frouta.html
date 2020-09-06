@@ -3,7 +3,6 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
 
     <title>Σκλαβενίτης: Προϊόντα στην ετικέτα Bonora</title>
     <meta charset="UTF-8">
@@ -19,11 +18,11 @@
 
     <div class="wrapper">
         <div class="cattitle">Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Bonora</strong></div>
-        <div id="explistout"></div>
+        <div class="explistout"></div>
 
         <div class="pagination">
-            <a href="#" style="font-size: 30px; display: none; color: #555; line-height: 37px;">‹</a>
-            <a href="/pages/categories/etoima-faghta.html" class="active">1</a>
+           <a href=""></a>
+            <a href="/pages/categories/aleuri.html" class="active">1</a>
             <a href="/pages/categories/etoima-faghta-page02.html">2</a>
             <a href="/pages/categories/etoima-faghta-page03.html">3</a>
             <a href="/pages/categories/etoima-faghta-page04.html">4</a>
@@ -40,11 +39,11 @@
             <a href="/pages/categories/etoima-faghta-page15.html">15</a>
             <a href="/pages/categories/etoima-faghta-page16.html">16</a>
             <a href="/pages/categories/etoima-faghta-page17.html">17</a>
-            <a class="dots">...</a>
+           
 
 
-            <a href="/pages/categories/etoima-faghta-page8.html" style="font-size: 30px; color: #555; line-height: 37px; display:none;">›</a>
-            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>5</strong></p>
+            
+            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>1</strong></p>
         </div>
 
     </div>
@@ -54,11 +53,11 @@
         $(".hload").load("/header.html");
         $(".fload").load("/footer.html");
 
-        $("#explistout").load("/pages/exp-lists/etoima-faghta-exp-list.html .explist:nth-child(n+1):nth-child(-n+12");
+        $(".explistout").load("/pages/exp-lists/food.html .alevri .explist:nth-child(-n+12)");
     </script>
     <style>
-        .pagination a:nth-child(n+4) {
+        .pagination a:nth-child(n+3) {
             display: none;
         }
-        
+      </style>  
         </body></html>

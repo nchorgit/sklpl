@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Αφεψήματα</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/all.css" rel="stylesheet" type="text/css">
+    <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
+    <link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
+
+</head>
+
+<body>
+    <div class="hload"></div>
+
+    <div class="wrapper">
+        <div class="cattitle">Προϊόντα στην κατηγορία: <strong><i class="fas fa-list-ul"></i> Αφεψήματα</strong></div>
+        <div id="explistout"></div>
+
+        <div class="pagination">
+           <a href=""></a>
+            <a href="/pages/categories/etoima-faghta.html" class="active">1</a>
+          
+           
+
+
+            
+            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>1</strong></p>
+        </div>
+
+    </div>
+    <div class="fload"></div>
+
+    <script>
+        $(".hload").load("/header.html");
+        $(".fload").load("/footer.html");
+
+        $("#explistout").load("/pages/exp-lists/food.html .afepshmata .explist:nth-child(-n+12)");
+    </script>
+    <style>
+        .pagination a:nth-child(n+3) {
+            display: none;
+        }
+      </style>  
+        </body></html>

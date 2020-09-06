@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Σκλαβενίτης: Προϊόντα στην ετικέτα Bonora</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/all.css" rel="stylesheet" type="text/css">
+    <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
+    <link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
+
+</head>
+
+<body>
+    <div class="hload"></div>
+
+    <div class="wrapper">
+        <div class="cattitle">Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Bonora</strong></div>
+        <div id="page1" class="explistout"></div>
+        <div id="page2" class="explistout"></div>
+        
+   
+      
+
+        <div class="pagination">
+           <a href=""></a>
+            <a href="#page1" class="topage1 active">1</a>
+            <a href="#page2" class="topage2">2</a>
+            <a href="#page3" class="topage3">3</a>
+            <a href="#page4" class="topage4">4</a>
+            
+           
+
+
+            
+            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>4</strong></p>
+        </div>
+
+    </div>
+    <div class="fload"></div>
+
+    <script>
+        document.querySelector("button").addEventListener("click", function(){
+    document.querySelector("div").style.display = "block";
+});
+
+        $(".hload").load("/header.html");
+        $(".fload").load("/footer.html");
+
+       $("#page2").load("/pages/exp-lists/food.html .etoima-faghta .explist:nth-child(n+13):nth-child(-n+24)");
+       
+        $("#page1").load("/pages/exp-lists/food.html .etoima-faghta .explist:nth-child(-n+12)");
+        $(".topage2").click(function() {
+   
+            $(".pagination p strong:first-child").empty().append("<b>2</b>");
+            });
+         
+    </script>
+    <style>
+        #page1 {display: none;}
+      </style>  
+        </body></html>

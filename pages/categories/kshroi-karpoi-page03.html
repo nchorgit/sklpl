@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Ξηροί καρποί</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/all.css" rel="stylesheet" type="text/css">
+    <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
+    <link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
+
+</head>
+
+<body>
+    <div class="hload"></div>
+
+    <div class="wrapper">
+        <div class="cattitle">Προϊόντα στην κατηγορία: <strong><i class="fas fa-list-ul"></i> Ξηροί καρποί</strong></div>
+        <div class="explistout"></div>
+
+        <div class="pagination">
+           <a href=""></a>
+            <a href="/pages/categories/kshroi-karpoi.html">1</a>
+            <a href="/pages/categories/kshroi-karpoi-page02.html">2</a>
+            <a href="/pages/categories/kshroi-karpoi-page03.html" class="active">3</a>
+            <a href="/pages/categories/kshroi-karpoi-page04.html">4</a>
+          
+          
+           
+
+
+            
+            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>4</strong></p>
+        </div>
+
+    </div>
+    <div class="fload"></div>
+
+    <script>
+        $(".hload").load("/header.html");
+        $(".fload").load("/footer.html");
+
+        $(".explistout").load("/pages/exp-lists/food.html .kshroi-karpoi .explist:nth-child(n+25):nth-child(-n+36)");
+    </script>
+    <style>
+      
+      </style>  
+        </body></html>
