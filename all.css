@@ -871,7 +871,7 @@ cattitle {
 }
 
 .explabel i {
-    font-size: 11px;
+    font-size: 13px;
     opacity: .6;
     margin-right: 4px;
 }
@@ -881,7 +881,7 @@ cattitle {
     background: #e64d00;
     text-decoration: none;
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     border-radius: 2px;
 }
