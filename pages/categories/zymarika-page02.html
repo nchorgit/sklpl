@@ -4,7 +4,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Ζάχαρη</title>
+    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Ζυμαρικά</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/all.css" rel="stylesheet" type="text/css">
@@ -17,13 +17,13 @@
     <div class="hload"></div>
 
     <div class="wrapper">
-        <div class="cattitle">Προϊόντα στην κατηγορία: <strong><i class="far fa-clone"></i> Ζάχαρη</strong></div>
+        <div class="cattitle">Προϊόντα στην κατηγορία: <strong><i class="far fa-clone"></i> Ζυμαρικά</strong></div>
         <div class="explistout"></div>
 
         <div class="pagination">
            <a href=""></a>
-            <a href="/pages/categories/zaxarh.html" class="active">1</a>
-            
+            <a href="/pages/categories/zymarika.html">1</a>
+            <a href="/pages/categories/zymarika-page02.html" class="active">2</a>
            
           
           
@@ -31,7 +31,7 @@
 
 
             
-            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>1</strong></p>
+            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>2</strong></p>
         </div>
 
     </div>
@@ -41,7 +41,7 @@
         $(".hload").load("/header.html");
         $(".fload").load("/footer.html");
 
-        $(".explistout").load("/pages/exp-lists/food.html .zaxarh .explist:nth-child(-n+12)");
+        $(".explistout").load("/pages/exp-lists/food.html .zymarika .explist:nth-child(n+13):nth-child(-n+24)");
     </script>
     <style>
       
