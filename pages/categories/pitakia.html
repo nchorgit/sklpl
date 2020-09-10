@@ -4,7 +4,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Γάλατα</title>
+    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Πιτάκια</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/all.css" rel="stylesheet" type="text/css">
@@ -17,20 +17,20 @@
     <div class="hload"></div>
 
     <div class="wrapper">
-        <div class="cattitle">Προϊόντα στην κατηγορία: <strong><i class="far fa-clone"></i> Γάλατα</strong></div>
-        <div class="explistout"></div>
+        <div class="cattitle">Προϊόντα στην κατηγορία: <strong><i class="far fa-clone"></i> Πιτάκια</strong></div>
+        <div id="explistout">
+            
+        </div>
 
         <div class="pagination">
            <a href=""></a>
-            <a href="/pages/categories/galata.html" class="active">1</a>
-             <a href="/pages/categories/galata-page02.html">2</a>
-          
+            <a href="/pages/categories/etoima-faghta.html" class="active">1</a>
           
            
 
 
             
-            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>2</strong></p>
+            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>1</strong></p>
         </div>
 
     </div>
@@ -40,9 +40,11 @@
         $(".hload").load("/header.html");
         $(".fload").load("/footer.html");
 
-        $(".explistout").load("/pages/exp-lists/food.html .galata .explist:nth-child(-n+12)");
+        $("#explistout").load("/pages/exp-lists/baker-master-exp-list.html .explist:nth-child(-n+8)");
     </script>
     <style>
-      
+        .pagination a:nth-child(n+3) {
+            display: none;
+        }
       </style>  
         </body></html>

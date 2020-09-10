@@ -17,51 +17,46 @@
 
     <div class="wrapper">
         <div class="cattitle">Προϊόντα στην κατηγορια: <strong><i class="fas fa-tags"></i>Τοματοειδή</strong></div>
-        <div class="explistout" id="page1"></div>
-        <div class="explistout" id="page2"></div>
-
-        <div class="pagination">
-         <a href="#"></a>
-            <a href="#page1" class="active">1</a>
-            <a href="#page2">2</a>
-            <a href="#page2">3</a>
-            <a href="/pages/labels/marata/marata-page04.html">4</a>
-            <a href="/pages/labels/marata/marata-page05.html">5</a>
-            <a href="/pages/labels/marata/marata-page06.html">6</a>
-            <a href="/pages/labels/marata/marata-page07.html">7</a>
-            <a href="/pages/labels/marata/marata-page08.html">8</a>
-            <a href="/pages/labels/marata/marata-page09.html">9</a>
-            <a href="/pages/labels/marata/marata-page10.html">10</a>
-            <a href="/pages/labels/marata/marata-page11.html">11</a>
-            <a href="/pages/labels/marata/marata-page12.html">12</a>
-            <a href="/pages/labels/marata/marata-page13.html">13</a>
-            <a href="/pages/labels/marata/marata-page14.html">14</a>
-            <a href="/pages/labels/marata/marata-page15.html">15</a>
-            <a href="/pages/labels/marata/marata-page16.html">16</a>
-            <a href="/pages/labels/marata/marata-page17.html">17</a>
-            <a class="dots">...</a>
+ 
+ <div class="explistout">
+ <div class="page01"></div>
+<div class="page02"></div>
+<div class="page03"></div>
+<div class="page04"></div>
+<div class="page05"></div>
+<div class="page06"></div>
+<div class="page07"></div>
+<div class="page08"></div>
+<div class="page09"></div>
+<div class="page10"></div>
+<div class="page11"></div>
+<div class="page12"></div>
+    </div>  
+        
 
 
             <a href="/pages/labels/marata/marata-page8.html" style="font-size: 30px; color: #555; line-height: 37px; display:none;">›</a>
             <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>2</strong></p>
         </div>
 
-    </div>
+    
     <div class="fload"></div>
 
     <script>
         $(".hload").load("/header.html");
         $(".fload").load("/footer.html");
- $("#page2").load("/pages/exp-lists/marata-cat-exp.html .xymoi-exp .explist:nth-child(n+13):nth-child(-n+24)");
-        $("#page1").load("/pages/exp-lists/marata-cat-exp.html .xymoi-exp .explist:nth-child(-n+12)");
-        $(".topage2").click(function() {
-            $(".page1").hide();
-            $(".page2").load("/pages/exp-lists/marata-cat-exp.html .xymoi-exp .explist:nth-child(n+13):nth-child(-n+24)");
-            $(".topage2").addClass("active");
-            $(".topage1").removeClass("active");
-            $(".pagination p strong:first-child").replaceWith("<b>2</b>");
-            
-        });
+ $(".page01").load("/products/marata/marata-aleuri-gia-oles-tis-xrhseis-1kg.html .product");
+$(".page02").load("/products/marata/marata-farina-500g.html .product");
+$(".page03").load("/products/marata/marata-ananas-zaxarwmenos-250g.html .product");
+$(".page04").load("/products/marata/marata-berikoka-apokshramena-250g.html .product");
+$(".page05").load("/products/marata/marata-damaskhna-me-koukoutsi-400g.html .product");
+$(".page06").load("/products/marata/marata-damaskhna-xwris-koukoutsi-250g.html .product");
+$(".page07").load("/products/marata/marata-mangko-zaxarwmeno-150g.html .product");
+$(".page08").load("/products/marata/marata-mpanana-chips-zaxarwmenh-120g.html .product");
+$(".page09").load("/products/marata/marata-papagia-zaxarwmenh-250g.html .product");
+$(".page10").load("/products/marata/marata-peponi-zaxarwmeno-200g.html .product");
+$(".page11").load("/products/marata/marata-fryganies-starenies-500g.html .product");
+$(".page12").load("/products/marata/marata-fryganies-starenies-me-sikalh-360g.html .product");
     </script>
     <style>
         .pagination a:nth-child(n+4) {
