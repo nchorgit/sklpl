@@ -346,7 +346,12 @@ a:hover.cat {
     color: #444;
     font-size: 17.5px;
 }
-
+.alltext div, .alltext b {
+    margin: 0 !important;
+}
+svg text {
+    font-family: google sans !important;
+}
 #kivotio br {
     display: none;
 }
@@ -495,6 +500,7 @@ a:hover.cat {
 
 #flag {
     display: flex;
+    margin: -15px 0 15px 0;
 }
 
 #flagimage img {
@@ -511,7 +517,9 @@ a:hover.cat {
     margin-left: 10px;
     line-height: 18px;
 }
-
+.barron #diatable .texr {
+    text-align: center;
+    }
 .plabels {
     padding: 25px 15px;
     background: #eee;
