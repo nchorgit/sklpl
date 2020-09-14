@@ -799,7 +799,11 @@ cattitle {
     border-radius: 4px;
     background: #eee;
 }
-
+explist:hover {
+    background: #ffe9de;
+    transition: all .3s;
+    border: 2px solid #ffcab0;
+}
 .explist a {
     text-decoration: none;
     color: #3a3939;
@@ -807,7 +811,7 @@ cattitle {
 }
 
 .explist a:hover {
-    opacity: .8;
+    opacity: .7;
 }
 
 .exptitle {
