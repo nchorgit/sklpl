@@ -346,6 +346,13 @@ a:hover.cat {
     color: #444;
     font-size: 17.5px;
 }
+.all2 {
+   padding: 15px;
+    line-height: 24px;
+    color: #444;
+    font-size: 17.5px;
+    background: #eee;
+}
 .alltext div, .alltext b {
     margin: 0 !important;
 }
@@ -573,6 +580,10 @@ a:hover.pcategory {
     border-collapse: separate;
     border-spacing: 0;
     font-size: 17.5px;
+}
+
+#diatable p {
+    margin: 0;
 }
 
 #diatable th {
@@ -1088,3 +1099,35 @@ grid-gap:5px; margin-top:5px;}
 .varel div:nth-child(1) {background:#777; color:white; padding:5px;}
 .varel div:nth-child(2) {background:#666; color:white; padding:5px; height:40px; display:flex; align-items:center; justify-content: center; font-size:30px;}
 .varel div:nth-child(3) {background:#eee; font-weight:bold; font-size:30px;padding:10px;}
+r {
+    display: block;
+    margin-top: 15px;
+    content: "";
+}
+
+.smez {
+        max-width: 100px;
+        position: relative;
+    }
+
+    .smez img {
+        position: relative;
+        width: 100%;
+
+    }
+
+    .smez span {
+        font-weight: bold;
+        position: absolute;
+        width: 100px;
+        height: 30px;
+        color: white;
+        display: block;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        font-size: x-large;
+    }
