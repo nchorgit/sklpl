@@ -19,6 +19,10 @@
 .sfs170 {
   font-size: 170%;
 }
+sfs170 {
+  font-size: 170%;
+}
+
 
 .sfs130 {
   font-size: 130%;
@@ -834,6 +838,15 @@ line-height: 21pt;
     color: inherit;
 }
 
+.sbrtop {
+    border-radius:4px 4px 0 0;
+
+}
+
+.sbrbot {
+    border-radius:0 0 4px 4px;
+
+}
  @media only screen and (max-width: 544px) {
   .blouz1, .blouz2, .blouz3, .dmez2 {
    background-size: 90%;
