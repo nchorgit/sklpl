@@ -1276,3 +1276,6 @@ r {
     width: auto;
     height: 18px;
 }
+.dsim {
+    max-width: 199px; display: flex; margin: auto; padding: 15px;
+}
