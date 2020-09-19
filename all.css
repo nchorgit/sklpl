@@ -742,6 +742,9 @@ a:hover.pcategory {
     width: 100%;
     border: 0;
     outline: 0;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
 }
 
 .closep {
