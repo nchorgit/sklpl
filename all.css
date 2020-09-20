@@ -1289,3 +1289,6 @@ div#disqus_thread {
     border-radius: 6px;
     margin-top: 15px;
 }
+
+.miti2 {display: none;}
+    @media only screen and (max-width:1180px) {.miti {display: none;} .miti2 {display: block;}}

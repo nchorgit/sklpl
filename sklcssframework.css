@@ -1,3 +1,7 @@
+.spa {
+    position: absolute;
+}
+.spr {position: relative}
 .sdib {
   display: inline-block;
 }
@@ -80,9 +84,18 @@ sfs170 {
 .sp15 {
   padding: 15px;
 }
+.sp510 {
+  padding: 5px 10px;
+}
 
+.sp310 {
+  padding: 3px 10px;
+}
 .sp30 {
   padding: 30px;
+}
+.sp0 {
+    padding: 0;
 }
 .sc30 {
   width:30px !important; 
