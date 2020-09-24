@@ -9,7 +9,25 @@ body {
 body.marata {
     background: #fff;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .marata .pagination a:nth-child(n+14):nth-child(-n+24) {
     display: none;
 }
@@ -151,7 +169,7 @@ body a:hover {
     height: auto;
     margin-right: 10px
 }
-
+.find {display: none;}
 .find a {
     position: absolute;
     left: auto;
@@ -195,7 +213,7 @@ body a:hover {
     padding: 0;
     border-radius: 4px;
     margin: auto;
-    display: none
+    
 }
 
 .fakos {
