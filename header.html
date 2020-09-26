@@ -60,6 +60,20 @@ $(document).ready(function(){
 </script>
 
 <style>
+.bgblack {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgb(0 0 0 / 87%);
+    display: none;
+    z-index: -2;
+}
 
 .hide a {
     padding: 15px 30px 15px;
@@ -493,41 +507,46 @@ overflow-y: auto;
 <a href="/products/marata/marata-xymos-action-9-frouta-250ml.html">Μαράτα Χυμός Action 9 φρούτα 250ml&nbsp;&nbsp;&bull;&nbsp;&nbsp;5202576043978</a>
 <a href="/products/marata/marata-xymos-iz-blue-250ml.html">Μαράτα Χυμός Iz Blue 250ml&nbsp;&nbsp;&bull;&nbsp;&nbsp;5202576043886</a>
 <a href="/products/marata/marata-xymos-iz-red-250ml.html">Μαράτα Χυμός Iz Red 250ml&nbsp;&nbsp;&bull;&nbsp;&nbsp;5202576043893</a>
-<a href="/products/baker-masterbaker-master-tyropitakia-sfoliatas-450g.html">Baker Master Τυροπιτάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480009</a>
-<a href="/products/baker-masterbaker-master-tyropitakia-kourou-450g.html">Baker Master Τυροπιτάκια κουρού 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480030</a>
-<a href="/products/baker-masterbaker-master-tyropitakia-trigwna-450g.html">Baker Master Τυροπιτάκια τρίγωνα 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480160</a>
-<a href="/products/baker-masterbaker-master-zamponotyropitakia-sfoliatas-450g.html">Baker Master Ζαμπονοτυροπιτάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480016</a>
-<a href="/products/baker-masterbaker-master-loukanikopitakia-sfoliatas-450g.html">Baker Master Λουκανικοπιτάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480023</a>
-<a href="/products/baker-masterbaker-master-spanakotyropitakia-trigwna-450g.html">Baker Master Σπανακοτυροπιτάκια τρίγωνα 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480184</a>
-<a href="/products/baker-masterbaker-master-mpougatsakia-sfoliatas-450g.html">Baker Master Μπουγατσάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480153</a>
-<a href="/products/baker-masterbaker-master-sokolatopitakia-kourou-450g.html">Baker Master Σοκολατοπιτάκια κουρού 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480061</a>
+<a href="/products/baker-master/baker-master-tyropitakia-sfoliatas-450g.html">Baker Master Τυροπιτάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480009</a>
+<a href="/products/baker-master/baker-master-tyropitakia-kourou-450g.html">Baker Master Τυροπιτάκια κουρού 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480030</a>
+<a href="/products/baker-master/baker-master-tyropitakia-trigwna-450g.html">Baker Master Τυροπιτάκια τρίγωνα 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480160</a>
+<a href="/products/baker-master/baker-master-zamponotyropitakia-sfoliatas-450g.html">Baker Master Ζαμπονοτυροπιτάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480016</a>
+<a href="/products/baker-master/baker-master-loukanikopitakia-sfoliatas-450g.html">Baker Master Λουκανικοπιτάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480023</a>
+<a href="/products/baker-master/baker-master-spanakotyropitakia-trigwna-450g.html">Baker Master Σπανακοτυροπιτάκια τρίγωνα 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480184</a>
+<a href="/products/baker-master/baker-master-mpougatsakia-sfoliatas-450g.html">Baker Master Μπουγατσάκια σφολιάτας 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480153</a>
+<a href="/products/baker-master/baker-master-sokolatopitakia-kourou-450g.html">Baker Master Σοκολατοπιτάκια κουρού 450g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5213000480061</a>
 
 </div>
-</div>
 
+</div>
+<div class="bgblack"></div>
     <script>
           $("body").click(function() {
          
             $(".hide").fadeOut();
             $(".search .closep").fadeOut();
-          
+          $(".bgblack").fadeOut();
 });
         $(".closep").click(function() {
             $(".pimg2").fadeOut();
             $(".pimg2bg").fadeOut();
+             $(".bgblack").fadeOut();
             $(".hide").fadeOut();
             $(".search .closep").fadeOut();
           
 });
  
-    $(".stext").keyup(function() {
-         $(".search .closep").fadeIn();
-      
-        });
+ 
         $(".pimg").click(function() {
             $(".pimg2").fadeIn();
             $(".pimg2bg").fadeIn();
         });
+           $(".stext").keyup(function() {
+         $(".search .closep").fadeIn();
+               $(".bgblack").show();
+        
+        });
+        
     </script>
 
 

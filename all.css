@@ -1051,10 +1051,10 @@ footer {
 
 .pzim {
     background: #da1316;
-    border-left: 10px solid #a52023;
+    border-left: 0px solid #a52023;
     color: #fff;
     padding: 15px;
-    margin-bottom: -15px;
+    margin-bottom: -15px !important;
 }
 
 .pagination {
