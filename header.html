@@ -35,8 +35,17 @@
             </div>
             <div class="search">
                 <div class="fakos"></div>
-                <input class="stext" placeholder="Αναζήτηση">
-                
+                <input class="stext" onfocus="this.value=''" placeholder="Αναζήτηση">
+                <div class="closep" style="top: 0;
+    right: 15px;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    filter: invert(0.5);
+        display: none;
+    
+      
+    "></div>
             </div>
         </div>
 <script>
@@ -52,7 +61,12 @@ $(document).ready(function(){
 
 <style>
 
-
+    .ahide {
+        display: none;
+    }
+    .ashow {
+        display: block;
+    }
 .hide a {
     padding: 15px 30px 15px;
     border-bottom: 1px solid #555;
@@ -70,12 +84,14 @@ overflow-y: auto;
     background: #444;
     border: 30px solid #444;
     border-radius: 6px;
+    display: none;
 }
 .hide a:hover {background:#666; color:#eee;}
 </style>
   <div id="myDIV">
-
+<div class="pimg2bg"></div>
 <div class="hide"> 
+
 <a href="/products/marata/marata-aleuri-gia-oles-tis-xrhseis-1kg.html">Μαράτα Αλεύρι για όλες τις χρήσεις 1kg&nbsp;&nbsp;&bull;&nbsp;&nbsp;5202576300989</a>
 <a href="/products/marata/marata-farina-500g.html">Μαράτα Φαρίνα 500g&nbsp;&nbsp;&bull;&nbsp;&nbsp;5202576300996</a>
 <a href="/products/buenas/buenas-galopoula-brasth-mpastouni.html">Buenas Γαλοπούλα βραστή μπαστούνι&nbsp;&nbsp;&bull;&nbsp;&nbsp;ΠΩΛΗΣΗ ΧΥΜΑ</a>
@@ -496,20 +512,29 @@ overflow-y: auto;
 </div>
 
     <script>
+          $("body").click(function() {
+         
+            $(".hide").fadeOut();
+            $(".search .closep").fadeOut();
+          
+});
         $(".closep").click(function() {
             $(".pimg2").fadeOut();
             $(".pimg2bg").fadeOut();
-        });
-        $(".pimg2bg").click(function() {
-            $(".pimg2").fadeOut();
-            $(".pimg2bg").fadeOut();
+            $(".hide").fadeOut();
+            $(".search .closep").fadeOut();
+          
+});
+ 
+    $(".stext").keyup(function() {
+         $(".search .closep").fadeIn();
+        $(".pimg2bg").show();
         });
         $(".pimg").click(function() {
             $(".pimg2").fadeIn();
             $(".pimg2bg").fadeIn();
         });
     </script>
-
 
 
     <script type="text/javascript">
