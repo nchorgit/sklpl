@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+    
+
+}
+
+a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+a:hover:not(.header) {
+  background-color: #eee;
+}
+ 
+</style>
+</head>
+<body>
+
+<h2>My Phonebook</h2>
+
+<input type="text" id="myInput"  placeholder="Search for names.." title="Type in a name">
+
+<button class="sre" onclick="myfilter(), mydisplay();">Filter</button>
+
+Search results for <span id="demo"></span>
+
+<hr>
+
+<div id="myUL">
+
+<a href="/products/buenas/buenas-galopoula-brasth-mpastouni.html">Buenas Γαλοπούλα βραστή μπαστούνι&nbsp;&nbsp;&bull;&nbsp;&nbsp;ΠΩΛΗΣΗ ΧΥΜΑ</a>
+<a href="/products/buenas/buenas-galopoula-kapnisth-&-edam-se-fetes.html">Buenas Γαλοπούλα καπνιστή & Edam σε φέτες&nbsp;&nbsp;&bull;&nbsp;&nbsp;5202576415113</a>
+ <a href="/products/buenas/buenas-galopoula-kapnisth-mpastouni.html">Buenas Γαλοπούλα καπνιστή μπαστούνι&nbsp;&nbsp;&bull;&nbsp;&nbsp;ΠΩΛΗΣΗ ΧΥΜΑ</a>
+ <a href="/products/buenas/buenas-zampon.html">Buenas Ζαμπόν&nbsp;&nbsp;&bull;&nbsp;&nbsp;ΠΩΛΗΣΗ ΧΥΜΑ</a>
+ <a href="/products/buenas/buenas-loukanika-poulerikwn.html">Buenas Λουκάνικα Πουλερικών&nbsp;&nbsp;&bull;&nbsp;&nbsp;5202576712942</a>
+</div>
+<script>
+function myfilter() {
+    var input, filter, div, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myUL");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < li.length; i++) {
+       
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+
+        }
+    }
+}
+
+function mydisplay() {
+    var x = document.getElementById("myInput").value;
+    document.getElementById("demo").innerHTML = x;
+}
+ $(".sre").click(function() {
+         $("p").show();
+      
+        });
+</script>
+
+</body>
+</html>
