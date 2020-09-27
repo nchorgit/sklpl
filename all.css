@@ -688,9 +688,9 @@ a:hover.pcategory {
 }
 
 .right {
-    width: 20%;
+    width: 30%;
     float: right;
-    background: red;
+    border: 2px solid #eee;
 }
 
 .pimg {
