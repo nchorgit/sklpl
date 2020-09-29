@@ -9,26 +9,28 @@ body {
 body.marata {
     background: #fff;
 }
+
 /* width */
 
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+    background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: #555;
 }
+
 .marata .pagination a:nth-child(n+14):nth-child(-n+24) {
     display: none;
 }
@@ -75,20 +77,26 @@ body a:hover {
     bottom: 0
 }
 
-.logopl {
-    background-image: url(media/svg/skllogo-white.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 267px;
-    height: 44px;
+#mlines a {
     position: absolute;
-    left: 15px;
-    top: 0;
-    bottom: 0;
-    margin: 0 auto
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    left: 20px;
+    background: #666;
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+#mlines a:hover {
+    background: #888;
+    transition: all .3s;
 }
 
 .logopl a {
+    background-image: url(media/svg/skllogo-white.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
     width: 267px;
     height: 44px;
     position: absolute;
@@ -97,6 +105,8 @@ body a:hover {
     bottom: 0;
     margin: 0 auto
 }
+
+
 
 #logopl img {
     width: 266px;
@@ -114,7 +124,7 @@ body a:hover {
     bottom: 0;
     border-left: 1px solid #888;
     padding: 12px 0 0 10px;
-    display: none
+
 }
 
 .labels a {
@@ -131,6 +141,7 @@ body a:hover {
     bottom: 0;
     text-decoration: none;
     font-size: 20px;
+    display: none;
 }
 
 .labels a:hover {
@@ -158,6 +169,7 @@ body a:hover {
     bottom: 0;
     text-decoration: none;
     font-size: 20px;
+    display: none;
 }
 
 .cats a:hover {
@@ -170,20 +182,24 @@ body a:hover {
     height: auto;
     margin-right: 10px
 }
-.find {display: none;}
+
+.find {
+    display: ;
+}
+
 .find a {
     position: absolute;
     left: auto;
     padding: 10px;
-    color: #333333;
+    color: #eeee;
     display: flex;
     align-items: center;
     margin: auto;
-    right: 15px;
+    right: 430px;
     top: 0;
     bottom: 0;
     text-decoration: none;
-    background: #fff;
+    background-color: transparent;
     border-radius: 4px;
     font-weight: 700;
     font-size: large;
@@ -209,12 +225,12 @@ body a:hover {
     top: 0;
     bottom: 0;
     background-color: #eeeeee;
-    width: 500px;
+    width: 400px;
     height: 40px;
     padding: 0;
     border-radius: 4px;
     margin: auto;
-    
+
 }
 
 .fakos {
@@ -1297,13 +1313,19 @@ r {
 .wtab3 div:nth-child(1) {
     text-align: left;
 }
+
 .keno {
     width: auto;
     height: 18px;
 }
+
 .dsim {
-    max-width: 199px; display: flex; margin: auto; padding: 15px;
+    max-width: 199px;
+    display: flex;
+    margin: auto;
+    padding: 15px;
 }
+
 div#disqus_thread {
     padding: 15px;
     border: 2px solid #eee;
@@ -1311,5 +1333,32 @@ div#disqus_thread {
     margin-top: 15px;
 }
 
-.miti2 {display: none;}
-    @media only screen and (max-width:1180px) {.miti {display: none;} .miti2 {display: block;}}
+.miti2 {
+    display: none;
+}
+
+@media only screen and (max-width:1180px) {
+    .miti {
+        display: none;
+    }
+
+    .miti2 {
+        display: block;
+    }
+}
+
+@media only screen and (max-width:1138px) {
+    .rload {
+        display: none;
+    }
+
+    .left {
+        width: auto;
+        float: none;
+    }
+
+    .wrapper {
+
+        margin: 75px auto;
+
+    }

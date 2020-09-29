@@ -1,5 +1,5 @@
 <div class="right">
-    <div class="eskl">
+   <div class="fadein"> <div class="eskl">
         <h3><i class="fas fa-tags" aria-hidden="true" style="
     color: #888;
     font-size: 18px;
@@ -30,6 +30,74 @@
         </table>
 
     </div>
+    
+    
+    
+    
+    <div class="eskl">
+        <h3><i class="fas fa-tags" aria-hidden="true" style="
+    color: #888;
+    font-size: 18px;
+    margin-right: 10px;
+"></i>Μαράτα
+        </h3>
+        <div class="eimgout" style="background: #f15b27;">
+            <div class="eimg" style="background: #f15b27;"><img src="https://sites.google.com/site/sklplfiles/files/marata.png"></div>
+        </div>
+        <table style="border-collapse: collapse; width: 100%; margin-top: 40px" border="0">
+            <tbody>
+                <tr>
+                    <td style="width: 5%;"><span class="sbrd50 stfff" style="padding: 10px 22.5px;font-size: 30px; background: #bbb"> <b>1</b></span></td>
+                    <td style="width: 26%; text-align: center"><img src="/media/icons/prod.svg" alt=""> </td>
+                    <td style="width: 65%; text-align: left; font-size: 22px; color: #555;">183 Προϊόντα</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="width: auto; height: 1px; background: #eee; margin: 15px 0"></div>
+        <table style="border-collapse: collapse; width: 100%; margin-top: 0px" border="0">
+            <tbody>
+                <tr>
+                    <td style="width: 5%;"><span class="sbrd50 stfff" style="padding: 10px 20.5px;font-size: 30px; background: #bbb"> <b>2</b></span></td>
+                    <td style="width: 26%; text-align: center"><img src="/media/icons/list.svg" alt=""> </td>
+                    <td style="width: 65%; text-align: left; font-size: 22px; color: #555;">21 Κατηγορίες</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+    
+    <div class="eskl">
+        <h3><i class="fas fa-tags" aria-hidden="true" style="
+    color: #888;
+    font-size: 18px;
+    margin-right: 10px;
+"></i>Bonora
+        </h3>
+        <div class="eimgout" style="background: #d76a28;">
+            <div class="eimg" style="background: #d76a28;"><img src="https://sites.google.com/site/sklplfiles/files/bonora.png"></div>
+        </div>
+        <table style="border-collapse: collapse; width: 100%; margin-top: 40px" border="0">
+            <tbody>
+                <tr>
+                    <td style="width: 5%;"><span class="sbrd50 stfff" style="padding: 10px 22.5px;font-size: 30px; background: #bbb"> <b>1</b></span></td>
+                    <td style="width: 26%; text-align: center"><img src="/media/icons/prod.svg" alt=""> </td>
+                    <td style="width: 65%; text-align: left; font-size: 22px; color: #555;">183 Προϊόντα</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="width: auto; height: 1px; background: #eee; margin: 15px 0"></div>
+        <table style="border-collapse: collapse; width: 100%; margin-top: 0px" border="0">
+            <tbody>
+                <tr>
+                    <td style="width: 5%;"><span class="sbrd50 stfff" style="padding: 10px 20.5px;font-size: 30px; background: #bbb"> <b>2</b></span></td>
+                    <td style="width: 26%; text-align: center"><img src="/media/icons/list.svg" alt=""> </td>
+                    <td style="width: 65%; text-align: left; font-size: 22px; color: #555;">21 Κατηγορίες</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div></div>
 
 <div class="keno"></div>
  <div class="eskl">
@@ -71,6 +139,8 @@
     </div>
 </div>
 <style>
+    .fadein { position:relative; height:557px; width:100%; }
+.fadein .eskl { position:absolute; left:0; top:0; }
     .nprod {
         margin-top: 17px;
     }
@@ -174,3 +244,9 @@
         border-radius: 0;
     }
 </style>
+<script>$(function(){
+    $('.fadein .eskl:gt(0)').hide();
+    setInterval(function(){$('.fadein > :first-child').fadeOut(1000).next('.eskl').fadeIn(0).end().appendTo('.fadein');}, 7000);
+});</script>
+
+
