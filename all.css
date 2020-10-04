@@ -712,8 +712,8 @@ a:hover.pcategory {
 }
 }
 
-.pimg {
-    cursor: pointer;
+.pimg  {
+    cursor: pointer !important;
 }
 
 .pimg2 img {
@@ -785,6 +785,7 @@ a:hover.pcategory {
     max-width: 500px;
     margin: auto;
     display: flex;
+    cursor: pointer;
 }
 
 .closep {
