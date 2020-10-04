@@ -21,7 +21,7 @@ height: 5px;
     border-top: 5px solid #fff;
 }
 ::-webkit-scrollbar-thumb {
-background: #ccc;
+background: #999;
 border-top:solid 0px white;
     border-radius: 10px;
 }
@@ -631,7 +631,7 @@ a:hover.pcategory {
     border-collapse: separate;
     border-spacing: 0;
     font-size: 17.5px;
-     min-width: 600px;
+     min-width: 700px;
 }
 }
 
@@ -768,6 +768,7 @@ a:hover.pcategory {
     display: none;
     max-width: 800px;
     margin: 0 auto;
+    z-index: 1;
 }
 
 .pimg2bg {
@@ -782,6 +783,7 @@ a:hover.pcategory {
     box-sizing: border-box;
     background: rgb(0 0 0 / 87%);
     display: none;
+    z-index: 2;
 }
 
 .pimg img {
@@ -1373,16 +1375,17 @@ div#disqus_thread {
 
     }
 }
-@media only screen and (max-width:700px) {
+@media only screen and (max-width:770px) {
     .product {padding: 0; border: 0;}
     .plabels {margin: 0; text-align: center;}
+     #diatable {margin-bottom: 10px;}
 }
 
 @media only screen and (max-width:600px) {
     .plabels {display: grid;
-    gap: 10px;
+    grid-gap: 10px;
     padding: 0px;}
-    #diatable {margin-bottom: 10px;}
+   
 }
 
 
