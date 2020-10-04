@@ -10,26 +10,26 @@ body.marata {
     background: #fff;
 }
 
-/* width */
-
 ::-webkit-scrollbar {
-    width: 10px;
+-webkit-appearance: none;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+::-webkit-scrollbar:vertical {
+width: 8px;
 }
-
-/* Handle */
+::-webkit-scrollbar:horizontal {
+height: 5px;
+    border-top: 5px solid #fff;
+}
 ::-webkit-scrollbar-thumb {
-    background: #888;
+background: #ccc;
+border-top:solid 0px white;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+border-radius: 10px;
+background-color: #ffffff;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
 
 .marata .pagination a:nth-child(n+14):nth-child(-n+24) {
     display: none;
@@ -406,7 +406,9 @@ svg text {
 #kivotio br {
     display: none;
 }
-
+.tabout {
+    overflow-x: auto;
+}
 #diatitle {
     background: orange;
     border-top: 1px solid #777;
@@ -414,6 +416,7 @@ svg text {
     color: white;
     padding: 10px;
     text-align: center;
+    width: 100%;
 }
 
 #sistatika,
@@ -628,6 +631,8 @@ a:hover.pcategory {
     border-collapse: separate;
     border-spacing: 0;
     font-size: 17.5px;
+     min-width: 600px;
+}
 }
 
 #diatable p {
@@ -759,8 +764,9 @@ a:hover.pcategory {
     left: 15px;
     width: auto;
     height: 100%;
+        max-height: 800px;
     display: none;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -1366,3 +1372,17 @@ div#disqus_thread {
         margin: 75px auto;
 
     }
+}
+@media only screen and (max-width:700px) {
+    .product {padding: 0; border: 0;}
+    .plabels {margin: 0; text-align: center;}
+}
+
+@media only screen and (max-width:600px) {
+    .plabels {display: grid;
+    gap: 10px;
+    padding: 0px;}
+    #diatable {margin-bottom: 10px;}
+}
+
+
