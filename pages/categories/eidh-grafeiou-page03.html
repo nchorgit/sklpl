@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Είδη γραφείου</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/all.css" rel="stylesheet" type="text/css">
+    <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
+    <link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
+
+</head>
+
+<body>
+    <div class="hload"></div>
+
+    <div class="wrapper">
+        <div class="cattitle">Προϊόντα στην κατηγορία: <strong><i class="far fa-clone"></i> Είδη γραφείου</strong></div>
+        <div class="explistout"></div>
+
+        <div class="pagination">
+           <a href=""></a>
+            <a href="/pages/categories/eidh-grafeiou.html">1</a>
+            <a href="/pages/categories/eidh-grafeiou-page02.html">2</a>
+            <a href="/pages/categories/eidh-grafeiou-page03.html" class="active">3</a>
+            <a href="/pages/categories/eidh-grafeiou-page04.html">4</a>
+            <a href="/pages/categories/eidh-grafeiou-page05.html">5</a>
+           
+
+
+            
+            <p>ΣΕΛΙΔΑ <strong>3</strong> ΑΠΟ <strong>5</strong></p>
+        </div>
+
+    </div>
+    <div class="fload"></div>
+
+    <script>
+        $(".hload").load("/header.html");
+        $(".fload").load("/footer.html");
+
+        $(".explistout").load("/pages/exp-lists/stampac.html .eg .explist:nth-child(n+25):nth-child(-n+36)");
+    </script>
+    
+     
+        </body></html>
