@@ -74,7 +74,9 @@ sfs170 {
 .sw20 {
   width: 20%;
 }
-
+.swauto {
+    width: auto;
+}
 .sp1510 {
   padding: 15px 10px;
 }
