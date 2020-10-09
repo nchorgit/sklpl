@@ -31,7 +31,7 @@ background-color: #ffffff;
 }
 
 
-.marata .pagination a:nth-child(n+14):nth-child(-n+24) {
+.marata .pagination a:nth-child(n+15):nth-child(-n+24) {
     display: none;
 }
 
