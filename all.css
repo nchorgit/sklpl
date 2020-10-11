@@ -822,11 +822,12 @@ a:hover.pcategory {
 
 .imgcaption {
     position: relative;
-    bottom: 85px;
+    bottom: 30px;
     left: 0;
     text-align: center;
     animation-name: example2;
     animation-duration: 2s;
+    color: #eee;
 }
 
 .cattitle {
