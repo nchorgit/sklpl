@@ -895,14 +895,14 @@ cattitle {
 .cattitle b {
  
    
-    border-radius: 30px;
+    border-radius: 3px;
     background: #fa5402;
-    color: #eeeeee;
+    color: #ffffff;
     margin-right: 5px;
-    width: 40px;
+   
     display: inline-block;
-    height: 40px;
-    line-height: 40px;
+
+    padding: 5px 20px;
 }
 
 .cattitle strong {
