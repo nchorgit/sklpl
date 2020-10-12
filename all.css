@@ -892,6 +892,19 @@ cattitle {
     margin-top: -45px;
 }
 
+.cattitle b {
+ 
+   
+    border-radius: 30px;
+    background: #fa5402;
+    color: #eeeeee;
+    margin-right: 5px;
+    width: 40px;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+
 .cattitle strong {
     padding: 5px 10px;
     background: #ffffff;
@@ -1490,7 +1503,14 @@ div#disqus_thread {
         grid-gap: 10px;
         margin-bottom: 20px;
     }
-
+   .cattitle b {
+    margin-right: 0;
+    width: auto;
+    border-radius: 30px;
+    height: auto;
+    line-height: initial;
+    padding: 5px;
+}
     .cattitle strong {
         margin-left: 0;
     }
