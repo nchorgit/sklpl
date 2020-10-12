@@ -12,13 +12,7 @@
 <body>
 <div class="hload"></div>
 <div class="wrapper">
-<p style="
-    text-align: center;
-    font-size: 40px;
-    
-    color: #666;
-    letter-spacing: -1.1px;
-">Τα Προϊόντα <span style="color: #ff5722;"><strong>Ιδιωτικής Ετικέτας</strong></span></p>
+<p class="tpie">Τα Προϊόντα <span style="color: #ff5722;"><strong>Ιδιωτικής Ετικέτας</strong></span></p>
 <div class="ilabels">
     <div class="ilab"><a href="/pages/labels/sklavenitis/sklavenitis.html"><img src="/media/icons/sklavenitis.png" alt=""><p>Σκλαβενίτης</p></a></div>
     <div class="ilab"><a href="/pages/labels/marata/marata.html"><img src="/media/icons/marata.png" alt=""><p>Μαράτα</p></a></div>
@@ -56,6 +50,11 @@ $(".hload").load("/header.html");
     .ilabels {
         text-align: justify;
         margin: -15px;
+        transition: all .3s;
+    }
+     .ilab:hover {
+       opacity: .7;
+        transition: all .3s;
     }
 
     .ilab a {
@@ -70,6 +69,7 @@ $(".hload").load("/header.html");
         display: inline-block;
         width: 18.8%;
         margin: 15px;
+        transition: all .3s;
     }
 
     .ilab img {
@@ -89,4 +89,46 @@ $(".hload").load("/header.html");
       .ilab p i {
           font-size: 12px;
           color: #777;
+    }
+    .tpie {
+    text-align: center;
+    font-size: 40px;
+   
+    color: #666;
+    letter-spacing: -1.1px; }  
+   @media only screen and (max-width:1015px) {
+       .ilabels {
+        text-align: justify;
+        margin: 0px;
+    }
+    
+    .ilab {
+       
+        width: 31%;
+        margin: 0px;
+    }
+    }
+       @media only screen and (max-width:643px) {
+           .ilab {
+       
+        width: 48%;
+        margin: 0px;
+    }
+    }
+    
+       @media only screen and (max-width:433px) {
+           .ilab {
+       
+        width: 48%;
+        margin: 0px;
+               font-size: 15px;
+    }
+           .ilab p {
+     font-size: 15px;
+    }
+           .tpie {
+               font-size: 25px;}
+    }
+    
+  
 </style>

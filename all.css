@@ -232,7 +232,8 @@ body a:hover {
     margin: auto;
 
 }
-
+#searchopen {display: none;}
+.searchpl2 {display: none;}
 .fakos {
     background-image: url(media/SVG/fakos.svg);
     background-repeat: no-repeat;
@@ -258,6 +259,23 @@ input.stext {
     border: none;
     font-family: inherit;
     font-size: 16px;
+}
+
+input.stext2 {
+    position: absolute;
+    background-color: #eeeeee;
+    /* left: 15px; */
+    height: 30px;
+    margin: auto;
+    right: 50pxpx;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 15px;
 }
 
 .arrow {
@@ -1375,18 +1393,89 @@ div#disqus_thread {
         margin: 75px auto;
 
     }
+    .find {display: none;}
 }
+
+
 @media only screen and (max-width:770px) {
     .product {padding: 0; border: 0;}
     .plabels {margin: 0; text-align: center;}
      #diatable {margin-bottom: 10px;}
+    #mlines a {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    left: auto;
+    background: #666;
+    border-radius: 0%;
+    transition: all .3s;
+    right: 60px;
+    border-radius: 4px;
+}
+    .logopl a {left: 15px;}
+    .search {display: none;}
+    #searchopen {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 15px;
+    background: #666666;
+    top: 0px;
+    left: auto;
+        border-radius: 4px;
+        
+}
+    .searchpl2 {
+    display: none;
+    width: 100%;
+    height: 50px;
+    
+    margin: 0px auto;
+    position: absolute;
+    background-color:rgba(0, 0, 0, 0.8);
+    top: 70px;
+    z-index: 8;
+}
 }
 
+@media only screen and (max-width:700px) {
+    .cattitle {display: grid; grid-gap: 10px; margin-bottom: 20px;} 
+    .cattitle strong {margin-left: 0;} 
+}
 @media only screen and (max-width:600px) {
     .plabels {display: grid;
     grid-gap: 10px;
     padding: 0px;}
+
    
 }
+@media only screen and (max-width: 444px) {
+   .logopl a {
+    height: 46px;
+width: 250px;
+      background-size: 100%;
+background-position: left center;}
+
+
+}
+
+@media only screen and (max-width: 400px) {
+  .logopl a {
+    width: 215px;
+   
+}
+  }
+
+@media only screen and (max-width: 358px) {
+  .logopl a {
+    width: 175px;
+    
+    
+    
+    background-size: 100%;
+}
+  }
 
 
