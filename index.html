@@ -11,6 +11,14 @@
 </head>
 <body>
 <div class="hload"></div>
+<div class="prout"><div class="promo"><p><span style="font-weight:500; color: #eee; text-shadow: 2px 2px #df5f2d;">Τα προϊόντα</span> <br>
+<span style="font-weight:700; font-size: 55px; color: #eee; text-shadow: 2px 2px #df5f2d;">Ιδιωτικής Ετικέτας</span>
+<br><br>
+<a class="mpl" href="#"><span style="font-weight: 500; padding: 10px 20px; background: #333; color:#eee; font-size: 22px; border-radius: 4px; letter-spacing: 0; transition: all .3s "><i class="fas fa-question-circle" aria-hidden="true" style="
+    margin-right: 10px;
+    opacity: .5;
+"></i>Γνωρίστε τις Ετικέτες μας</span></a>
+</p><img src="/media/promo/cart.jpg" alt=""></div></div>
 <div class="wrapper">
 <p class="tpie">Τα Προϊόντα <span style="color: #ff5722;"><strong>Ιδιωτικής Ετικέτας</strong></span></p>
 <div class="ilabels">
@@ -47,6 +55,48 @@ $(".hload").load("/header.html");
 
 
 <style>
+    .wrapper {margin: 30px auto;}
+    .header {background: rgb(80 43 29 / 86%);}
+    .header i {color: #eee;}
+    .labels a:hover, .cats a:hover {
+        background-color: #333;}
+    #mlines a {background: #7b3e27;}
+    .prout {
+    background: #f26c37;
+}
+    .promo {
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    max-width: 1315px;
+        position: relative;
+  
+}
+    
+.promo p {
+    position: absolute;
+    font-size: 50px;
+    color: #fff;
+    letter-spacing: -1.4px;
+    margin: auto;
+    left: 15px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    height: 210px;
+    
+    }
+    
+    a.mpl {text-decoration: none;} 
+    .mpl span:hover  {background: darkred !important; transition: all .3s}
+    .promo img {
+    width: 100%;
+    height: auto;
+    max-width: 1315px;
+    text-align: center;
+        margin-bottom: -5px;
+}
+
     .ilabels {
         text-align: justify;
         margin: -15px;
@@ -93,6 +143,7 @@ $(".hload").load("/header.html");
     .tpie {
     text-align: center;
     font-size: 40px;
+        display: none;
    
     color: #666;
     letter-spacing: -1.1px; }  
