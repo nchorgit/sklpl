@@ -43,7 +43,7 @@ body.marata {
     display: none;
 }
 
-.bonora .pagination a:nth-child(n+7):nth-child(-n+24) {
+.bonora .pagination a:nth-child(n+8):nth-child(-n+24) {
     display: none;
 }
 
@@ -1574,7 +1574,7 @@ div#disqus_thread {
         align-items: center;
     }
 
-    ul {
+    .promo ul {
         padding: 20px 40px;
     color: #333;
     background: #f6f6f6;

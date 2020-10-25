@@ -4,7 +4,7 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Μαρμελάδες</title>
+    <title>Σκλαβενίτης: Προϊόντα στην κατηγορία Σνακ</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/all.css" rel="stylesheet" type="text/css">
@@ -17,15 +17,12 @@
     <div class="hload"></div>
 
     <div class="wrapper">
-        <div class="cattitle"><b>4</b> Προϊόντα στην κατηγορία: <strong><i class="far fa-clone"></i> Μαρμελάδες</strong></div>
-        <div class="explistout"></div>
+        <div class="cattitle"><b>4</b> Προϊόντα στην κατηγορία: <strong><i class="far fa-clone"></i> Σνακ</strong></div>
+        <div id="explistout"></div>
 
         <div class="pagination">
            <a href=""></a>
-            <a href="/pages/categories/marmelades.html" class="active">1</a>
-           
-           
-          
+            <a href="/pages/categories/snacks.html" class="active">1</a>
           
            
 
@@ -41,9 +38,11 @@
         $(".hload").load("/header.html");
         $(".fload").load("/footer.html");
 
-        $(".explistout").load("/pages/exp-lists/food.html .marmelades .explist:nth-child(-n+12)");
+        $("#explistout").load("/pages/exp-lists/food.html .snack .explist:nth-child(-n+12)");
     </script>
     <style>
-      
+        .pagination a:nth-child(n+3) {
+            display: none;
+        }
       </style>  
         </body></html>
