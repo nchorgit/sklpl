@@ -43,7 +43,7 @@ body.marata {
     display: none;
 }
 
-.bonora .pagination a:nth-child(n+8):nth-child(-n+24) {
+.bonora .pagination a:nth-child(n+9):nth-child(-n+24) {
     display: none;
 }
 
