@@ -1676,7 +1676,12 @@ div#disqus_thread {
         background: #666;
     }
 
-    @media only screen and (max-width: 1046px) {
+@media only screen and (max-width: 1046px) {
+    
+    
+}
+    @media only screen and (max-width: 1233px) {
+        .cats a, .labels a {display: none;}
 
         .cflex {
             flex-flow: column-reverse;
