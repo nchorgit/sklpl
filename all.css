@@ -1,6 +1,10 @@
+@font-face {
+   font-family: 'cf_asty_st';
+  src: url(/cfastystd-book-webfont.eot);
+}
 body {
     margin: 0 auto;
-    font-family: google sans, Arial, Helvetica, sans-serif;
+    font-family: cf_asty_st, google sans, Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     font-size: 17.5px;
     color: #444;
