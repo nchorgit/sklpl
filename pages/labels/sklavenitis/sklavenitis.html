@@ -19,7 +19,7 @@
         <div class="cattitle"><b>185</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Σκλαβενίτης</strong></div>
         <div id="explistout"></div>
 
-        <div class="pagination">
+        <div class="pagination" style="display:none;">
             <a href="#" style="font-size: 30px; display: none; color: #555; line-height: 37px;">‹</a>
             <a href="/pages/labels/sklavenitis/sklavenitis.html" class="active">1</a>
             <a href="/pages/labels/sklavenitis/sklavenitis-page02.html">2</a>
@@ -52,7 +52,7 @@
         $(".hload").load("/header.html");
         $(".fload").load("/footer.html");
 
-        $("#explistout").load("/pages/exp-lists/sklavenitis-exp-list.html .explist:nth-child(-n+12)");
+        $("#explistout").load("/pages/exp-lists/sklavenitis-exp-list.html .explist");
     </script>
 
     </style>
