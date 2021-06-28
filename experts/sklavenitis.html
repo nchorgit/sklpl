@@ -12,83 +12,11 @@
 <link href="/expert.css" rel="stylesheet" type="text/css">
 <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
 
-<script>
-        
-  
-    $(document).ready(function() {
-  
-  var show_per_page = 16;
-  var number_of_items = $('.lprod').find('.explist1').length;
-  var number_of_pages = Math.ceil(number_of_items / show_per_page);
-  
-  $('.cattitle').after('<div class=cout><div class=controls></div></div><input id=current_page type=hidden><input id=show_per_page type=hidden>');
-  
-  $('#current_page').val(0);
-  $('#show_per_page').val(show_per_page);
-  
-  var navigation_html = '<a class="prev" onclick="previous()">‹</a>';
-  var current_link = 0;
-  while (number_of_pages > current_link) {
-    navigation_html += '<a class="page" onclick="go_to_page(' + current_link + ')" longdesc="' + current_link + '">' + (current_link + 1) + '</a>';
-    current_link++;
-  }
-  navigation_html += '<a class="next" onclick="next()">›</a>';
-  
-  $('.controls').html(navigation_html);
-  $('.controls .page:first').addClass('active');
-  
-  $('.lprod').find(".explist1").css('display', 'none');
-  $('.lprod').find(".explist1").slice(0, show_per_page).css('display', 'block');
-  
-  });
-  
-  
-  
-  function go_to_page(page_num) {
-  var show_per_page = parseInt($('#show_per_page').val(), 0);
-  
-  start_from = page_num * show_per_page;
-  
-  end_on = start_from + show_per_page;
-  
-  $('.lprod').find(".explist1").css('display', 'none').slice(start_from, end_on).css('display', 'block');
-  
-  $('.page[longdesc=' + page_num + ']').addClass('active').siblings('.active').removeClass('active');
-  
-  $('#current_page').val(page_num);
-  }
-  
-  
-  
-  function previous() {
-  
-  new_page = parseInt($('#current_page').val(), 0) - 1;
-  //if there is an item before the current active link run the function
-  if ($('.active').prev('.page').length == true) {
-    go_to_page(new_page);
-  }
-  
-  }
-  
-  function next() {
-  new_page = parseInt($('#current_page').val(), 0) + 1;
-  //if there is an item after the current active link run the function
-  if ($('.active').next('.page').length == true) {
-    go_to_page(new_page);
-  }
-  
-  }
-  
-  
-      </script>
 </head>
 <body>
-<div class="hload"></div>
-<div class="wrapper">
-    <div class="cattitle"><b>185</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Σκλαβενίτης</strong></div>
-<div class="left">
+
 <div class="lprod">
-    <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-tilio-15g.html"><div class="dload177"></div></a></div></div>
+    <div class='explist1'><a href="/products/sklavenitis/sklavenitis-tilio-15g.html"><div class="dload177"></div></a></div></div>
     <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-tsai-bounou-50g.html"><div class="dload178"></div></a></div></div>
     <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-tsai-mayro-25g.html"><div class="dload179"></div></a></div></div>
     <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-xamomhli-15g.html"><div class="dload180"></div></a></div></div>
@@ -274,201 +202,194 @@
     <div class='explist1'><div class="zaxari"><a href="/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p2.html"><div class="dload184"></div></a></div></div>
     <div class='explist1'><div class="zaxari"><a href="/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p3.html"><div class="dload185"></div></a></div></div>
 </div>
-</div>
-<div class="rload"></div>
-</div>
- <div class="fload"></div>
 
 <script>
 
-$(".hload").load("/header.html");
-
-$(".fload").load("/footer.html");
-$(".dload1").load("/products/sklavenitis/sklavenitis-agginares-me-araka-400g.html .product");
-$(".dload2").load("/products/sklavenitis/sklavenitis-ammwnia-dittanthrakiko-ammwnio-25g.html .product");
-$(".dload3").load("/products/sklavenitis/sklavenitis-amygdala-psixa-apofloiwmena-el-200g.html .product");
-$(".dload4").load("/products/sklavenitis/sklavenitis-amygdala-psixa-apofloiwmena-pshmena-mh-alatismena-el-200g.html .product");
-$(".dload5").load("/products/sklavenitis/sklavenitis-amygdala-psixa-pshmena-alatismena-el-200g.html .product");
-$(".dload6").load("/products/sklavenitis/sklavenitis-amygdala-psixa-pshmena-mh-alatismena-el-200g.html .product");
-$(".dload7").load("/products/sklavenitis/sklavenitis-amygdala-psixa-se-fetes-apofloiwmena-150g.html .product");
-$(".dload8").load("/products/sklavenitis/sklavenitis-amygdala-psixa-se-fetes-apofloiwmena-el-150g.html .product");
-$(".dload9").load("/products/sklavenitis/sklavenitis-amygdala-psixa-wma-el-200g.html .product");
-$(".dload10").load("/products/sklavenitis/sklavenitis-amygdala-psixa-wma-el-500g.html .product");
-$(".dload11").load("/products/sklavenitis/sklavenitis-amygdala-psixa-wma-psilokommena-el-200g.html .product");
-$(".dload12").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-kai-kranmperi-me-xymo-mhlou-200g.html .product");
-$(".dload13").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-me-kranmperi-200g.html .product");
-$(".dload14").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-pshmenoi-alatismenoi-200g.html .product");
-$(".dload15").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-pshmenoi-mh-alatismenoi-200g.html .product");
-$(".dload16").load("/products/sklavenitis/sklavenitis-arakas-laderos-me-patates-400g.html .product");
-$(".dload17").load("/products/sklavenitis/sklavenitis-basilikos-apokshramenos-20g.html .product");
-$(".dload18").load("/products/sklavenitis/sklavenitis-dafnh-apokshramenh-25g.html .product");
-$(".dload19").load("/products/sklavenitis/sklavenitis-dendrolibano-apokshrameno-25g.html .product");
-$(".dload20").load("/products/sklavenitis/sklavenitis-dyosmos-apokshramenos-trimmenos-15g.html .product");
-$(".dload21").load("/products/sklavenitis/sklavenitis-faba-500g.html .product");
-$(".dload22").load("/products/sklavenitis/sklavenitis-faba-el-500g.html .product");
-$(".dload23").load("/products/sklavenitis/sklavenitis-fakes-400g.html .product");
-$(".dload24").load("/products/sklavenitis/sklavenitis-fakes-psiles-500g.html .product");
-$(".dload25").load("/products/sklavenitis/sklavenitis-fakes-psiles-el-500g.html .product");
-$(".dload26").load("/products/sklavenitis/sklavenitis-fakes-xondres-500g.html .product");
-$(".dload27").load("/products/sklavenitis/sklavenitis-fakes-xondres-el-500g.html .product");
-$(".dload28").load("/products/sklavenitis/sklavenitis-faskomhlo-50g.html .product");
-$(".dload29").load("/products/sklavenitis/sklavenitis-fasolada-400g.html .product");
-$(".dload30").load("/products/sklavenitis/sklavenitis-fasolakia-ladera-400g.html .product");
-$(".dload31").load("/products/sklavenitis/sklavenitis-fasolia-gigantes-500g.html .product");
-$(".dload32").load("/products/sklavenitis/sklavenitis-fasolia-gigantes-egxrwmoi-el-500g.html .product");
-$(".dload33").load("/products/sklavenitis/sklavenitis-fasolia-gigantes-el-500g.html .product");
-$(".dload34").load("/products/sklavenitis/sklavenitis-fasolia-mauromatika-500g.html .product");
-$(".dload35").load("/products/sklavenitis/sklavenitis-fasolia-mauromatika-el-500g.html .product");
-$(".dload36").load("/products/sklavenitis/sklavenitis-fasolia-metria-500g.html .product");
-$(".dload37").load("/products/sklavenitis/sklavenitis-fasolia-metria-el-500g.html .product");
-$(".dload38").load("/products/sklavenitis/sklavenitis-fasolia-mparmounia-500g.html .product");
-$(".dload39").load("/products/sklavenitis/sklavenitis-fasolia-xondra-500g.html .product");
-$(".dload40").load("/products/sklavenitis/sklavenitis-fasolia-xondra-el-500g.html .product");
-$(".dload41").load("/products/sklavenitis/sklavenitis-fistikia-arapika-pshmena-alatismena-200g.html .product");
-$(".dload42").load("/products/sklavenitis/sklavenitis-fistikia-arapika-pshmena-alatismena-el-200g.html .product");
-$(".dload43").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-pshmena-alatismena-el-200g.html .product");
-$(".dload44").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-pshmena-mh-alatismena-el-200g.html .product");
-$(".dload45").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-psixa-wmh-el-200g.html .product");
-$(".dload46").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-psixa-wmh-se-fetes-el-200g.html .product");
-$(".dload47").load("/products/sklavenitis/sklavenitis-fistikia-kokteil-el-200g.html .product");
-$(".dload48").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-barbecue-el-200g.html .product");
-$(".dload49").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-mpeikon-tyri-200g.html .product");
-$(".dload50").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-mpeikon-tyri-el-200g.html .product");
-$(".dload51").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-paprika-el-200g.html .product");
-$(".dload52").load("/products/sklavenitis/sklavenitis-fistikia-pinats-200g.html .product");
-$(".dload53").load("/products/sklavenitis/sklavenitis-fistikia-pinats-500g.html .product");
-$(".dload54").load("/products/sklavenitis/sklavenitis-fistikia-xouanita-el-200g.html .product");
-$(".dload55").load("/products/sklavenitis/sklavenitis-fountoukia-psixa-pshmena-200g.html .product");
-$(".dload56").load("/products/sklavenitis/sklavenitis-garyfallo-25g.html .product");
-$(".dload57").load("/products/sklavenitis/sklavenitis-garyfallo-trimmeno-25g.html .product");
-$(".dload58").load("/products/sklavenitis/sklavenitis-gemista-me-ryzi-450g.html .product");
-$(".dload59").load("/products/sklavenitis/sklavenitis-gigantes-400g.html .product");
-$(".dload60").load("/products/sklavenitis/sklavenitis-gioubarlakia-me-augolemono-450g.html .product");
-$(".dload61").load("/products/sklavenitis/sklavenitis-gioubetsi-440g.html .product");
-$(".dload62").load("/products/sklavenitis/sklavenitis-glykaniso-25g.html .product");
-$(".dload63").load("/products/sklavenitis/sklavenitis-hliosporos-pshmenos-alatismenos-150g.html .product");
-$(".dload64").load("/products/sklavenitis/sklavenitis-hliosporos-pshmenos-mh-alatismenos-150g.html .product");
-$(".dload65").load("/products/sklavenitis/sklavenitis-kalampoki-snak-200g.html .product");
-$(".dload66").load("/products/sklavenitis/sklavenitis-kalampoki-wmo-gia-pop-korn-250g.html .product");
-$(".dload67").load("/products/sklavenitis/sklavenitis-kalampoki-wmo-gia-pop-korn-el-250g.html .product");
-$(".dload68").load("/products/sklavenitis/sklavenitis-kanela-apokshramenos-floios-50g.html .product");
-$(".dload69").load("/products/sklavenitis/sklavenitis-kanela-trimmenh-50g.html .product");
-$(".dload70").load("/products/sklavenitis/sklavenitis-kari-50g.html .product");
-$(".dload71").load("/products/sklavenitis/sklavenitis-karyda-apokshramenh-trimmenh-150g.html .product");
-$(".dload72").load("/products/sklavenitis/sklavenitis-karydia-psixa-200g.html .product");
-$(".dload73").load("/products/sklavenitis/sklavenitis-karydia-psixa-el-200g.html .product");
-$(".dload74").load("/products/sklavenitis/sklavenitis-kasious-alatismena-200g.html .product");
-$(".dload75").load("/products/sklavenitis/sklavenitis-kasious-pshmena-mh-alatismena-200g.html .product");
-$(".dload76").load("/products/sklavenitis/sklavenitis-keftedakia-280g.html .product");
-$(".dload77").load("/products/sklavenitis/sklavenitis-kolokythakia-gemista-me-augolemono-450g.html .product");
-$(".dload78").load("/products/sklavenitis/sklavenitis-kotompoukies-me-mpeikon-ryzi-me-laxanika-400g.html .product");
-$(".dload79").load("/products/sklavenitis/sklavenitis-kotopoulo-kokkinisto-me-mpamies-400g.html .product");
-$(".dload80").load("/products/sklavenitis/sklavenitis-kotopoulo-sto-fourno-me-patates-400g.html .product");
-$(".dload81").load("/products/sklavenitis/sklavenitis-kotopoulo-sxaras-me-laxanika-380g.html .product");
-$(".dload82").load("/products/sklavenitis/sklavenitis-koukia-el-500g.html .product");
-$(".dload83").load("/products/sklavenitis/sklavenitis-kremydi-apokshrameno-se-nifades-25g.html .product");
-$(".dload84").load("/products/sklavenitis/sklavenitis-krepes-me-zampon,-tyri-kai-manitaria-300g.html .product");
-$(".dload85").load("/products/sklavenitis/sklavenitis-kritharoto-me-garides-400g.html .product");
-$(".dload86").load("/products/sklavenitis/sklavenitis-ksino-kitriko-oksy-50g.html .product");
-$(".dload87").load("/products/sklavenitis/sklavenitis-kymino-25g.html .product");
-$(".dload88").load("/products/sklavenitis/sklavenitis-kymino-trimmeno-50g.html .product");
-$(".dload89").load("/products/sklavenitis/sklavenitis-laxanontolmades-450g.html .product");
-$(".dload90").load("/products/sklavenitis/sklavenitis-ligkouini-olikhs-aleshs-me-laxanika-450g.html .product");
-$(".dload91").load("/products/sklavenitis/sklavenitis-makaronia-karmponara-450g.html .product");
-$(".dload92").load("/products/sklavenitis/sklavenitis-makaronia-me-kima-480g.html .product");
-$(".dload93").load("/products/sklavenitis/sklavenitis-makaronia-me-saltsa-ntomatas-480g.html .product");
-$(".dload94").load("/products/sklavenitis/sklavenitis-mauromatika-salata-400g.html .product");
-$(".dload95").load("/products/sklavenitis/sklavenitis-maxlepi-15g.html .product");
-$(".dload96").load("/products/sklavenitis/sklavenitis-maxlepi-trimmeno-15g.html .product");
-$(".dload97").load("/products/sklavenitis/sklavenitis-meigma-piperiwn-50g.html .product");
-$(".dload98").load("/products/sklavenitis/sklavenitis-melitzanes-papoutsakia-400g.html .product");
-$(".dload99").load("/products/sklavenitis/sklavenitis-meltzanes-imam-280g.html .product");
-$(".dload100").load("/products/sklavenitis/sklavenitis-mosxari-kokkinisto-me-fasolakia-400g.html .product");
-$(".dload101").load("/products/sklavenitis/sklavenitis-mosxari-kokkinisto-me-poure-400g.html .product");
-$(".dload102").load("/products/sklavenitis/sklavenitis-mosxokarydo-25g.html .product");
-$(".dload103").load("/products/sklavenitis/sklavenitis-mosxokarydo-trimmeno-25g.html .product");
-$(".dload104").load("/products/sklavenitis/sklavenitis-mousakas-400g.html .product");
-$(".dload105").load("/products/sklavenitis/sklavenitis-mpamies-laderes-350g.html .product");
-$(".dload106").load("/products/sklavenitis/sklavenitis-mpaxari-25g.html .product");
-$(".dload107").load("/products/sklavenitis/sklavenitis-mpaxari-trimmeno-25g.html .product");
-$(".dload108").load("/products/sklavenitis/sklavenitis-mpifteki-laxanikwn-350g.html .product");
-$(".dload109").load("/products/sklavenitis/sklavenitis-mpiftekia-galopoulas-me-ryzi-kai-laxanika-400g.html .product");
-$(".dload110").load("/products/sklavenitis/sklavenitis-mpoukobo-kautero-apokshrameno-25g.html .product");
-$(".dload111").load("/products/sklavenitis/sklavenitis-mpriam-400g.html .product");
-$(".dload112").load("/products/sklavenitis/sklavenitis-pagwto-banilia-550g.html .product");
-$(".dload113").load("/products/sklavenitis/sklavenitis-pagwto-fistiki-300g.html .product");
-$(".dload114").load("/products/sklavenitis/sklavenitis-pagwto-fraoula-batomouro-300g.html .product");
-$(".dload115").load("/products/sklavenitis/sklavenitis-pagwto-giaourti-550g.html .product");
-$(".dload116").load("/products/sklavenitis/sklavenitis-pagwto-giaouti-me-siropi-maurokeraso-300g.html .product");
-$(".dload117").load("/products/sklavenitis/sklavenitis-pagwto-kaimaki-550g.html .product");
-$(".dload118").load("/products/sklavenitis/sklavenitis-pagwto-krema-mpiskoto-300g.html .product");
-$(".dload119").load("/products/sklavenitis/sklavenitis-pagwto-krema-mpiskoto-550g.html .product");
-$(".dload120").load("/products/sklavenitis/sklavenitis-pagwto-mangko-350g.html .product");
-$(".dload121").load("/products/sklavenitis/sklavenitis-pagwto-parfe-banilia-300g.html .product");
-$(".dload122").load("/products/sklavenitis/sklavenitis-pagwto-parfe-banilia-550g.html .product");
-$(".dload123").load("/products/sklavenitis/sklavenitis-pagwto-parfe-sokolata-kakao-300g.html .product");
-$(".dload124").load("/products/sklavenitis/sklavenitis-pagwto-parfe-sokolata-kakao-550g.html .product");
-$(".dload125").load("/products/sklavenitis/sklavenitis-pagwto-peponi-550g.html .product");
-$(".dload126").load("/products/sklavenitis/sklavenitis-pagwto-sokolata-kakao-550g.html .product");
-$(".dload127").load("/products/sklavenitis/sklavenitis-pagwto-stratsiatela-300g.html .product");
-$(".dload128").load("/products/sklavenitis/sklavenitis-pagwto-stratsiatela-550g.html .product");
-$(".dload129").load("/products/sklavenitis/sklavenitis-paprika-glykia-50g.html .product");
-$(".dload130").load("/products/sklavenitis/sklavenitis-pasatempos-psilos-pshmenos-alatismenos-200g.html .product");
-$(".dload131").load("/products/sklavenitis/sklavenitis-pasatempos-psilos-pshmenos-alatismenos-el-200g.html .product");
-$(".dload132").load("/products/sklavenitis/sklavenitis-pasatempos-xondros-pshmenos-150g.html .product");
-$(".dload133").load("/products/sklavenitis/sklavenitis-pasatempos-xondros-pshmenos-mh-alatismenos-150g.html .product");
-$(".dload134").load("/products/sklavenitis/sklavenitis-pastitsio-400g.html .product");
-$(".dload135").load("/products/sklavenitis/sklavenitis-patates-fournou-400g.html .product");
-$(".dload136").load("/products/sklavenitis/sklavenitis-patatosalata-350g.html .product");
-$(".dload137").load("/products/sklavenitis/sklavenitis-penes-olikhs-me-saltsa-manitariwn-450g.html .product");
-$(".dload138").load("/products/sklavenitis/sklavenitis-piperi-aspro-trimmeno-50g.html .product");
-$(".dload139").load("/products/sklavenitis/sklavenitis-piperi-kokkino-kautero-50g.html .product");
-$(".dload140").load("/products/sklavenitis/sklavenitis-piperi-mayro-50g.html .product");
-$(".dload141").load("/products/sklavenitis/sklavenitis-piperi-mayro-trimmeno-25g.html .product");
-$(".dload142").load("/products/sklavenitis/sklavenitis-piperi-mayro-trimmeno-50g.html .product");
-$(".dload143").load("/products/sklavenitis/sklavenitis-pligouri-500g.html .product");
-$(".dload144").load("/products/sklavenitis/sklavenitis-pligouri-el-500g.html .product");
-$(".dload145").load("/products/sklavenitis/sklavenitis-psari-me-laxanika-400g.html .product");
-$(".dload146").load("/products/sklavenitis/sklavenitis-psari-me-laxanika,-ston-atmo-400g.html .product");
-$(".dload147").load("/products/sklavenitis/sklavenitis-rebithia-400g.html .product");
-$(".dload148").load("/products/sklavenitis/sklavenitis-rebithia-apofloiwmena-500g.html .product");
-$(".dload149").load("/products/sklavenitis/sklavenitis-rebithia-metria-el-500g.html .product");
-$(".dload150").load("/products/sklavenitis/sklavenitis-rebithia-xondra-500g.html .product");
-$(".dload151").load("/products/sklavenitis/sklavenitis-rebithia-xondra-el-500g.html .product");
-$(".dload152").load("/products/sklavenitis/sklavenitis-riganh-apokshramenh-trimmenh-25g.html .product");
-$(".dload153").load("/products/sklavenitis/sklavenitis-ryzi-glase-el-500g.html .product");
-$(".dload154").load("/products/sklavenitis/sklavenitis-ryzi-karolina-el-500g.html .product");
-$(".dload155").load("/products/sklavenitis/sklavenitis-ryzi-me-laxanika-400g.html .product");
-$(".dload156").load("/products/sklavenitis/sklavenitis-ryzi-mpasmati-500g.html .product");
-$(".dload157").load("/products/sklavenitis/sklavenitis-ryzi-mplou-mponet-el-500g.html .product");
-$(".dload158").load("/products/sklavenitis/sklavenitis-ryzi-nyxaki-el-500g.html .product");
-$(".dload159").load("/products/sklavenitis/sklavenitis-salata-brastwn-laxanikwn-450g.html .product");
-$(".dload160").load("/products/sklavenitis/sklavenitis-sitari-el-500g.html .product");
-$(".dload161").load("/products/sklavenitis/sklavenitis-skordo-apokshrameno-trimmeno-50g.html .product");
-$(".dload162").load("/products/sklavenitis/sklavenitis-soda-dittanthrakiko-natrio-50g.html .product");
-$(".dload163").load("/products/sklavenitis/sklavenitis-soufle-me-taliateles-350g.html .product");
-$(".dload164").load("/products/sklavenitis/sklavenitis-soupies-me-spanaki-400g.html .product");
-$(".dload165").load("/products/sklavenitis/sklavenitis-soutzoukakia-me-ryzi-450g.html .product");
-$(".dload166").load("/products/sklavenitis/sklavenitis-spanakoryzo-450g.html .product");
-$(".dload167").load("/products/sklavenitis/sklavenitis-sporoi-sousamiou-25g.html .product");
-$(".dload168").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-200g.html .product");
-$(".dload169").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-500g.html .product");
-$(".dload170").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-el-200g.html .product");
-$(".dload171").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-el-500g.html .product");
-$(".dload172").load("/products/sklavenitis/sklavenitis-stafides-mayres-el-200g.html .product");
-$(".dload173").load("/products/sklavenitis/sklavenitis-stragalia-pshmena-afrata-200g.html .product");
-$(".dload174").load("/products/sklavenitis/sklavenitis-stragalia-pshmena-afrata-stafides-ksanthes-200g.html .product");
-$(".dload175").load("/products/sklavenitis/sklavenitis-stragalia-pshmena-alatismena-200g.html .product");
-$(".dload176").load("/products/sklavenitis/sklavenitis-thymari-apokshrameno-20g.html .product");
-$(".dload177").load("/products/sklavenitis/sklavenitis-tilio-15g.html .product");
-$(".dload178").load("/products/sklavenitis/sklavenitis-tsai-bounou-50g.html .product");
-$(".dload179").load("/products/sklavenitis/sklavenitis-tsai-mayro-25g.html .product");
-$(".dload180").load("/products/sklavenitis/sklavenitis-xamomhli-15g.html .product");
-$(".dload181").load("/products/sklavenitis/sklavenitis-xorta-400g.html .product");
-$(".dload182").load("/products/sklavenitis/sklavenitis-xtapodi-me-kofto-makaronaki-400g.html .product");
-$(".dload183").load("/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p1.html .product");
-$(".dload184").load("/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p2.html .product");
-$(".dload185").load("/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p3.html .product");
-</script>
-</body>
-</html>
+    $(".dload1").load("/products/sklavenitis/sklavenitis-agginares-me-araka-400g.html .product");
+    $(".dload2").load("/products/sklavenitis/sklavenitis-ammwnia-dittanthrakiko-ammwnio-25g.html .product");
+    $(".dload3").load("/products/sklavenitis/sklavenitis-amygdala-psixa-apofloiwmena-el-200g.html .product");
+    $(".dload4").load("/products/sklavenitis/sklavenitis-amygdala-psixa-apofloiwmena-pshmena-mh-alatismena-el-200g.html .product");
+    $(".dload5").load("/products/sklavenitis/sklavenitis-amygdala-psixa-pshmena-alatismena-el-200g.html .product");
+    $(".dload6").load("/products/sklavenitis/sklavenitis-amygdala-psixa-pshmena-mh-alatismena-el-200g.html .product");
+    $(".dload7").load("/products/sklavenitis/sklavenitis-amygdala-psixa-se-fetes-apofloiwmena-150g.html .product");
+    $(".dload8").load("/products/sklavenitis/sklavenitis-amygdala-psixa-se-fetes-apofloiwmena-el-150g.html .product");
+    $(".dload9").load("/products/sklavenitis/sklavenitis-amygdala-psixa-wma-el-200g.html .product");
+    $(".dload10").load("/products/sklavenitis/sklavenitis-amygdala-psixa-wma-el-500g.html .product");
+    $(".dload11").load("/products/sklavenitis/sklavenitis-amygdala-psixa-wma-psilokommena-el-200g.html .product");
+    $(".dload12").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-kai-kranmperi-me-xymo-mhlou-200g.html .product");
+    $(".dload13").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-me-kranmperi-200g.html .product");
+    $(".dload14").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-pshmenoi-alatismenoi-200g.html .product");
+    $(".dload15").load("/products/sklavenitis/sklavenitis-anamiktoi-karpoi-pshmenoi-mh-alatismenoi-200g.html .product");
+    $(".dload16").load("/products/sklavenitis/sklavenitis-arakas-laderos-me-patates-400g.html .product");
+    $(".dload17").load("/products/sklavenitis/sklavenitis-basilikos-apokshramenos-20g.html .product");
+    $(".dload18").load("/products/sklavenitis/sklavenitis-dafnh-apokshramenh-25g.html .product");
+    $(".dload19").load("/products/sklavenitis/sklavenitis-dendrolibano-apokshrameno-25g.html .product");
+    $(".dload20").load("/products/sklavenitis/sklavenitis-dyosmos-apokshramenos-trimmenos-15g.html .product");
+    $(".dload21").load("/products/sklavenitis/sklavenitis-faba-500g.html .product");
+    $(".dload22").load("/products/sklavenitis/sklavenitis-faba-el-500g.html .product");
+    $(".dload23").load("/products/sklavenitis/sklavenitis-fakes-400g.html .product");
+    $(".dload24").load("/products/sklavenitis/sklavenitis-fakes-psiles-500g.html .product");
+    $(".dload25").load("/products/sklavenitis/sklavenitis-fakes-psiles-el-500g.html .product");
+    $(".dload26").load("/products/sklavenitis/sklavenitis-fakes-xondres-500g.html .product");
+    $(".dload27").load("/products/sklavenitis/sklavenitis-fakes-xondres-el-500g.html .product");
+    $(".dload28").load("/products/sklavenitis/sklavenitis-faskomhlo-50g.html .product");
+    $(".dload29").load("/products/sklavenitis/sklavenitis-fasolada-400g.html .product");
+    $(".dload30").load("/products/sklavenitis/sklavenitis-fasolakia-ladera-400g.html .product");
+    $(".dload31").load("/products/sklavenitis/sklavenitis-fasolia-gigantes-500g.html .product");
+    $(".dload32").load("/products/sklavenitis/sklavenitis-fasolia-gigantes-egxrwmoi-el-500g.html .product");
+    $(".dload33").load("/products/sklavenitis/sklavenitis-fasolia-gigantes-el-500g.html .product");
+    $(".dload34").load("/products/sklavenitis/sklavenitis-fasolia-mauromatika-500g.html .product");
+    $(".dload35").load("/products/sklavenitis/sklavenitis-fasolia-mauromatika-el-500g.html .product");
+    $(".dload36").load("/products/sklavenitis/sklavenitis-fasolia-metria-500g.html .product");
+    $(".dload37").load("/products/sklavenitis/sklavenitis-fasolia-metria-el-500g.html .product");
+    $(".dload38").load("/products/sklavenitis/sklavenitis-fasolia-mparmounia-500g.html .product");
+    $(".dload39").load("/products/sklavenitis/sklavenitis-fasolia-xondra-500g.html .product");
+    $(".dload40").load("/products/sklavenitis/sklavenitis-fasolia-xondra-el-500g.html .product");
+    $(".dload41").load("/products/sklavenitis/sklavenitis-fistikia-arapika-pshmena-alatismena-200g.html .product");
+    $(".dload42").load("/products/sklavenitis/sklavenitis-fistikia-arapika-pshmena-alatismena-el-200g.html .product");
+    $(".dload43").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-pshmena-alatismena-el-200g.html .product");
+    $(".dload44").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-pshmena-mh-alatismena-el-200g.html .product");
+    $(".dload45").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-psixa-wmh-el-200g.html .product");
+    $(".dload46").load("/products/sklavenitis/sklavenitis-fistikia-kelyfwta-psixa-wmh-se-fetes-el-200g.html .product");
+    $(".dload47").load("/products/sklavenitis/sklavenitis-fistikia-kokteil-el-200g.html .product");
+    $(".dload48").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-barbecue-el-200g.html .product");
+    $(".dload49").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-mpeikon-tyri-200g.html .product");
+    $(".dload50").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-mpeikon-tyri-el-200g.html .product");
+    $(".dload51").load("/products/sklavenitis/sklavenitis-fistikia-me-geush-paprika-el-200g.html .product");
+    $(".dload52").load("/products/sklavenitis/sklavenitis-fistikia-pinats-200g.html .product");
+    $(".dload53").load("/products/sklavenitis/sklavenitis-fistikia-pinats-500g.html .product");
+    $(".dload54").load("/products/sklavenitis/sklavenitis-fistikia-xouanita-el-200g.html .product");
+    $(".dload55").load("/products/sklavenitis/sklavenitis-fountoukia-psixa-pshmena-200g.html .product");
+    $(".dload56").load("/products/sklavenitis/sklavenitis-garyfallo-25g.html .product");
+    $(".dload57").load("/products/sklavenitis/sklavenitis-garyfallo-trimmeno-25g.html .product");
+    $(".dload58").load("/products/sklavenitis/sklavenitis-gemista-me-ryzi-450g.html .product");
+    $(".dload59").load("/products/sklavenitis/sklavenitis-gigantes-400g.html .product");
+    $(".dload60").load("/products/sklavenitis/sklavenitis-gioubarlakia-me-augolemono-450g.html .product");
+    $(".dload61").load("/products/sklavenitis/sklavenitis-gioubetsi-440g.html .product");
+    $(".dload62").load("/products/sklavenitis/sklavenitis-glykaniso-25g.html .product");
+    $(".dload63").load("/products/sklavenitis/sklavenitis-hliosporos-pshmenos-alatismenos-150g.html .product");
+    $(".dload64").load("/products/sklavenitis/sklavenitis-hliosporos-pshmenos-mh-alatismenos-150g.html .product");
+    $(".dload65").load("/products/sklavenitis/sklavenitis-kalampoki-snak-200g.html .product");
+    $(".dload66").load("/products/sklavenitis/sklavenitis-kalampoki-wmo-gia-pop-korn-250g.html .product");
+    $(".dload67").load("/products/sklavenitis/sklavenitis-kalampoki-wmo-gia-pop-korn-el-250g.html .product");
+    $(".dload68").load("/products/sklavenitis/sklavenitis-kanela-apokshramenos-floios-50g.html .product");
+    $(".dload69").load("/products/sklavenitis/sklavenitis-kanela-trimmenh-50g.html .product");
+    $(".dload70").load("/products/sklavenitis/sklavenitis-kari-50g.html .product");
+    $(".dload71").load("/products/sklavenitis/sklavenitis-karyda-apokshramenh-trimmenh-150g.html .product");
+    $(".dload72").load("/products/sklavenitis/sklavenitis-karydia-psixa-200g.html .product");
+    $(".dload73").load("/products/sklavenitis/sklavenitis-karydia-psixa-el-200g.html .product");
+    $(".dload74").load("/products/sklavenitis/sklavenitis-kasious-alatismena-200g.html .product");
+    $(".dload75").load("/products/sklavenitis/sklavenitis-kasious-pshmena-mh-alatismena-200g.html .product");
+    $(".dload76").load("/products/sklavenitis/sklavenitis-keftedakia-280g.html .product");
+    $(".dload77").load("/products/sklavenitis/sklavenitis-kolokythakia-gemista-me-augolemono-450g.html .product");
+    $(".dload78").load("/products/sklavenitis/sklavenitis-kotompoukies-me-mpeikon-ryzi-me-laxanika-400g.html .product");
+    $(".dload79").load("/products/sklavenitis/sklavenitis-kotopoulo-kokkinisto-me-mpamies-400g.html .product");
+    $(".dload80").load("/products/sklavenitis/sklavenitis-kotopoulo-sto-fourno-me-patates-400g.html .product");
+    $(".dload81").load("/products/sklavenitis/sklavenitis-kotopoulo-sxaras-me-laxanika-380g.html .product");
+    $(".dload82").load("/products/sklavenitis/sklavenitis-koukia-el-500g.html .product");
+    $(".dload83").load("/products/sklavenitis/sklavenitis-kremydi-apokshrameno-se-nifades-25g.html .product");
+    $(".dload84").load("/products/sklavenitis/sklavenitis-krepes-me-zampon,-tyri-kai-manitaria-300g.html .product");
+    $(".dload85").load("/products/sklavenitis/sklavenitis-kritharoto-me-garides-400g.html .product");
+    $(".dload86").load("/products/sklavenitis/sklavenitis-ksino-kitriko-oksy-50g.html .product");
+    $(".dload87").load("/products/sklavenitis/sklavenitis-kymino-25g.html .product");
+    $(".dload88").load("/products/sklavenitis/sklavenitis-kymino-trimmeno-50g.html .product");
+    $(".dload89").load("/products/sklavenitis/sklavenitis-laxanontolmades-450g.html .product");
+    $(".dload90").load("/products/sklavenitis/sklavenitis-ligkouini-olikhs-aleshs-me-laxanika-450g.html .product");
+    $(".dload91").load("/products/sklavenitis/sklavenitis-makaronia-karmponara-450g.html .product");
+    $(".dload92").load("/products/sklavenitis/sklavenitis-makaronia-me-kima-480g.html .product");
+    $(".dload93").load("/products/sklavenitis/sklavenitis-makaronia-me-saltsa-ntomatas-480g.html .product");
+    $(".dload94").load("/products/sklavenitis/sklavenitis-mauromatika-salata-400g.html .product");
+    $(".dload95").load("/products/sklavenitis/sklavenitis-maxlepi-15g.html .product");
+    $(".dload96").load("/products/sklavenitis/sklavenitis-maxlepi-trimmeno-15g.html .product");
+    $(".dload97").load("/products/sklavenitis/sklavenitis-meigma-piperiwn-50g.html .product");
+    $(".dload98").load("/products/sklavenitis/sklavenitis-melitzanes-papoutsakia-400g.html .product");
+    $(".dload99").load("/products/sklavenitis/sklavenitis-meltzanes-imam-280g.html .product");
+    $(".dload100").load("/products/sklavenitis/sklavenitis-mosxari-kokkinisto-me-fasolakia-400g.html .product");
+    $(".dload101").load("/products/sklavenitis/sklavenitis-mosxari-kokkinisto-me-poure-400g.html .product");
+    $(".dload102").load("/products/sklavenitis/sklavenitis-mosxokarydo-25g.html .product");
+    $(".dload103").load("/products/sklavenitis/sklavenitis-mosxokarydo-trimmeno-25g.html .product");
+    $(".dload104").load("/products/sklavenitis/sklavenitis-mousakas-400g.html .product");
+    $(".dload105").load("/products/sklavenitis/sklavenitis-mpamies-laderes-350g.html .product");
+    $(".dload106").load("/products/sklavenitis/sklavenitis-mpaxari-25g.html .product");
+    $(".dload107").load("/products/sklavenitis/sklavenitis-mpaxari-trimmeno-25g.html .product");
+    $(".dload108").load("/products/sklavenitis/sklavenitis-mpifteki-laxanikwn-350g.html .product");
+    $(".dload109").load("/products/sklavenitis/sklavenitis-mpiftekia-galopoulas-me-ryzi-kai-laxanika-400g.html .product");
+    $(".dload110").load("/products/sklavenitis/sklavenitis-mpoukobo-kautero-apokshrameno-25g.html .product");
+    $(".dload111").load("/products/sklavenitis/sklavenitis-mpriam-400g.html .product");
+    $(".dload112").load("/products/sklavenitis/sklavenitis-pagwto-banilia-550g.html .product");
+    $(".dload113").load("/products/sklavenitis/sklavenitis-pagwto-fistiki-300g.html .product");
+    $(".dload114").load("/products/sklavenitis/sklavenitis-pagwto-fraoula-batomouro-300g.html .product");
+    $(".dload115").load("/products/sklavenitis/sklavenitis-pagwto-giaourti-550g.html .product");
+    $(".dload116").load("/products/sklavenitis/sklavenitis-pagwto-giaouti-me-siropi-maurokeraso-300g.html .product");
+    $(".dload117").load("/products/sklavenitis/sklavenitis-pagwto-kaimaki-550g.html .product");
+    $(".dload118").load("/products/sklavenitis/sklavenitis-pagwto-krema-mpiskoto-300g.html .product");
+    $(".dload119").load("/products/sklavenitis/sklavenitis-pagwto-krema-mpiskoto-550g.html .product");
+    $(".dload120").load("/products/sklavenitis/sklavenitis-pagwto-mangko-350g.html .product");
+    $(".dload121").load("/products/sklavenitis/sklavenitis-pagwto-parfe-banilia-300g.html .product");
+    $(".dload122").load("/products/sklavenitis/sklavenitis-pagwto-parfe-banilia-550g.html .product");
+    $(".dload123").load("/products/sklavenitis/sklavenitis-pagwto-parfe-sokolata-kakao-300g.html .product");
+    $(".dload124").load("/products/sklavenitis/sklavenitis-pagwto-parfe-sokolata-kakao-550g.html .product");
+    $(".dload125").load("/products/sklavenitis/sklavenitis-pagwto-peponi-550g.html .product");
+    $(".dload126").load("/products/sklavenitis/sklavenitis-pagwto-sokolata-kakao-550g.html .product");
+    $(".dload127").load("/products/sklavenitis/sklavenitis-pagwto-stratsiatela-300g.html .product");
+    $(".dload128").load("/products/sklavenitis/sklavenitis-pagwto-stratsiatela-550g.html .product");
+    $(".dload129").load("/products/sklavenitis/sklavenitis-paprika-glykia-50g.html .product");
+    $(".dload130").load("/products/sklavenitis/sklavenitis-pasatempos-psilos-pshmenos-alatismenos-200g.html .product");
+    $(".dload131").load("/products/sklavenitis/sklavenitis-pasatempos-psilos-pshmenos-alatismenos-el-200g.html .product");
+    $(".dload132").load("/products/sklavenitis/sklavenitis-pasatempos-xondros-pshmenos-150g.html .product");
+    $(".dload133").load("/products/sklavenitis/sklavenitis-pasatempos-xondros-pshmenos-mh-alatismenos-150g.html .product");
+    $(".dload134").load("/products/sklavenitis/sklavenitis-pastitsio-400g.html .product");
+    $(".dload135").load("/products/sklavenitis/sklavenitis-patates-fournou-400g.html .product");
+    $(".dload136").load("/products/sklavenitis/sklavenitis-patatosalata-350g.html .product");
+    $(".dload137").load("/products/sklavenitis/sklavenitis-penes-olikhs-me-saltsa-manitariwn-450g.html .product");
+    $(".dload138").load("/products/sklavenitis/sklavenitis-piperi-aspro-trimmeno-50g.html .product");
+    $(".dload139").load("/products/sklavenitis/sklavenitis-piperi-kokkino-kautero-50g.html .product");
+    $(".dload140").load("/products/sklavenitis/sklavenitis-piperi-mayro-50g.html .product");
+    $(".dload141").load("/products/sklavenitis/sklavenitis-piperi-mayro-trimmeno-25g.html .product");
+    $(".dload142").load("/products/sklavenitis/sklavenitis-piperi-mayro-trimmeno-50g.html .product");
+    $(".dload143").load("/products/sklavenitis/sklavenitis-pligouri-500g.html .product");
+    $(".dload144").load("/products/sklavenitis/sklavenitis-pligouri-el-500g.html .product");
+    $(".dload145").load("/products/sklavenitis/sklavenitis-psari-me-laxanika-400g.html .product");
+    $(".dload146").load("/products/sklavenitis/sklavenitis-psari-me-laxanika,-ston-atmo-400g.html .product");
+    $(".dload147").load("/products/sklavenitis/sklavenitis-rebithia-400g.html .product");
+    $(".dload148").load("/products/sklavenitis/sklavenitis-rebithia-apofloiwmena-500g.html .product");
+    $(".dload149").load("/products/sklavenitis/sklavenitis-rebithia-metria-el-500g.html .product");
+    $(".dload150").load("/products/sklavenitis/sklavenitis-rebithia-xondra-500g.html .product");
+    $(".dload151").load("/products/sklavenitis/sklavenitis-rebithia-xondra-el-500g.html .product");
+    $(".dload152").load("/products/sklavenitis/sklavenitis-riganh-apokshramenh-trimmenh-25g.html .product");
+    $(".dload153").load("/products/sklavenitis/sklavenitis-ryzi-glase-el-500g.html .product");
+    $(".dload154").load("/products/sklavenitis/sklavenitis-ryzi-karolina-el-500g.html .product");
+    $(".dload155").load("/products/sklavenitis/sklavenitis-ryzi-me-laxanika-400g.html .product");
+    $(".dload156").load("/products/sklavenitis/sklavenitis-ryzi-mpasmati-500g.html .product");
+    $(".dload157").load("/products/sklavenitis/sklavenitis-ryzi-mplou-mponet-el-500g.html .product");
+    $(".dload158").load("/products/sklavenitis/sklavenitis-ryzi-nyxaki-el-500g.html .product");
+    $(".dload159").load("/products/sklavenitis/sklavenitis-salata-brastwn-laxanikwn-450g.html .product");
+    $(".dload160").load("/products/sklavenitis/sklavenitis-sitari-el-500g.html .product");
+    $(".dload161").load("/products/sklavenitis/sklavenitis-skordo-apokshrameno-trimmeno-50g.html .product");
+    $(".dload162").load("/products/sklavenitis/sklavenitis-soda-dittanthrakiko-natrio-50g.html .product");
+    $(".dload163").load("/products/sklavenitis/sklavenitis-soufle-me-taliateles-350g.html .product");
+    $(".dload164").load("/products/sklavenitis/sklavenitis-soupies-me-spanaki-400g.html .product");
+    $(".dload165").load("/products/sklavenitis/sklavenitis-soutzoukakia-me-ryzi-450g.html .product");
+    $(".dload166").load("/products/sklavenitis/sklavenitis-spanakoryzo-450g.html .product");
+    $(".dload167").load("/products/sklavenitis/sklavenitis-sporoi-sousamiou-25g.html .product");
+    $(".dload168").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-200g.html .product");
+    $(".dload169").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-500g.html .product");
+    $(".dload170").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-el-200g.html .product");
+    $(".dload171").load("/products/sklavenitis/sklavenitis-stafides-ksanthes-el-500g.html .product");
+    $(".dload172").load("/products/sklavenitis/sklavenitis-stafides-mayres-el-200g.html .product");
+    $(".dload173").load("/products/sklavenitis/sklavenitis-stragalia-pshmena-afrata-200g.html .product");
+    $(".dload174").load("/products/sklavenitis/sklavenitis-stragalia-pshmena-afrata-stafides-ksanthes-200g.html .product");
+    $(".dload175").load("/products/sklavenitis/sklavenitis-stragalia-pshmena-alatismena-200g.html .product");
+    $(".dload176").load("/products/sklavenitis/sklavenitis-thymari-apokshrameno-20g.html .product");
+    $(".dload177").load("/products/sklavenitis/sklavenitis-tilio-15g.html .product");
+    $(".dload178").load("/products/sklavenitis/sklavenitis-tsai-bounou-50g.html .product");
+    $(".dload179").load("/products/sklavenitis/sklavenitis-tsai-mayro-25g.html .product");
+    $(".dload180").load("/products/sklavenitis/sklavenitis-xamomhli-15g.html .product");
+    $(".dload181").load("/products/sklavenitis/sklavenitis-xorta-400g.html .product");
+    $(".dload182").load("/products/sklavenitis/sklavenitis-xtapodi-me-kofto-makaronaki-400g.html .product");
+    $(".dload183").load("/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p1.html .product");
+    $(".dload184").load("/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p2.html .product");
+    $(".dload185").load("/products/sklavenitis/sklavenitis-zaxarh-leukh-1kg-p3.html .product");
+    </script>
+    </body>
+    </html>
