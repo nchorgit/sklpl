@@ -17,12 +17,13 @@
 <div class="hload"></div>
 <div class="wrapper">
     <div class="cattitle"><b></b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Σκλαβενίτης</strong></div>
-
+<div class="toplines"><a href="">+</a></div>
     <div class="lprod">
         <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-tilio-15g.html"><div class="dload177"></div></a></div></div>
         <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-tsai-bounou-50g.html"><div class="dload178"></div></a></div></div>
         <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-tsai-mayro-25g.html"><div class="dload179"></div></a></div></div>
         <div class='explist1'><div class="afepsima"><a href="/products/sklavenitis/sklavenitis-xamomhli-15g.html"><div class="dload180"></div></a></div></div>
+        
         <div class='explist1'><div class="fagita"><a href="/products/sklavenitis/sklavenitis-arakas-laderos-me-patates-400g.html"><div class="dload16"></div></a></div></div>
         <div class='explist1'><div class="fagita"><a href="/products/sklavenitis/sklavenitis-fakes-400g.html"><div class="dload23"></div></a></div></div>
         <div class='explist1'><div class="fagita"><a href="/products/sklavenitis/sklavenitis-fasolada-400g.html"><div class="dload29"></div></a></div></div>
@@ -69,6 +70,7 @@
         <div class='explist1'><div class="fagita"><a href="/products/sklavenitis/sklavenitis-agginares-me-araka-400g.html"><div class="dload1"></div></a></div></div>
         <div class='explist1'><div class="fagita"><a href="/products/sklavenitis/sklavenitis-krepes-me-zampon,-tyri-kai-manitaria-300g.html"><div class="dload84"></div></a></div></div>
         <div class='explist1'><div class="fagita"><a href="/products/sklavenitis/sklavenitis-kritharoto-me-garides-400g.html"><div class="dload85"></div></a></div></div>
+    
         <div class='explist1'><div class="karpoi"><a href="/products/sklavenitis/sklavenitis-anamiktoi-karpoi-me-kranmperi-200g.html"><div class="dload13"></div></a></div></div>
         <div class='explist1'><div class="karpoi"><a href="/products/sklavenitis/sklavenitis-amygdala-psixa-apofloiwmena-el-200g.html"><div class="dload3"></div></a></div></div>
         <div class='explist1'><div class="karpoi"><a href="/products/sklavenitis/sklavenitis-amygdala-psixa-apofloiwmena-pshmena-mh-alatismena-el-200g.html"><div class="dload4"></div></a></div></div>
@@ -403,7 +405,9 @@
 
 $(".fload").load("/footer.html");
 $(".hload").load("/header.html");
-
+$(".toplines").click(function(){
+  $(".lprod").addClass("plines");
+});
 
 </script>
 
