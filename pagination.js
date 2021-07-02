@@ -3,15 +3,15 @@
   
     $(document).ready(function() {
   
-  var show_per_page = 16;
+  var show_per_page = 24;
   var number_of_items = $('.lprod').find('.explist1').length;
   var number_of_pages = Math.ceil(number_of_items / show_per_page);
   
-  $('.cattitle').after('<div class=cout><div class=controls></div></div><input id=current_page type=hidden><input id=show_per_page type=hidden>');
+  $('.cattitle').after('<div class=cout><div class=controls></div></div><input id=current_page type=show><input id=show_per_page type=hidden>');
   $('.cattitle b').append('<input id=current_title type=show>');
-  $('.cout').append('<input id=current type=show><input id=current_pages type=show>');
+  $('.cout').append('<input id=current type=hidden><input id=current_pages type=hidden>');
   $('#current_title').val(number_of_items);
-  $('#current').val(current_link);
+  $('#current_page').val(current_link);
   $('#show_per_page').val(show_per_page);
   $('#current_pages').val(number_of_pages);
   
@@ -25,6 +25,7 @@
   
   $('.controls').html(navigation_html);
   $('.controls .page:first').addClass('active');
+ $('.controls .prev:first').css('display', 'none');
   
   $('.lprod').find(".explist1").css('display', 'none');
   $('.lprod').find(".explist1").slice(0, show_per_page).css('display', 'block');
