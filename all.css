@@ -892,7 +892,7 @@ a:hover.pcategory {
 
 
     border-radius: 3px;
-    background: #fa5402;
+    background: #d91a32;
     color: #ffffff;
     margin-right: 5px;
 
@@ -1218,8 +1218,8 @@ a.wlistes:hover {
 .pageline {
     
     margin-top: 27px;
-    border-top: 2px solid #ede0d4;
-    margin-bottom: -90px;
+    border-top: 0px solid #ede0d4;
+    margin-bottom: -110px;
 }
 .pagination {
     width: 100%;
@@ -1240,7 +1240,7 @@ a.wlistes:hover {
     text-decoration: none;
     transition: background-color .3s;
     border: 2px solid #ddd;
-    margin-right: 6px;
+    margin-right: 4px;
     width: 40px;
     text-align: center;
     height: 40px;
