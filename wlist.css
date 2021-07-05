@@ -1,0 +1,77 @@
+.wlist {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 18px;
+    margin-top: 0px;
+}
+.wlist .explist {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 100%;
+}
+.wlist .exptitle {
+    display: flex;
+    padding: 20px 20px 20px 120px;
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    font-size: 17.5px;
+    height: 77px;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    letter-spacing: -.3px;
+}
+.wlist .expbc {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eeee;
+    font-size: 17px;
+    background: white;
+    color: #444;
+    width: 50%;
+    float: left;
+}
+.wlist .expsize {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-left: 2px solid #eee;
+    font-size: 17px;
+    background: white;
+    color: #444;
+    width: auto;
+}
+.wlist .expimage img {
+    width: 100px;
+    height: auto;
+    background: white;
+    margin: 0;
+    padding-top: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.wlist .explabel {
+    background: #ffffff;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: left;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+    width: 100%;
+}
+.wlist .explabel span a {
+    padding: 7px 8px;
+    background: #eeeeee;
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 2px;
+}

@@ -1,10 +1,10 @@
 @font-face {
-   font-family: 'cf_asty_st';
+   font-family: cfasty;
   src: url(cfastystd-book-webfont.eot);
 }
 body {
     margin: 0 auto;
-    font-family: cf_asty_st, google sans, Arial, Helvetica, sans-serif;
+    font-family: cfasty, google sans, Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     font-size: 17.5px;
     color: #444;
@@ -878,33 +878,16 @@ a:hover.pcategory {
 }
 
 .cattitle {
-    padding: 15px;
+    padding: 20px 15px;
     text-align: center;
     background: #efdcca;
-    margin-bottom: 30px;
+    margin-top: 70px;
     font-size: 18px;
     color: #6f6056;
-    border-bottom: 2px solid #e5d3c2;
-    border-radius: 4px;
+    border-bottom: 0px solid #e5d3c2;
+    border-radius: 0;
+    margin-bottom: 27px;
 }
-
-cattitle {
-    padding: 30px;
-    text-align: center;
-    background: #efdcca;
-    margin-bottom: 30px;
-    font-size: 22px;
-    color: #6f6056;
-    border-bottom: 2px solid #e5d3c2;
-    border-radius: 4px;
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    margin-left: -50vw;
-    display: inline-block;
-    margin-top: -45px;
-}
-
 .cattitle b {
 
 
@@ -1147,17 +1130,109 @@ footer {
     padding: 15px;
     margin-bottom: -15px !important;
 }
-
 .pagination {
     width: 100%;
-    margin-top: 15px;
+    margin: 15px 0 120px 0px;
+}
+.pagination1 {
+    
+    overflow: auto;
+    margin: 0 auto !important;
+    
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+}
+.pagouter {
+    width: auto;
+    margin: -20px auto;
+    display: flex;
+    max-width: 1300px;
+    padding: 15px;
+    position: relative;
+}
+.views {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+}
+a.wnormal {
+    position: relative;
+    background: #fff;
+   border: 2px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+}
+.pointers {
+    pointer-events: none;
+}
+.views-active {
+    background: #eee !important;
+}
+a.wlistes {
+    position: relative;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 0px 4px 4px 0;
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+    
+    border-left: 0;
+}
+ a.wnormal:hover {
+     background: #ddd;
+  
+    
+}
+a.wlistes:hover {
+    background: #ddd;
+    border-color:#ddd
+}
+.wnormal img, .wlistes img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.slist {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0%;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+}
+.slist div {
+    border-radius: 1px;
+}
+.pageline {
+    
+    margin-top: 27px;
+    border-top: 2px solid #ede0d4;
+    margin-bottom: -90px;
+}
+.pagination {
+    width: 100%;
+    margin-top: 20px;
 }
 
 .pagination a:nth-child(1),
 .pagination a:last-child {
-    display: none;
+    display: block;
 }
-
+.pnext {
+    font-size:23px;
+}
 .pagination a {
     color: black;
     float: left;
@@ -1184,9 +1259,10 @@ footer {
     border-radius: 4px;
     color: #555;
     margin: 0;
-    border: 2px solid #ddd;
+    border: 2px solid #eee;
     padding: 0 15px;
     font-size: 15px;
+    background: #eee;
 }
 
 .pagination a.active,
