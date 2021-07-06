@@ -552,6 +552,18 @@ svg text {
     background-position: center;
 }
 
+#powerimage {
+    background: #eee;
+    border-radius: 0%;
+    float: left;
+    height: 40px;
+    width: 40px;
+    background-image: url(media/icons/power.svg);
+    background-size: 17px 23px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #dimimg {
     background: #eee;
     border-radius: 0%;
