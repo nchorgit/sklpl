@@ -14,11 +14,11 @@
 }
 .wlist .exptitle {
     display: flex;
-    padding: 20px 20px 20px 120px;
+    padding: 20px 20px 20px 110px;
     text-decoration: none;
     color: #444;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 19px;
     height: 47px;
     text-align: left;
     align-items: center;
