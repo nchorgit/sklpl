@@ -923,11 +923,7 @@ a:hover.pcategory {
     margin: auto;
 }
 
-explist:hover {
-    background: #ffe9de;
-    transition: all .3s;
-    border: 2px solid #ffcab0;
-}
+
 
 .explist a {
     text-decoration: none;
@@ -1170,7 +1166,7 @@ a.wnormal {
     pointer-events: none;
 }
 .views-active {
-    background: #eee !important;
+    background: #ddd !important;
 }
 a.wlistes {
     position: relative;
