@@ -1,18 +1,15 @@
-
-        
+$(document).ready(function() {
   
-    $(document).ready(function() {
-  
-      var show_per_page = 24;
+      var show_per_page = 12;
       var number_of_items = $('.lprod').find('.explist1').length;
       var number_of_pages = Math.ceil(number_of_items / show_per_page);
       
       $('.cattitle').after('<div class=cout><div class=controls></div></div><input id=current_page type=hidden><input id=show_per_page type=hidden>');
       
       $('.cattitle b').append('<input id=current_title type=show>');
-      $('.cout').append('<input id=current_page type=hidden><input id=current_pages type=hidden>');
+      $('.cout').append('<input id=current_page type=show><input id=current_pages type=show>');
       $('#current_title').val(number_of_items);
-      $('#current_page').val(current_link);
+      
       $('#show_per_page').val(show_per_page);
       $('#current_pages').val(number_of_pages);
       
@@ -47,6 +44,9 @@
       $('.page[longdesc=' + page_num + ']').addClass('active').siblings('.active').removeClass('active');
       
       $('#current_page').val(page_num);
+      $(".lprod").hide();
+   
+    $(".lprod").stop().fadeIn(500);
       }
       
       

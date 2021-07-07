@@ -103,11 +103,10 @@ text-decoration: none;
 transition: all .3s
 }
 .cout {
-background: #fff;
-margin: -32px 0 20px 0;
-padding: 10px;
-border: 2px solid #efdcca;
-border-radius: 0 0 4px 4px;
+    background: #fff;
+    margin: -20px auto -100px auto;
+    padding: 10px;
+    max-width: 1300px;
 }
 .cout2 {
 background: #fff;
@@ -117,7 +116,7 @@ border: 2px solid #efdcca;
 border-radius: 0 0 4px 4px;
 }
    .controls {
-text-align: center;
+text-align: left;
 }
  
     .controls a {
@@ -159,6 +158,7 @@ line-height: ;
 a.prev, a.next {
 font-size: 25px;
 line-height: 35px;
+display: none;
 }
 a.prev:hover, a.next:hover {
     background-color: #ddd;
@@ -182,7 +182,120 @@ overflow-x: hidden;
     left: 0;
     top: 0;
 }
+.views {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 150px;
+    top: 15px;
+}
+.pagouter {
+    width: auto;
+    margin: -20px auto;
+    display: flex;
+    max-width: 1300px;
+    padding: 15px;
+    position: relative;
+}
 
+.views {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 150px;
+    top: 15px;
+}
+
+a.wnormal {
+    position: relative;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.pointers {
+    pointer-events: none;
+}
+
+.views-active {
+    background: #ddd !important;
+}
+
+a.wlistes {
+    position: relative;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 0px 4px 4px 0;
+    margin-right: 0;
+    width: 40px;
+    height: 40px;
+
+    border-left: 0;
+}
+
+a.wnormal:hover {
+    background: #ddd;
+
+
+}
+
+a.wlistes:hover {
+    background: #ddd;
+    border-color: #ddd
+}
+
+.wnormal img,
+.wlistes img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.slist {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0%;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+}
+
+.slist div {
+    border-radius: 1px;
+}
+
+.pageline {
+    margin-top: 105px;
+    border-top: 2px solid #ede0d4;
+    margin-bottom: -95px;
+}
+.npages {
+    position: relative;
+    top: 29px;
+    max-width: 1330px;
+    margin: 0 auto;
+    right: 15px;
+}
+.npages p {
+    font-size: 15px;
+    background: #eee;
+    display: inline-block;
+    right: 0;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    border-radius: 4px;
+    float: right;
+}
 .plines h3.post-title.entry-title {
     display: flex;
     padding: 20px 20px 20px 110px;
