@@ -165,22 +165,20 @@ $(".drolio40").load("/products/drolio/syllektes-ygrasias/drolio-syllekths-ygrasi
 
 
         $(".lprod").page({ 'perPage': 4 });
-$(".page-2").click(function () {
-$(".npages p strong:nth-child(1)").text("2");});   
-$(".page-3").click(function () {
-$(".npages p strong:nth-child(1)").text("3");}); 
-$(".page-4").click(function () {
-$(".npages p strong:nth-child(1)").text("4");}); 
-$(".page-5").click(function () {
-$(".npages p strong:nth-child(1)").text("5");}); 
-$(".page-6").click(function () {
-$(".npages p strong:nth-child(1)").text("6");}); 
-$(".page-7").click(function () {
-$(".npages p strong:nth-child(1)").text("7");});                
 
+             
+jQuery(document).ready(function(){
+    console.log('test');
+    jQuery("a.page").click(function(){
+         var txt = jQuery(this).text();
+         //$(this).attr('rel');
+         jQuery(".npages p strong:nth-child(1)").text(txt);
+    });
+});
     
 
-$(".page-pagination.page-pagination-0").addClass("pagination");     
+$(".page-pagination.page-pagination-0").addClass("pagination"); 
+$(".page-1, .page-2, .page-3").hide();    
     </script>
 
 </body>
