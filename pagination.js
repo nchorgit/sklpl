@@ -7,9 +7,9 @@ $(document).ready(function() {
       $('.cattitle').after('<div class=cout><div class=controls></div></div><input id=current_page type=hidden><input id=show_per_page type=hidden>');
       
       $('.cattitle b').append('<input id=current_title type=show>');
-      $('.cout').append('<input id=current_page type=show><input id=current_pages type=show>');
+      $('.cout').append('<input id=current type=show><input id=current_pages type=show>');
       $('#current_title').val(number_of_items);
-      
+      $('#current_title').val(number_of_items);
       $('#show_per_page').val(show_per_page);
       $('#current_pages').val(number_of_pages);
       
