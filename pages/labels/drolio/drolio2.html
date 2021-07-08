@@ -9,14 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
 <link href="/all.css" rel="stylesheet" type="text/css">
-<link href="/css/jquery.paginate.css" rel="stylesheet" type="text/css">
 <link href="/expert.css" rel="stylesheet" type="text/css">
 <link href="" rel="stylesheet" type="text/css">
 <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
-<script src="/pagination.js"></script>
+
 <script src="/js/jquery.paginate.js"></script>
 
-</head>
 
 <body>
     <div class="hload"></div>
@@ -164,14 +162,25 @@ $(".drolio40").load("/products/drolio/syllektes-ygrasias/drolio-syllekths-ygrasi
     <script>
         $(".hload").load("/header.html");
         $(".fload").load("/footer.html");
-$(".controls .page:nth-child(3)").click(function () {
- $(".npages p strong:nth-child(1)").text("16");  
 
+
+        $(".lprod").page({ 'perPage': 4 });
+$(".page-2").click(function () {
+$(".npages p strong:nth-child(1)").text("2");});   
+$(".page-3").click(function () {
+$(".npages p strong:nth-child(1)").text("3");}); 
+$(".page-4").click(function () {
+$(".npages p strong:nth-child(1)").text("4");}); 
+$(".page-5").click(function () {
+$(".npages p strong:nth-child(1)").text("5");}); 
+$(".page-6").click(function () {
+$(".npages p strong:nth-child(1)").text("6");}); 
+$(".page-7").click(function () {
+$(".npages p strong:nth-child(1)").text("7");});                
 
     
-});
-      $(".page").addClass("goto");
 
+$(".page-pagination.page-pagination-0").addClass("pagination");     
     </script>
 
 </body>
