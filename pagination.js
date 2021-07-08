@@ -23,6 +23,7 @@ $(document).ready(function() {
       
       $('.controls').html(navigation_html);
       $('.controls .page:first').addClass('active');
+      
      
       
       $('.lprod').find(".explist1").css('display', 'none');
