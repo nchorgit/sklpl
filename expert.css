@@ -202,7 +202,7 @@ overflow-x: hidden;
     display: flex;
     align-items: center;
     position: absolute;
-    right: 150px;
+    right: 15px;
     top: 15px;
 }
 
@@ -274,8 +274,8 @@ a.wlistes:hover {
 }
 
 .pageline {
-    margin-top: 105px;
-    border-top: 2px solid #ede0d4;
+    margin-top: 50px;
+    border-top: 2px solid transparent;
     margin-bottom: -95px;
 }
 .npages {
