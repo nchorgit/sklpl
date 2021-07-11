@@ -3,7 +3,7 @@
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     grid-gap: 18px;
-    margin-top: 0px;
+    margin-top: 60px;
 }
 .wlist .explist {
     position: relative;
