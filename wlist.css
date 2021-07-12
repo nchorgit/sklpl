@@ -19,12 +19,12 @@
     color: #444;
     font-weight: bold;
     font-size: 19px;
-    height: 47px;
+    height: 45px;
     text-align: left;
     align-items: center;
     justify-content: left;
     letter-spacing: -.3px;
-    background: #eee;
+    background: #fff;
 }
 .wlist .expbc {
     height: 40px;
@@ -56,6 +56,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    border-right: 2px solid #eee;
 }
 
 .wlist .explabel {
@@ -76,4 +77,13 @@
     font-size: 14px;
     font-weight: 500;
     border-radius: 2px;
+}
+@media screen and (max-width:740px) {
+    .wlist {
+        grid-template-columns: auto;
+    }
+}
+@media screen and (max-width:4000px) {
+    .wlist .expbc {width: 53%;}
+    .wlist .exptitle {font-size:18px; padding: 20px 20px 20px 100px;}
 }

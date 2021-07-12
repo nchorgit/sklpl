@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<title>Σκλαβενίτης: Τα προϊόντα Ιδιωτικής Ετικέτας</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="all.css" rel="stylesheet" type="text/css">
+<link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
+
+</head>
+
+<body>
+    <div class="hload"></div>
+    <div id="myData"></div>
+    <div class="fload"></div>
+<script>
+fetch(url)
+  .then(function (response) {
+    // The JSON data will arrive here
+  })
+  .catch(function (err) {
+    // If an error occured, you will catch it here
+  });
+  function appendData(data) {
+  var mainContainer = document.getElementById("myData");
+  for (var i = 0; i < data.length; i++) {
+    var div = document.createElement("div");
+    div.innerHTML = 'Name: ' + data[i].title + ' ' + data[i].image;
+    mainContainer.appendChild(div);
+  }
+}
+</script>
+<script>
+
+    $(".fload").load("/footer.html");
+    $(".hload").load("/header.html");
+    
+    $(".toplines").click(function(){
+        $( ".lprod" ).addClass( "plines" );
+    });
+    
+    </script>
+    
+    </body>
+    </html>

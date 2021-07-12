@@ -931,7 +931,7 @@ a:hover.pcategory {
     margin-bottom: 5px;
     border: 2px solid #eee;
     border-radius: 4px;
-    background: #eee;
+    background: #fff;
     max-width: 350px;
     margin: auto;
 }
@@ -960,6 +960,7 @@ a:hover.pcategory {
     align-items: center;
     justify-content: center;
     letter-spacing: -.3px;
+    border-bottom: 2px solid #eee;
 }
 
 .expbc {
@@ -1747,27 +1748,28 @@ div#disqus_thread {
         }
 
     }
-    a.ordercat {
-        background: #ddd;
-        width: 40px;
-        height: 40px;
-        border: 2px solid #ddd;
-        border-radius: 4px 0 0 4px;
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        color: #555;
-    }
-    a.ordera {
-        background: #fff;
-        width: 40px;
-        height: 40px;
-        border: 2px solid #ddd;
-        border-radius: 0 4px 4px 0;
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        color: #555;
-    }
+    @media only screen and (max-width: 614px) {
+        span.page {
+            display: none; 
+        }
+    
+        }
+    
+        @media only screen and (max-width: 560px) {
+            .pagination1 p {
+                display: none; 
+            }
+        
+            }
+            @media only screen and (max-width: 462px) {
+                .pagination a {
+                    width: 25px;
+            
+                }
+            }  
+            @media only screen and (max-width: 367px) {
+                .pagination2 p {
+                    padding: 0 10px;
+            
+                }
+            }            

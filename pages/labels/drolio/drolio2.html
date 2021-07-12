@@ -179,7 +179,19 @@ jQuery(document).ready(function(){
 
 $(".page-pagination.page-pagination-0").addClass("pagination"); 
 $(".page-6, .page-7, .page-8, .page-9, .page-10, .page-11, .page-12, .page-13, .page-14, .page-15, .page-16, .page-17, .page-18, .page-19, .page-20").hide();
-$(".page-1, .page-2, .page-3, .page-4, .page-5").show();    
+$(".page-1, .page-2, .page-3, .page-4, .page-5").show(); 
+$(".wlistes").click(function() {
+  var $sortedDiv = $('.lprod .explist1').sort(function(a,b){
+     var text1 = $(a).find('h3').text();
+     var text2 = $(b).find('h3').text();
+     return String.prototype.localeCompare.call(text1.toLowerCase(),text2.toLowerCase());
+  });
+  $('.lprod').html($sortedDiv);
+  $(".lprod").hide();
+   
+    $(".lprod").stop().fadeIn(500);
+    $(".aorder").addClass("aorderout");
+});   
     </script>
 
 </body>
