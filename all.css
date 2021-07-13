@@ -112,7 +112,7 @@ body a:hover {
     width: 267px;
     height: 44px;
     position: absolute;
-    left: 80px;
+    left: 72px;
     top: 0;
     bottom: 0;
     margin: 0 auto
@@ -142,7 +142,7 @@ body a:hover {
 .labels a {
     position: absolute;
     left: 380px;
-    padding: 10px;
+    padding: 10px 20px;
     border-left: 0px solid #666666;
     color: #eeeeee;
     display: flex;
@@ -152,13 +152,15 @@ body a:hover {
     top: 0;
     bottom: 0;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
+    background-color: #f37920;
+    border-radius: 4px;
 
 }
 
 .labels a:hover,
 .cats a:hover {
-    background-color: #555;
+    background-color: #222;
     border-left: 0px solid #ff6600;
     border-radius: 4px;
 }
@@ -172,7 +174,7 @@ body a:hover {
 .cats a {
     position: absolute;
     left: 530px;
-    padding: 10px;
+    padding: 10px 20px;
     border-left: 0px solid #666666;
     color: #eeeeee;
     display: flex;
@@ -182,7 +184,9 @@ body a:hover {
     top: 0;
     bottom: 0;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
+    background-color: #1484b1;
+    border-radius: 4px;
 
 }
 
@@ -195,32 +199,33 @@ body a:hover {
 }
 
 .find {
-    display: none;
+    
 }
 
 .find a {
-    position: absolute;
-    left: auto;
-    padding: 10px;
-    color: #eeee;
-    display: flex;
-    align-items: center;
-    margin: auto;
-    right: 430px;
-    top: 0;
-    bottom: 0;
-    text-decoration: none;
-    background-color: transparent;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: large;
-    letter-spacing: -0.3px;
-    width: 300px;
-    justify-content: center;
+       position: absolute;
+       left: auto;
+       padding: 10px 30px;
+       color: #fff;
+       display: flex;
+       align-items: center;
+       margin: auto;
+       right: 65px;
+       top: 0;
+       bottom: 0;
+       text-decoration: none;
+       background-color: #d91a32;
+       border-radius: 4px;
+       font-weight: 700;
+       font-size: 18px;
+       letter-spacing: -0.3px;
+       width: auto;
+       justify-content: center;
+       border: 0px solid #777;
 }
 
 .find a:hover {
-    background-color: #cccccc;
+    background-color: #333;
 }
 
 .find img {
@@ -236,7 +241,7 @@ body a:hover {
     top: 0;
     bottom: 0;
     background-color: #eee;
-    width: 500px;
+    width: auto;
     height: 40px;
     padding: 0;
     border-radius: 4px;
@@ -257,15 +262,17 @@ body a:hover {
 }
 
 .fakos {
-    background-image: url(media/SVG/fakos.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 19px 19px;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    opacity: .6;
+        background-image: url(media/SVG/fakos.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px 25px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: auto;
+        opacity: 1;
+        filter: brightness(1.5);
+        right: 0px;
 }
 
 input.stext {
@@ -282,7 +289,7 @@ input.stext {
     border: none;
     font-family: inherit;
     font-size: 16px;
-    color: #εεε;
+    display: none;
 }
 
 input.stext2 {
@@ -891,7 +898,7 @@ a:hover.pcategory {
 }
 
 .cattitle {
-    padding: 20px 15px;
+    padding: 25px 15px;
     text-align: center;
     background: #efdcca;
     margin-top: 70px;
@@ -904,7 +911,7 @@ a:hover.pcategory {
 .cattitle b {
 
 
-    border-radius: 3px;
+    border-radius: 4px;
     background: #d91a32;
     color: #ffffff;
     margin-right: 5px;
@@ -918,7 +925,7 @@ a:hover.pcategory {
     padding: 5px 10px;
     background: #ffffff;
     color: #948272;
-    border-radius: 2px;
+    border-radius: 4px;
     margin-left: 5px;
 }
 
@@ -1466,7 +1473,7 @@ div#disqus_thread {
     }
 
     .find {
-        display: none;
+     
     }
 }
 
