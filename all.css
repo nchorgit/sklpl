@@ -160,7 +160,7 @@ body a:hover {
 
 .labels a:hover,
 .cats a:hover {
-    background-color: #222;
+    background-color: #666;
     border-left: 0px solid #ff6600;
     border-radius: 4px;
 }
@@ -395,7 +395,7 @@ a.home {
     background: #555;
     color: #eee;
     font-weight: bold;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 a.cat {
@@ -404,7 +404,7 @@ a.cat {
     padding: 7px 15px;
     background: #ff5500;
     font-weight: normal;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 a:hover.home,
@@ -423,7 +423,7 @@ a:hover.cat {
     clear: both;
     font-weight: bold;
     margin-top: 2px;
-    border-radius: 4px;
+    
     
 }
 
@@ -491,6 +491,7 @@ svg text {
     height: 40px;
     padding: 0px;
     width: 50%;
+    border-radius:  4px 0 0 0;
 }
 
 #barimage {
@@ -499,6 +500,7 @@ svg text {
     float: left;
     height: 40px;
     width: 40px;
+    
 }
 
 #barimage img {
@@ -528,6 +530,7 @@ svg text {
     height: 40px;
     padding: 0px;
     width: 50%;
+    
 }
 
 #varosimage {
@@ -548,6 +551,7 @@ svg text {
     background-size: 19px 22px;
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 #varosimage1 {
@@ -627,6 +631,7 @@ svg text {
     width: 24px;
     border-radius: 0px;
     float: left;
+    border-radius: 2px;
 }
 
 #flagimage2 {
@@ -660,7 +665,7 @@ a.pcategory {
     background: #ff5500;
     text-decoration: none;
     color: white;
-    border-radius: 2px;
+    border-radius: 4px;
     align-items: center;
 }
 
@@ -729,7 +734,7 @@ a:hover.pcategory {
 #diatable tr th {
     border-right: 0;
     border-top: 0;
-     border-radius: 4px;
+  
 }
 
 #diatable tr td:first-child,
@@ -739,7 +744,7 @@ a:hover.pcategory {
 
 #diatable tr td {
     border-right: 0;
-     border-radius: 4px;
+     
 }
 
 #diatable tr td {
