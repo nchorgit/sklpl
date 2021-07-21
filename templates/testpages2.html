@@ -18,6 +18,7 @@
 <body>
 <div class="hload"></div>
 <div class="cattitle"><b>185</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Σκλαβενίτης</strong></div>
+<div class="wrapper">
 <div class="pagouter">
 <div class="pagination1 pagination">
     <div class="pnum1">
@@ -72,11 +73,11 @@
                 
                 
                 </a></div> </div>
-         <div class="pageline"></div>
-                <div class="wrapper">
+     
+              
     
-<div class="lprod"></div>
-                    <div class="plist">
+
+                    <div class="lprod">
                     <div class='explist1'><a href="/products/sklavenitis/afepshmata/sklavenitis-faskomhlo-50g.html"><div class="sload1"></div></a></div>
                   <div class='explist1'><a href="/products/sklavenitis/afepshmata/sklavenitis-tilio-15g.html"><div class="sload2"></div></a></div>
                   <div class='explist1'><a href="/products/sklavenitis/afepshmata/sklavenitis-tsai-bounou-50g.html"><div class="sload3"></div></a></div>
@@ -455,7 +456,7 @@
                   
                   </script>
 
-<div class="pagination">
+<div class="pagination2 pagination">
     <div class="pnum1">
   
                   <a href="#" class="active">1</a>
@@ -497,7 +498,7 @@
               <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>16</strong></p>
           </div>
 
-</div>
+</div></div>
  <div class="fload"></div>
 
 <script>
@@ -506,8 +507,8 @@ $(".hload").load("/header.html");
 
 $(".fload").load("/footer.html");
 $( document ).ready(function() {
-    
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+1):nth-child(-n+12)");
+    $(".lprod .explist1").hide();
+$(".lprod .explist1:nth-child(n+1):nth-child(-n+12)").show();
 
 /*pagination*/
 
@@ -519,9 +520,9 @@ $(".pnum1 a:nth-child(1)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(1)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("1");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+1):nth-child(-n+12)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".lprod .explist1:nth-child(n+1):nth-child(-n+12)").fadeIn(500, 0);
+
 });
 
 /*02*/
@@ -529,9 +530,11 @@ $(".pnum1 a:nth-child(2)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("2");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+13):nth-child(-n+24)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".lprod .explist1:nth-child(n+13):nth-child(-n+24)").fadeIn(500, 0);
+
+
+
 });
 
 /*03*/
@@ -539,9 +542,9 @@ $(".pnum1 a:nth-child(3)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(3)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("3");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+25):nth-child(-n+36)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+25):nth-child(-n+36)").show();
+
 });
 
 /*04*/
@@ -549,9 +552,8 @@ $(".pnum1 a:nth-child(4)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(4)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("4");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+37):nth-child(-n+48)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+37):nth-child(-n+48)").show();
 });
 
 /*05*/
@@ -559,9 +561,8 @@ $(".pnum1 a:nth-child(5)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(5)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("5");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+49):nth-child(-n+60)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+49):nth-child(-n+60)").show();
 });
 
 /*pnum1NEXT*/
@@ -571,9 +572,8 @@ $(".pnum2").show();
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("6");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+61):nth-child(-n+72)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+61):nth-child(-n+72)").show();
 });
 
 /*pnum2NEXT1*/
@@ -583,9 +583,8 @@ $(".pnum1").show();
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(1)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("1");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+1):nth-child(-n+12)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+1):nth-child(-n+13)").show();
 });
 
 /*06*/
@@ -593,9 +592,8 @@ $(".pnum2 a:nth-child(2)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("6");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+61):nth-child(-n+72)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+61):nth-child(-n+72)").show();
 });
 
 /*07*/
@@ -603,9 +601,8 @@ $(".pnum2 a:nth-child(3)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(3)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("7");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+73):nth-child(-n+84)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+73):nth-child(-n+84)").show();
 });
 
 /*08*/
@@ -613,9 +610,8 @@ $(".pnum2 a:nth-child(4)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(4)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("8");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+85):nth-child(-n+96)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+85):nth-child(-n+96)").show();
 });
 
 /*09*/
@@ -623,9 +619,8 @@ $(".pnum2 a:nth-child(5)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(5)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("9");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+97):nth-child(-n+108)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+97):nth-child(-n+108)").show();
 });
 
 /*10*/
@@ -633,9 +628,8 @@ $(".pnum2 a:nth-child(6)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(6)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("10");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+109):nth-child(-n+120)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+109):nth-child(-n+120)").show();
 });
 
 /*pnum2NEXT2*/
@@ -645,9 +639,8 @@ $(".pnum3").show();
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("11");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+121):nth-child(-n+132)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+121):nth-child(-n+132)").show();
 });
 
 /*pnum3NEXT1*/
@@ -657,9 +650,8 @@ $(".pnum2").show();
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("6");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+61):nth-child(-n+72)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+61):nth-child(-n+72)").show();
 });
 
 /*11*/
@@ -667,9 +659,8 @@ $(".pnum3 a:nth-child(2)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("11");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+121):nth-child(-n+132)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+121):nth-child(-n+132)").show();
 });
 
 /*12*/
@@ -677,9 +668,8 @@ $(".pnum3 a:nth-child(3)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(3)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("12");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+133):nth-child(-n+144)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+133):nth-child(-n+144)").show();
 });
 
 /*13*/
@@ -687,9 +677,8 @@ $(".pnum3 a:nth-child(4)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(4)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("13");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+145):nth-child(-n+156)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+145):nth-child(-n+156)").show();
 });
 
 /*14*/
@@ -697,9 +686,8 @@ $(".pnum3 a:nth-child(5)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(5)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("14");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+157):nth-child(-n+168)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+157):nth-child(-n+168)").show();
 });
 
 /*15*/
@@ -707,9 +695,8 @@ $(".pnum3 a:nth-child(6)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(6)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("15");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+169):nth-child(-n+180)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+169):nth-child(-n+180)").show();
 });
 
 /*pnum3NEXT2*/
@@ -719,9 +706,8 @@ $(".pnum3").hide();
 $(".pnum4 a").removeClass("active")
 $(".pnum4 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("16");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+181):nth-child(-n+192)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+181):nth-child(-n+192)").show();
 });
 
 /*pnum4NEXT1*/
@@ -731,9 +717,8 @@ $(".pnum3").show();
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("11");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+121):nth-child(-n+132)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+121):nth-child(-n+132)").show();
 });
 
 /*16*/
@@ -741,9 +726,8 @@ $(".pnum4 a:nth-child(2)").click(function () {
 $(".pnum4 a").removeClass("active")
 $(".pnum4 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("16");
-$(".lprod").hide();
-$(".lprod").load("/templates/testpages2.html .plist .explist1:nth-child(n+181):nth-child(-n+192)");
-$(".lprod").stop().fadeIn(500);
+$(".explist1").hide();
+$(".explist1:nth-child(n+181):nth-child(-n+192)").show();
 });
 $(".wnormal").addClass("views-active");
 $(".wlistes").click(function () {
@@ -790,31 +774,24 @@ $(".plist").hide();
     $(".plist div:nth-child(n+1):nth-child(-n+12)").show();
 </script>
 
-    <style>
-      .lprod .product div, .lprod .product table, #drtable {
-    display: none;
-} 
-    .lprod #barimage1, .lprod #varosimage1 {
-    background-color: #fff;
+   <style>
+       .pagouter {
+    width: auto;
+    margin: 0px auto;
+    display: flex;
+    max-width: 1300px;
+    padding: 0;
+    position: relative;
+}
+.wrapper {
+    max-width: 1300px;
+    padding: 15px;
+    margin: -20px auto !important;
+    overflow: auto;
+}
+div#pics2 {
     display: block;
 }
-.lprod .pimg {
-    display: block !important;
-}
-.lprod .product {
-    transition: all .3s;
-}
-.lprod a {
-    text-decoration: none;
-    transition: all .3s;
-}
-.lprod .product:hover {
-    opacity: .6;
-    transition: all .3s;
-}
-.lprod .plabels {
-    display: flex !important;
-}
-    </style>
+   </style>
 </body>
 </html>

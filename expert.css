@@ -41,9 +41,16 @@ text-align: center;
 align-items: center;
 justify-content: center;
 letter-spacing: -.3px;
-margin: -2px;
+margin: -2px -2px 0 -2px;
 background: #eee;
 border-radius: 4px 4px 0 0;
+}
+.product div {display: none;}
+.lprod .pimg {
+    display: block !important;
+}
+.lprod p {
+    display: none;
 }
 .lprod #sistatika {display: none;}
 .lprod .alltext {display: none;}
@@ -65,14 +72,14 @@ font-size: 17.5px;
 margin-left: 0px;
 font-weight: 300;
 }
-.lprod #barimage1, .lprod #varosimage1 {background-color: #fff;}
+.lprod #barimage1, .lprod #varosimage1 {background-color: #fff; display: block;}
 .lprod .plabels {background: #ff5500;
 padding: 15px 0;
 display: flex;
 text-align: center;
 justify-content: center;
 border-radius: 0 0 4px 4px;
-margin: 0px -2px -6px -2px;}
+margin: 0px -2px -7px -2px;}
 .lprod a.plabel, .lprod a.pcategory {
 padding: 7px 8px;
 background: #e64d00;
