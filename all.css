@@ -14,6 +14,89 @@ body.marata {
     background: #fff;
 }
 
+.stitle {
+    font-size: 25px;
+    font-weight: 800;
+    padding: 10px 20px;
+    background: white;
+    display: inline-flex;
+    border-radius: 4px;
+    width: fit-content;
+    font-weight: 800;
+}
+
+    .hide p {
+        display: none !important;
+    }
+    .bgblack {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background: rgb(0 0 0 / 94%);
+        display: none;
+        z-index: -2;
+    }
+    .hide a {
+        padding: 15px 15px 15px 80px;
+        border: 2px solid #eee;
+        text-decoration: none;
+        display: flex;
+        color: #444;
+       position: relative;
+        align-items: center;
+        border-radius: 4px;
+        height: 50px;
+        /* background: #eee; */
+    }
+    .hide {
+        max-width: 1300px;
+        margin: 180px auto;
+        columns: 2;
+        display: none;
+        display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-gap: 18px;
+    }
+    .hide a:hover {
+        background: #ddd;
+        border: 2px solid #ddd;
+        
+    }
+    .hide a::before {
+        width: 50px;
+        height: 50px;
+        background-size: 50px 50px;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+        border-radius: 2px;
+        display: inline-table;
+        position: absolute;
+    left: 15px;
+    }
+    @media only screen and (max-width:770px) {
+        .hide a {
+            font-size: 16px;
+            padding: 15px;
+            margin-right: 0;
+        }
+        
+        .hide {
+            border: 0;
+            border-bottom: 0px solid #444;
+            margin: 65px auto;
+            border-radius: 0px;
+        }
+        .hide a::before {}
+        ::-webkit-scrollbar {
+            -webkit-appearance: inerhit;
+        }
+    }
 ::-webkit-scrollbar {
     -webkit-appearance: none;
 }
@@ -274,22 +357,22 @@ body a:hover {
         filter: brightness(1.5);
         right: 0px;
 }
-
-input.stext {
+.fakos2 {
+    width: 24px;
     position: absolute;
-    background-color: transparent;
-    left: 45px;
-    height: 30px;
+    right: 15px;
     margin: auto;
-    right: auto;
     top: 0;
     bottom: 0;
-    width: 80%;
+    height: 24px;
+    cursor: pointer;
+}
+input.stext {
     outline: none;
     border: none;
     font-family: inherit;
-    font-size: 16px;
-    display: none;
+    font-size: 25px;
+    font-weight: 800;
 }
 
 input.stext2 {
