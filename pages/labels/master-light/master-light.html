@@ -17,15 +17,16 @@
 </head>
 <body>
 <div class="hload"></div>
-<div class="cattitle"><b>4</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Master Light</strong></div>
+<div class="cattitle"><b>5</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Master Light</strong></div>
+<div class="wrapper">
 <div class="pagouter">
 <div class="pagination1 pagination">
     <div class="pnum1">
   
                   <a href="#" class="active">1</a>
-         
+                 
               </div>
-          <!--div class="pnum2">
+          <div class="pnum2">
                   <a class="pnext" href="#">‹</a>
                   <a href="#" class="active">6</a>
                   <a href="#">7</a>
@@ -50,7 +51,7 @@
                   <a href="#" class="active">16</a>
                   
   
-              </div-->
+              </div>
   
               
   
@@ -67,18 +68,26 @@
                 
                 
                 </a></div> </div>
-         <div class="pageline"></div>
-                <div class="wrapper">
+     
+              
     
+<ul class="lprod">
+    <li class="master-light lampthres"><div class='explist1'><a href="/products/master-light/lampthres/master-light-lampthras-led-11w-e27-a60.html"><div class="sload389"></div></a></div></li>
+    <li class="master-light lampthres"><div class='explist1'><a href="/products/master-light/lampthres/master-light-lampthras-led-a-60-11w-b22.html"><div class="sload390"></div></a></div></li>
+    <li class="master-light lampthres"><div class='explist1'><a href="/products/master-light/lampthres/master-light-lampthras-led-a-60-11w-e27-psyxro.html"><div class="sload391"></div></a></div></li>
+    <li class="master-light lampthres"><div class='explist1'><a href="/products/master-light/lampthres/master-light-lampthras-led-glompos-7w-e14.html"><div class="sload392"></div></a></div></li>
+    <li class="master-light lampthres"><div class='explist1'><a href="/products/master-light/lampthres/master-light-lampthras-led-keri-7w-e14.html"><div class="sload393"></div></a></div></li>
+  
+</ul>
+   
 
-                    <div class="lprod"></div>
-<div class="pagination">
+<div class="pagination2 pagination">
     <div class="pnum1">
   
                   <a href="#" class="active">1</a>
-                  
+         
               </div>
-          <!--div class="pnum2">
+          <div class="pnum2">
                   <a class="pnext" href="#">‹</a>
                   <a href="#" class="active">6</a>
                   <a href="#">7</a>
@@ -103,13 +112,13 @@
                   <a href="#" class="active">16</a>
                  
   
-              </div-->
+              </div>
   
               
               <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>1</strong></p>
           </div>
 
-</div>
+</div></div>
  <div class="fload"></div>
 
 <script>
@@ -117,9 +126,12 @@
 $(".hload").load("/header.html");
 
 $(".fload").load("/footer.html");
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+1):nth-child(-n+12)");
+$( document ).ready(function() {
+    $(".lprod li").hide();
+$(".lprod li:nth-child(n+1):nth-child(-n+12)").fadeIn(500, 0);
 
 /*pagination*/
+
 $(".pnum2").hide();
 $(".pnum3").hide();
 $(".pnum4").hide();
@@ -128,9 +140,9 @@ $(".pnum1 a:nth-child(1)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(1)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("1");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+1):nth-child(-n+12)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+1):nth-child(-n+12)").fadeIn(500, 0);
+
 });
 
 /*02*/
@@ -138,9 +150,11 @@ $(".pnum1 a:nth-child(2)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("2");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+13):nth-child(-n+24)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+13):nth-child(-n+24)").fadeIn(500, 0);
+
+
+
 });
 
 /*03*/
@@ -148,9 +162,9 @@ $(".pnum1 a:nth-child(3)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(3)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("3");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+25):nth-child(-n+36)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+25):nth-child(-n+36)").fadeIn(500, 0);
+
 });
 
 /*04*/
@@ -158,9 +172,8 @@ $(".pnum1 a:nth-child(4)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(4)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("4");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+37):nth-child(-n+48)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+37):nth-child(-n+48)").fadeIn(500, 0);
 });
 
 /*05*/
@@ -168,9 +181,8 @@ $(".pnum1 a:nth-child(5)").click(function () {
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(5)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("5");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+49):nth-child(-n+60)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+49):nth-child(-n+60)").fadeIn(500, 0);
 });
 
 /*pnum1NEXT*/
@@ -180,9 +192,8 @@ $(".pnum2").show();
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("6");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+61):nth-child(-n+72)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+61):nth-child(-n+72)").fadeIn(500, 0);
 });
 
 /*pnum2NEXT1*/
@@ -192,9 +203,8 @@ $(".pnum1").show();
 $(".pnum1 a").removeClass("active")
 $(".pnum1 a:nth-child(1)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("1");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+1):nth-child(-n+12)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+1):nth-child(-n+12)").fadeIn(500, 0);
 });
 
 /*06*/
@@ -202,9 +212,8 @@ $(".pnum2 a:nth-child(2)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("6");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+61):nth-child(-n+72)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+61):nth-child(-n+72)").fadeIn(500, 0);
 });
 
 /*07*/
@@ -212,9 +221,8 @@ $(".pnum2 a:nth-child(3)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(3)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("7");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+73):nth-child(-n+84)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+73):nth-child(-n+84)").fadeIn(500, 0);
 });
 
 /*08*/
@@ -222,9 +230,8 @@ $(".pnum2 a:nth-child(4)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(4)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("8");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+85):nth-child(-n+96)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+85):nth-child(-n+96)").fadeIn(500, 0);
 });
 
 /*09*/
@@ -232,9 +239,8 @@ $(".pnum2 a:nth-child(5)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(5)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("9");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+97):nth-child(-n+108)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+97):nth-child(-n+108)").fadeIn(500, 0);
 });
 
 /*10*/
@@ -242,9 +248,8 @@ $(".pnum2 a:nth-child(6)").click(function () {
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(6)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("10");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+109):nth-child(-n+120)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+109):nth-child(-n+120)").fadeIn(500, 0);
 });
 
 /*pnum2NEXT2*/
@@ -254,9 +259,8 @@ $(".pnum3").show();
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("11");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+121):nth-child(-n+132)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+121):nth-child(-n+132)").fadeIn(500, 0);
 });
 
 /*pnum3NEXT1*/
@@ -266,9 +270,8 @@ $(".pnum2").show();
 $(".pnum2 a").removeClass("active")
 $(".pnum2 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("6");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+61):nth-child(-n+72)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+61):nth-child(-n+72)").fadeIn(500, 0);
 });
 
 /*11*/
@@ -276,9 +279,8 @@ $(".pnum3 a:nth-child(2)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("11");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+121):nth-child(-n+132)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+121):nth-child(-n+132)").fadeIn(500, 0);
 });
 
 /*12*/
@@ -286,9 +288,8 @@ $(".pnum3 a:nth-child(3)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(3)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("12");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+133):nth-child(-n+144)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+133):nth-child(-n+144)").fadeIn(500, 0);
 });
 
 /*13*/
@@ -296,9 +297,8 @@ $(".pnum3 a:nth-child(4)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(4)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("13");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+145):nth-child(-n+156)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+145):nth-child(-n+156)").fadeIn(500, 0);
 });
 
 /*14*/
@@ -306,9 +306,8 @@ $(".pnum3 a:nth-child(5)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(5)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("14");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+157):nth-child(-n+168)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+157):nth-child(-n+168)").fadeIn(500, 0);
 });
 
 /*15*/
@@ -316,9 +315,8 @@ $(".pnum3 a:nth-child(6)").click(function () {
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(6)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("15");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+169):nth-child(-n+180)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+169):nth-child(-n+180)").fadeIn(500, 0);
 });
 
 /*pnum3NEXT2*/
@@ -328,9 +326,8 @@ $(".pnum3").hide();
 $(".pnum4 a").removeClass("active")
 $(".pnum4 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("16");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+181):nth-child(-n+192)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+181):nth-child(-n+192)").fadeIn(500, 0);
 });
 
 /*pnum4NEXT1*/
@@ -340,9 +337,8 @@ $(".pnum3").show();
 $(".pnum3 a").removeClass("active")
 $(".pnum3 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("11");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+121):nth-child(-n+132)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+121):nth-child(-n+132)").fadeIn(500, 0);
 });
 
 /*16*/
@@ -350,9 +346,8 @@ $(".pnum4 a:nth-child(2)").click(function () {
 $(".pnum4 a").removeClass("active")
 $(".pnum4 a:nth-child(2)").addClass("active")
 $(".pagination p strong:nth-child(1)").text("16");
-$(".lprod").hide();
-$(".lprod").load("/experts/master-light.html .explist:nth-child(n+181):nth-child(-n+192)");
-$(".lprod").stop().fadeIn(500);
+$(".lprod li").hide();
+$(".lprod li:nth-child(n+181):nth-child(-n+192)").fadeIn(500, 0);
 });
 $(".wnormal").addClass("views-active");
 $(".wlistes").click(function () {
@@ -393,13 +388,31 @@ $(".aorder").click(function() {
     $(".aorder").addClass("aorderout");
 });
 $(".aorderout").click(function() { return false; });
+});
+
+$(".plist").hide();
+    $(".plist div:nth-child(n+1):nth-child(-n+12)").fadeIn(500, 0);
 </script>
 
-<style>
- 
- 
-
-
-</style>
+   <style>
+       .pagouter {
+    width: auto;
+    margin: 0px auto;
+    display: flex;
+    max-width: 1300px;
+    padding: 0;
+    position: relative;
+}
+.wrapper {
+    max-width: 1300px;
+    padding: 15px;
+    margin: -20px auto !important;
+    overflow: auto;
+}
+div#pics2 {
+    display: block;
+}
+   </style>
 </body>
+<script src="/loadproducts.js"></script>
 </html>
