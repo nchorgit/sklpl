@@ -10,8 +10,8 @@
 <link href="/wlist.css" rel="stylesheet" type="text/css">
 <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
 <form name="searchBox">
-    Keyword(s): <input type="text" name="keyword" />
-    <input type="button" value="Search" onClick="searchFunction()" />
+    Keyword(s): <input id="searchtext" type="text" name="keyword" />
+    <input id="sbutton" type="button" value="Search" onClick="searchFunction()" />
  </form>
  
  <div class="prod">
@@ -756,6 +756,12 @@ function searchFunction() {
         
         .show();
 }
+$.expr[":"].contains = $.expr.createPseudo(function(arg) {
+    return function( elem ) {
+        return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
+});
+
  </script>
  <script src="/loadproducts.js"></script>
  <style>

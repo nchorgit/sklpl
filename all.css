@@ -373,6 +373,7 @@ input.stext {
     font-family: inherit;
     font-size: 25px;
     font-weight: 800;
+    -webkit-appearance: none;
 }
 
 input#stext {
