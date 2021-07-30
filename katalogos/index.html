@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+
+        .outer {
+            background-color: transparent;
+            width: 1400px;
+            height: 700px;
+            perspective: 3000px;
+            margin: 0 auto;
+        }
+
+        .inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .front {
+            background-color: #bbb;
+            left: 50%;
+        }
+
+        .back {
+            background-color: teal;
+            color: white;
+            transform: rotateY(-180deg);
+            /* transform-origin: 5px; */
+            right: 0;
+        }
+
+        .clicked {
+            transform: rotateY(-180deg);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="outer">
+            <div class="inner">
+                <img class="front" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/1.jpg">
+                <img class="back" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/2.jpg">
+            </div>
+        </div>
+        <div class="outer">
+            <div class="inner2 inner">
+                <img class="front" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/3.jpg">
+                <img class="back" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/4.jpg">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $('.inner.front').on('click', function() {
+    $(this).addClass('clicked');
+});
+    $('.inner.back').on('click', function() {
+    $(this).addClass('clicked');
+});
+</script>
+
+</html>
