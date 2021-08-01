@@ -1,89 +1,453 @@
 <!DOCTYPE html>
-<html lang="el">
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
+<body>
+
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: none;width: 100%;max-width: 400px;background: rgb(51, 51, 51);color: rgb(238, 238, 238);" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">ΠΕΡΙΕΧΟΜΕΝΑ <span style="float: right; font-size: 30px !important;">×</span></button>
+        <a href="#" class="w3-bar-item w3-button s28"> Κιόσκια &amp; ομπρέλες εξωτερικού χώρου </a>
+        <a href="#" class="w3-bar-item w3-button s30"> Είδη Bbq &amp; διακόσμηση κήπου </a>
+        <a href="#" class="w3-bar-item w3-button s36"> Είδη camping &amp; παραλίας </a>
+        <a href="#" class="w3-bar-item w3-button s44"> Παιχνίδια εξωτερικού χώρου </a>
+        <a href="#" class="w3-bar-item w3-button s48"> Οικιακά είδη - Αποθnκευσn &amp; τακτοποίηση </a>
+        <a href="#" class="w3-bar-item w3-button s58"> Ηλεκτρικές μικροσυσκευές </a>
+        <a href="#" class="w3-bar-item w3-button s62"> Λευκά είδη &amp; Είδη μπάνιου </a>
+    </div>
+
+    <div id="main">
+
+        <div class="w3-teal" style="position: fixed; width: 100%;">
+            <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()"
+                style="background: rgb(244, 67, 54); border-radius: 50%; padding: 0px; line-height: 24px; width: 40px; height: 40px; margin: 10px; display: inline-block;">☰</button>
+            <div class="w3-container">
+                <div style="
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+"><img src="https://redesign-sklavenitis.atcom.gr/assets/Media/sklavenitis-logo.svg"
+                        style="width: 200px; text-align: center;">
+                    <p style="
+    margin-left: 25px;
+    letter-spacing: -.5px;
+    background: #799441;
+    padding: 5px 15px;
+    border-radius: 4px;
+    display: block;
+"><b style="">Σπίτι και κήπος:</b> Άνοιξη / Καλοκαίρι 2021</p>
+                </div>
+            </div>
+            <p class="per">gfdhdfg</p>
+        </div>
+
+
+
+        <div class="w3-container">
+           
+            <div class="katalogos">
+                <p class="per" style="color: #333;position: absolute;top: 80px;left: 50%;transform: translate(-50%, -50%);">gfdhdfg</p>
+                <div class="book">
+                    <div id="pages" class="pages">
+                        <div class="page"><img src="/katalogos/pages/1.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/2.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/3.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/4.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/5.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/6.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/7.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/8.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/9.jpg"></div>
+                        <div class="page" id="p10"><img src="/katalogos/pages/10.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/11.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/12.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/13.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/14.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/15.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/16.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/17.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/18.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/19.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/20.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/21.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/22.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/23.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/24.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/25.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/26.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/27.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/28.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/29.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/30.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/31.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/32.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/33.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/34.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/35.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/36.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/37.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/38.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/39.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/40.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/41.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/42.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/43.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/44.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/45.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/46.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/47.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/48.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/49.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/50.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/51.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/52.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/53.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/54.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/55.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/56.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/57.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/58.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/59.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/60.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/61.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/62.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/63.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/64.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/65.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/66.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/67.jpg"></div>
+                        <div class="page"><img src="/katalogos/pages/68.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.width = "25%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+
     <style>
-        body {
-            background-color: #eee;
+        .czoom {
+            zoom: 125%
         }
 
-        .outer {
-            background-color: transparent;
-            width: 1400px;
-            height: 700px;
-            perspective: 3000px;
+        .w3-teal,
+        .w3-hover-teal:hover {
+            color: #fff !important;
+            background-color: #ffffff !important;
+            display: flex;
+            height: 60px;
+        }
+
+        .w3-container,
+        .w3-panel {
+            padding: 0.01em 16px;
             margin: 0 auto;
         }
 
-        .inner {
+        .w3-bar-block .w3-bar-item {
+            width: 100%;
+            /* display: flex; */
+            padding: 0 15px;
+            text-align: left;
+            border: none;
+            white-space: normal;
+            float: none;
+            outline: 0;
+            height: 60px;
+            line-height: 60px;
+            font-weight: 700;
+            border-bottom: 1px solid #444;
+        }
+
+
+        .book {
+            transition: opacity 0.4s 0.2s;
+        }
+
+        .menu {
+            background: #333;
+        }
+
+        .menu div {
+            padding: 10px;
+        }
+
+        .menu a {
+            color: #eee;
+            font-family: arial;
+            background: #222;
+            padding: 10px;
+            display: block;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: .2s;
+        }
+
+        .menu a:hover {
+            color: #eee;
+            font-family: arial;
+            background: rgb(122, 122, 122);
+            transition: .2s;
+
+
+        }
+
+        .page {
+            width: 40vw;
+            height: 40vw;
+            background-color: #111111;
+            float: left;
+            margin-bottom: 0.5em;
+            background: left top no-repeat;
+            background-size: cover;
+        }
+
+        .page:nth-child(even) {
+            clear: both;
+        }
+
+        .book {
+            perspective: 250vw;
+        }
+
+        .book .pages {
+            width: 80vw;
+            height: 40vw;
             position: relative;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            border-radius: 0px;
+            /*box-shadow: 0 0 0 1px #e3dfd8;*/
+        }
+
+        .book .page {
+            float: none;
+            clear: none;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            width: 40vw;
+            height: 40vw;
+            transform-origin: 0 0;
+            transition: transform 1.4s;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            user-select: none;
+            background-color: #f0f0f0;
+        }
+
+        .book .page:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.7s;
+            z-index: 2;
+        }
+
+        .book .page:nth-child(odd) {
+            pointer-events: all;
+            transform: rotateY(0deg);
+            right: 0;
+            border-radius: 0;
+            background: linear-gradient(90deg, rgb(0 0 0 / 32%)) 5%, transparent 90%;
+        }
+
+        .book .page:nth-child(odd):hover {
+            transform: rotateY(-15deg);
+        }
+
+        .book .page:nth-child(odd):hover:before {}
+
+        .book .page:nth-child(odd):before {
+            background: linear-gradient(to left, transparent 90%, rgb(0 0 0 / 32%)) 5%;
+        }
+
+        .book .page:nth-child(even) {
+            pointer-events: none;
+            transform: rotateY(180deg);
+            transform-origin: 100% 0;
+            left: 0;
+            border-radius: 0px;
+            border-color: black;
+            background-image: linear-gradient(to left, rgba(0, 0, 0, .12) 0%, rgba(0, 0, 0, 0) 10%);
+        }
+
+        .book .page:nth-child(even):before {
+            background: linear-gradient(90deg, transparent 90%, rgb(0 0 0 / 32%)) 5%;
+        }
+
+        .book .page.grabbing {
+            transition: none;
+        }
+
+        .book .page.flipped:nth-child(odd) {
+            pointer-events: none;
+            transform: rotateY(-180deg);
+        }
+
+        .book .page.flipped:nth-child(odd):before {
+            background: linear-gradient(90deg, rgb(0 0 0 / 32%)) 5%, transparent 90%;
+        }
+
+        .book .page.flipped:nth-child(even) {
+            pointer-events: all;
+            transform: rotateY(0deg);
+        }
+
+        .book .page.flipped:nth-child(even):hover {
+            transform: rotateY(25deg);
+        }
+
+        .book .page.flipped:nth-child(even):hover:before {
+            background: linear-gradient(90deg, transparent 90%, rgb(0 0 0 / 32%)) 5%;
+        }
+
+        .book .page.flipped:nth-child(even):before {
+            background: linear-gradient(90deg, transparent 90%, rgb(0 0 0 / 32%)) 5%;
+        }
+
+        *,
+        * :before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        .fold {
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate3d(192px, 13px, 0px) rotate(-45deg);
+            width: 400px;
+            height: 200px;
+            background-color: #4EE73C;
+        }
+
+        h3 {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .fold:after {
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 0;
+        }
+
+        .fold:hover:after {
+            transition-duration: 1s;
+            border-bottom: 50px solid black;
+            border-right: 50px solid white;
+        }
+
+        html,
+        body {
+
+            background: #ccc;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            margin: 0 auto;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: .2s;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        .katalogos {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2em 0;
+            line-height: 1.5em;
+            margin: 0 auto;
+        }
+
+        .page:nth-child(odd) {
+            background-position: right top;
+        }
+
+        img {
             width: 100%;
             height: 100%;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
         }
-
-        .front,
-        .back {
-            position: absolute;
-            width: 50%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .front {
-            background-color: #bbb;
-            left: 50%;
-        }
-
-        .back {
-            background-color: teal;
-            color: white;
-            transform: rotateY(-180deg);
-            /* transform-origin: 5px; */
-            right: 0;
-        }
-
-        .clicked {
-            transform: rotateY(-180deg);
-        }
-        
     </style>
-</head>
+    <script>
+        var pages = document.getElementsByClassName('page');
+        for (var i = 0; i < pages.length; i++) {
+            var page = pages[i];
+            if (i % 2 === 0) {
+                page.style.zIndex = (pages.length - i);
+            }
+        }
 
-<body>
-    <div class="container">
-        <div class="outer">
-            <div class="inner">
-                <img class="front" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/1.jpg">
-                <img class="back" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/2.jpg">
-            </div>
-        </div>
-        <div class="outer">
-            <div class="inner2 inner">
-                <img class="front" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/3.jpg">
-                <img class="back" src="https://sklavenitis-pl.tk/home-garden/samples/magazine/pages/4.jpg">
-            </div>
-        </div>
-    </div>
+        document.addEventListener('DOMContentLoaded', function () {
+            for (var i = 0; i < pages.length; i++) {
+                //Or var page = pages[i];
+                pages[i].pageNum = i + 1;
+                pages[i].onclick = function () {
+                    if (this.pageNum % 2 === 0) {
+                        this.classList.remove('flipped');
+                        this.previousElementSibling.classList.remove('flipped');
+                    }
+                    else {
+                        this.classList.add('flipped');
+                        this.nextElementSibling.classList.add('flipped');
+                    }
+                }
+            }
+        })
+        $(".page.flipped").toggleClass("fold");
+        $(".s28").click(function () {
+            $(".page").hide();
+            $(".w3-sidebar").hide();
+            $(".w3-button").show();
+            $(".page:nth-child(n+28):nth-child(-n+150)").fadeIn(250, 0);
+            $(".page:nth-child(28)").toggleClass("flipped");
+  
+
+        });
+        $(".s30").click(function () {
+            $(".page").hide();
+            $(".w3-sidebar").hide();
+            $(".w3-button").show();
+            $(".page:nth-child(n+30):nth-child(-n+150)").fadeIn(250, 0);
+            $(".page:nth-child(30)").toggleClass("flipped");
+            $(".per").text("Κιόσκια &amp; ομπρέλες εξωτερικού χώρου")
+  
+
+        });
+           
+          
+           
+
+     
+    </script>
 </body>
-<script>
-    $('.inner.front').on('click', function() {
-    $(this).addClass('clicked');
-});
-    $('.inner.back').on('click', function() {
-    $(this).addClass('clicked');
-});
-</script>
 
 </html>
