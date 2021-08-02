@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="pages">
+        <img src="/home-garden/samples/magazine/pages/1.jpg" alt="">
+        <img src="/home-garden/samples/magazine/pages/2.jpg" alt="">
+    </div>
+    <div class="pages">
+        <img src="/home-garden/samples/magazine/pages/3.jpg" alt="">
+        <img src="/home-garden/samples/magazine/pages/4.jpg" alt="">
+    </div>
+</body>
+<style>
+    .turn {
+        transform: tr(180deg);
+        transform-style: preserve-3d;
+        transition-duration: 1s
+    }
+    .pages {
+    position: ;
+    width: 1300px;
+    height: 700px;
+}
+img {
+width: 50%;
+    position:absolute 
+    height: 100%;}
+</style>
+<script>
+     $('.pages img').hide();
+     $('.pages:nth-child(1) img:nth-child(1)').show();
+
+     $('.pages:nth-child(1) img:nth-child(1)').on('click', function() {
+        $('.pages:nth-child(1) img:nth-child(1)').animate({
+            width: '0', height: '100%'
+    });
+    $('.pages:nth-child(1) img:nth-child(2)').animate({
+      width: '50%', height: '100%'
+    });
+});
+</script>
+</html>
