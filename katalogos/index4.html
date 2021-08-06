@@ -1,51 +1,802 @@
-<!DOCTYPE html>
+
+
+<!DOCTYPE html
 <html>
-<title>W3.CSS</title>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+* {box-sizing: border-box}
+body {
+    font-family: arial;
+    margin: 0;
+    background: #f2f2f2;
+    overflow-y: hidden;
+}
+.tophead {
+    background: #fff;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.menu {
+    padding: 0px 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mlines {
+   
+    width: 30px;
+    height: 18px;
+    position: relative;
+}
+.mlines:hover {
+  cursor: pointer;
+
+}
+.logo {
+    width: 200px;
+}
+p.topp {
+    background: #004548;
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: #ffde73;
+}
+
+p.ppage {
+    background: #eee;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-left: -15px;
+    display: flex;
+}
+
+.dmenu {
+    position: fixed;
+    background: #444;
+    height: 100%;
+    z-index: 400;
+    top: 50px;
+    display: none;
+}
+.dmenu div {
+  padding: 10px 30px;
+}
+.dmenu a {text-decoration: none;
+    color: #eee;
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid #555;
+}
+
+.dmenu a:hover {
+  background: #555;
+}
+.zoom {
+    float: right;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+}
+.transition {
+   
+    transform: scale(120%);
+}
+img {vertical-align: middle;}
+.fade:nth-child(n+2)::before{
+content: "";
+position: absolute;
+ width:50%;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-image: -webkit-linear-gradient( 
+0deg
+, rgb(185 182 182 / 8%) 0%, rgb(255 255 255 / 0%) 33%, rgb(255 255 255 / 0%) 84%, rgb(138 138 140 / 31%) 95.5%, rgb(0 0 0 / 28%) 100%);
+   } 
+.fade:nth-child(n+2)::after {
+content: "";
+position: absolute;
+        width:50%;
+top: 0;
+bottom: 0;
+left: auto;
+right: 0;
+background-image: -webkit-linear-gradient( 
+0deg
+ , rgb(6 6 6 / 19%) 0%, rgb(255 255 255 / 0%) 13%, rgb(255 255 255 / 0%) 84%, rgb(138 138 140 / 15%) 95.5%, rgb(0 0 0 / 13%) 100%);
+}
+
+
+.katalogos-pages {
+    max-width: 1400px;
+    position: relative;
+    margin: 80px auto;
+  border: 2px solid #e4e4e4;
+    z-index: 200;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #ddd;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  display:none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+.dot {
+    cursor: pointer;
+    height: 35px;
+    width: 60px;
+    margin: 0;
+    background-color: #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    line-height: 35px;
+}
+
+.dot2 {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    margin: 0;
+    background-color: #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    line-height: 35px;
+}
+.active {
+    background-color: #f47920;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dot:hover, .dot2:hover {
+  background-color: #bbb;
+}
+
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+  transition: all .4s ease-in-out;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+svg {
+  height:14px;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+.dots1, .dots2, .dots3, .dots4 {
+  text-align: center;
+    margin: -100px auto;
+    height: 35px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 5px;
+    padding:0 15px;
+    max-width: 1100px;
+}
+.penone {
+  pointer-events: none;
+  background: transparent;
+  color: #666;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+img:nth-child(odd) {float:left;}
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
 <body>
-
-<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large"
-  onclick="w3_close()">Close &times;</button>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
-</div>
-
-<div id="main">
-
-<div class="w3-teal">
-  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-  <div class="w3-container">
-    <h1>My Page</h1>
+<div class="tophead">
+<div class="menu">
+  <div class="mlines">
+    <div style="
+       width: 30px;
+       height: 2px;
+       background: #000;
+       margin-bottom: 6px;
+   "></div>
+       <div style="
+       width: 30px;
+       height: 2px;
+       background: #000;
+       margin-bottom: 6px;
+   "></div>
+        <div style="
+       width: 30px;
+       height: 2px;
+       background: #000;
+       /* margin-bottom: 6px; */
+   "></div>
+   </div>
+<div class="logo"><img src="https://www.sklavenitis.gr/assets/Media/sklavenitis-logo.svg" alt=""></div>
+<p class="topp">Σπίτι και Κήπος 2021</p>
+<p class="ppage"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17" style="
+  position: relative;
+  /* top: 2px; */
+  opacity: .5;
+  height: 16px;
+  left: -5px;
+">&gt;
+ <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+ </svg> <span>Εξώφυλλο</span></p>
+ <div class="zoom">Μεγέθυνση<img src="https://image.flaticon.com/icons/png/512/104/104690.png" style="
+  width: 32px;
+  margin-left: 10px;
+"></div>
   </div>
+  
+</div>
+<div class="dmenu"> 
+  <div class="dclose" style="
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  background: #545454;
+  height: 50px;
+  width: 55px;
+  padding: 0;
+"> 
+<img src="/katalogos/close.svg"  style="width: 40px;height: 40px;position: absolute;left: 15px; top: 10px;">
+
+</div>
+  <br>
+  <div><p style="
+    padding: 15px;
+    background: #ffdf72;
+    color: #004548;
+    font-weight: bold;
+    border-left: 6px solid #85b94f;
+    border-radius: 4px;
+">ΠΕΡΙΕΧΟΜΕΝΑ</p></div>
+  <div><a href="#">	Έπιπλα εξωτερικού χώρου & μαξιλάρια σελ. 4	</a></div>
+<div><a href="#">	Κιόσκια & ομπρέλες εξωτερικού χώρου σελ. 28	</a></div>
+<div><a href="#">	Είδη Bbq & διακόσμηση κήπου σελ. 30	</a></div>
+<div><a href="#">	Είδη camping & παραλίας σελ. 36	</a></div>
+<div><a href="#">	Παιχνίδια εξωτερικού χώρου σελ. 44	</a></div>
+<div><a href="#">	Οικιακά είδη - Αποθnκευσn & τακτοποίηση σελ. 48	</a></div>
+<div><a href="#">	Ηλεκτρικές μικροσυσκευές σελ. 58	</a></div>
+<div><a href="#">	Λευκά είδη & Είδη μπάνιου σελ. 62	</a></div></div>
+<div style="
+    padding: 20px;
+    margin-top: -20px;
+">
+<div class="katalogos-pages">
+
+<div class="first katalogos fade p1">
+<img src="https://sklavenitis-pl.tk/katalogos/pages/1.jpg" style="width:50%;margin:auto; display:flex; float:none;">
+
 </div>
 
-<img src="img_car.jpg" alt="Car" style="width:100%">
+<div class="katalogos fade p2"><img src="https://sklavenitis-pl.tk/katalogos/pages/2.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/3.jpg" style="width:50%"></div>
+<div class="katalogos fade p3"><img src="https://sklavenitis-pl.tk/katalogos/pages/4.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/5.jpg" style="width:50%"></div>
+<div class="katalogos fade p4"><img src="https://sklavenitis-pl.tk/katalogos/pages/6.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/7.jpg" style="width:50%"></div>
+<div class="katalogos fade p5"><img src="https://sklavenitis-pl.tk/katalogos/pages/8.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/9.jpg" style="width:50%"></div>
+<div class="katalogos fade p6"><img src="https://sklavenitis-pl.tk/katalogos/pages/10.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/11.jpg" style="width:50%"></div>
+<div class="katalogos fade p7"><img src="https://sklavenitis-pl.tk/katalogos/pages/12.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/13.jpg" style="width:50%"></div>
+<div class="katalogos fade p8"><img src="https://sklavenitis-pl.tk/katalogos/pages/14.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/15.jpg" style="width:50%"></div>
+<div class="katalogos fade p9"><img src="https://sklavenitis-pl.tk/katalogos/pages/16.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/17.jpg" style="width:50%"></div>
+<div class="katalogos fade p10"><img src="https://sklavenitis-pl.tk/katalogos/pages/18.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/19.jpg" style="width:50%"></div>
+<div class="katalogos fade p11"><img src="https://sklavenitis-pl.tk/katalogos/pages/20.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/21.jpg" style="width:50%"></div>
+<div class="katalogos fade p12"><img src="https://sklavenitis-pl.tk/katalogos/pages/22.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/23.jpg" style="width:50%"></div>
+<div class="katalogos fade p13"><img src="https://sklavenitis-pl.tk/katalogos/pages/24.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/25.jpg" style="width:50%"></div>
+<div class="katalogos fade p14"><img src="https://sklavenitis-pl.tk/katalogos/pages/26.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/27.jpg" style="width:50%"></div>
+<div class="katalogos fade p15"><img src="https://sklavenitis-pl.tk/katalogos/pages/28.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/29.jpg" style="width:50%"></div>
+<div class="katalogos fade p16"><img src="https://sklavenitis-pl.tk/katalogos/pages/30.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/31.jpg" style="width:50%"></div>
+<div class="katalogos fade p17"><img src="https://sklavenitis-pl.tk/katalogos/pages/32.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/33.jpg" style="width:50%"></div>
+<div class="katalogos fade p18"><img src="https://sklavenitis-pl.tk/katalogos/pages/34.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/35.jpg" style="width:50%"></div>
+<div class="katalogos fade p19"><img src="https://sklavenitis-pl.tk/katalogos/pages/36.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/37.jpg" style="width:50%"></div>
+<div class="katalogos fade p20"><img src="https://sklavenitis-pl.tk/katalogos/pages/38.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/39.jpg" style="width:50%"></div>
+<div class="katalogos fade p21"><img src="https://sklavenitis-pl.tk/katalogos/pages/40.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/41.jpg" style="width:50%"></div>
+<div class="katalogos fade p22"><img src="https://sklavenitis-pl.tk/katalogos/pages/42.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/43.jpg" style="width:50%"></div>
+<div class="katalogos fade p23"><img src="https://sklavenitis-pl.tk/katalogos/pages/44.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/45.jpg" style="width:50%"></div>
+<div class="katalogos fade p24"><img src="https://sklavenitis-pl.tk/katalogos/pages/46.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/47.jpg" style="width:50%"></div>
+<div class="katalogos fade p25"><img src="https://sklavenitis-pl.tk/katalogos/pages/48.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/49.jpg" style="width:50%"></div>
+<div class="katalogos fade p26"><img src="https://sklavenitis-pl.tk/katalogos/pages/50.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/51.jpg" style="width:50%"></div>
+<div class="katalogos fade p27"><img src="https://sklavenitis-pl.tk/katalogos/pages/52.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/53.jpg" style="width:50%"></div>
+<div class="katalogos fade p28"><img src="https://sklavenitis-pl.tk/katalogos/pages/54.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/55.jpg" style="width:50%"></div>
+<div class="katalogos fade p29"><img src="https://sklavenitis-pl.tk/katalogos/pages/56.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/57.jpg" style="width:50%"></div>
+<div class="katalogos fade p30"><img src="https://sklavenitis-pl.tk/katalogos/pages/58.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/59.jpg" style="width:50%"></div>
+<div class="katalogos fade p31"><img src="https://sklavenitis-pl.tk/katalogos/pages/60.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/61.jpg" style="width:50%"></div>
+<div class="katalogos fade p32"><img src="https://sklavenitis-pl.tk/katalogos/pages/62.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/63.jpg" style="width:50%"></div>
+<div class="katalogos fade p33"><img src="https://sklavenitis-pl.tk/katalogos/pages/64.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/65.jpg" style="width:50%"></div>
+<div class="katalogos fade p34"><img src="https://sklavenitis-pl.tk/katalogos/pages/66.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/67.jpg" style="width:50%"></div>
 
-<div class="w3-container">
-<p>In this example, the sidebar is hidden (style="display:none")</p>
-<p>It is shown when you click on the menu icon in the top left corner.</p>
-<p>When it is opened, it shifts the page content to the right.</p>
-<p>We use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%" matches the width of the sidebar.</p>
+<div class="katalogos fade p35">
+<img src="https://sklavenitis-pl.tk/katalogos/pages/68.jpg" style="width:50%;margin:auto; display:flex; float:none;">
+
 </div>
 
+
 </div>
+</div>
+<br>
+
+<div class="dots1">
+  <span class="dot bu1 active">1</span>
+  <span class="dot bu2">2-3</span>
+  <span class="dot bu3">4-5</span>
+  <span class="dot bu4">6-7</span>
+  <span class="dot bu5">8-9</span>
+  <span class="dot bu6">10-11</span>
+  <span class="dot bu7">12-13</span>
+  <span class="dot bu8">14-15</span>
+  <span class="dot bu9">16-17</span>
+  <span class="dot bu10">18-19</span>
+  <span class="dot2 penone">&bull;&bull;&bull;</span>
+  <span class="dot2 b2" style="position:relative; top:0px;"><svg 
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="12px" height="17px" viewBox="0 0 12 17">>
+   <path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+    d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "/>
+   </svg></span>
+</div>
+
+
+<div class="dots2">
+  <span class="dot2 b3" style="position:relative;top:0px;transform: rotate(180deg);">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
+    <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+    </svg></span>
+    <span class="dot2 penone">&bull;&bull;&bull;</span>
+    <span class="dot bu11 active">20-21</span>
+    <span class="dot bu12">22-23</span>
+    <span class="dot bu13">24-25</span>
+    <span class="dot bu14">26-27</span>
+    <span class="dot bu15">28-29</span>
+    <span class="dot bu16">30-31</span>
+    <span class="dot bu17">32-33</span>
+    <span class="dot bu18">34-35</span>
+    <span class="dot bu19">36-37</span>
+    <span class="dot bu20">38-39</span>
+    <span class="dot2 penone">&bull;&bull;&bull;</span>
+    <span class="dot2 b4" style="position:relative;top:0px;">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
+      <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+      </svg></span>
+    
+</div>
+
+<div class="dots3">
+  <span class="dot2 b5" style="position:relative;top:0px;transform: rotate(180deg);">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
+    <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+    </svg></span>
+    <span class="dot2 penone">&bull;&bull;&bull;</span>
+    <span class="dot bu21 active">40-41</span>
+    <span class="dot bu22">42-43</span>
+    <span class="dot bu23">44-45</span>
+    <span class="dot bu24">46-47</span>
+    <span class="dot bu25">48-49</span>
+    <span class="dot bu26">50-51</span>
+    <span class="dot bu27">52-53</span>
+    <span class="dot bu28">54-55</span>
+    <span class="dot bu29">56-57</span>
+    <span class="dot bu30">58-59</span>
+    <span class="dot2 penone">&bull;&bull;&bull;</span>
+    <span class="dot2 b6" style="position:relative; top:0px;"><svg 
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="12px" height="17px" viewBox="0 0 12 17">>
+     <path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+      d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "/>
+     </svg></span>
+</div>
+
+<div class="dots4">
+  <span class="dot2 b7" style="position:relative;top:0px;transform: rotate(180deg);">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
+    <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+    </svg></span> 
+    <span class="dot2 penone">&bull;&bull;&bull;</span>
+    <span class="dot bu31 active">60-61</span>
+    <span class="dot bu32">62-63</span>
+    <span class="dot bu33">64-65</span>
+    <span class="dot bu34">66-67</span>
+    <span class="dot bu35">68</span>
+</div>
+
 
 <script>
-function w3_open() {
-  document.getElementById("main").style.marginLeft = "25%";
-  document.getElementById("mySidebar").style.width = "25%";
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("openNav").style.display = 'none';
-}
-function w3_close() {
-  document.getElementById("main").style.marginLeft = "0%";
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("openNav").style.display = "inline-block";
-}
+$(".fade").hide()
+$(".dots1, .dots2, .dots3, .dots4").hide()
+$(".p1").show()
+$(".dots1").show()
+
+$(".bu1").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p1").show()
+});
+
+$(".bu2").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p2").show()
+});
+
+$(".bu3").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p3").show()
+$(".ppage span").text("Έπιπλα εξωτερικού χώρου & μαξιλάρια")
+});
+
+$(".bu4").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p4").show()
+});
+
+$(".bu5").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p5").show()
+});
+
+$(".bu6").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p6").show()
+});
+
+$(".bu7").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p7").show()
+});
+
+$(".bu8").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p8").show()
+});
+
+$(".bu9").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p9").show()
+});
+
+$(".bu10").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p10").show()
+});
+
+$(".b2").click(function () {
+$(".dots1").hide()
+$(".dots2").show()
+$(".fade").hide()
+$(".p11").show()
+$(".dot").removeClass("active")
+$(".bu11").addClass("active")
+});
+
+$(".b3").click(function () {
+$(".dots1").show()
+$(".dots2").hide()
+$(".fade").hide()
+$(".p1").show()
+$(".dot").removeClass("active")
+$(".bu1").addClass("active")
+});
+
+$(".bu11").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p11").show()
+});
+
+$(".bu12").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p12").show()
+});
+
+$(".bu13").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p13").show()
+});
+
+$(".bu14").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p14").show()
+});
+
+$(".bu15").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p15").show()
+});
+
+$(".bu16").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p16").show()
+});
+
+$(".bu17").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p17").show()
+});
+
+$(".bu18").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p18").show()
+});
+
+$(".bu19").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p19").show()
+});
+
+$(".bu20").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p20").show()
+});
+
+$(".b4").click(function () {
+$(".dots2").hide()
+$(".dots3").show()
+$(".fade").hide()
+$(".p21").show()
+$(".dot").removeClass("active")
+$(".bu21").addClass("active")
+});
+
+$(".b5").click(function () {
+$(".dots2").show()
+$(".dots3").hide()
+$(".fade").hide()
+$(".p11").show()
+$(".dot").removeClass("active")
+$(".bu11").addClass("active")
+});
+
+$(".bu21").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p21").show()
+});
+
+$(".bu22").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p22").show()
+});
+
+$(".bu23").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p23").show()
+});
+
+$(".bu24").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p24").show()
+});
+
+$(".bu25").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p25").show()
+});
+
+$(".bu26").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p26").show()
+});
+
+$(".bu27").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p27").show()
+});
+
+$(".bu28").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p28").show()
+});
+
+$(".bu29").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p29").show()
+});
+
+$(".bu30").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p30").show()
+});
+
+$(".b6").click(function () {
+$(".dots3").hide()
+$(".dots4").show()
+$(".fade").hide()
+$(".p31").show()
+$(".dot").removeClass("active")
+$(".bu31").addClass("active")
+});
+
+$(".b7").click(function () {
+$(".dots3").show()
+$(".dots4").hide()
+$(".fade").hide()
+$(".p21").show()
+$(".dot").removeClass("active")
+$(".bu21").addClass("active")
+});
+
+$(".bu31").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p31").show()
+});
+
+$(".bu32").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p32").show()
+});
+
+$(".bu33").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p33").show()
+});
+
+$(".bu34").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p34").show()
+});
+
+$(".bu35").click(function () {
+$(".dot").removeClass("active")
+$(this).addClass("active")
+$(".fade").hide()
+$(".p35").show()
+});
+
+$(".mlines").click(function () {
+$(".dmenu").slideDown("500, 0")
+
+$(".mlines").css("opacity","0")
+$(".dclose").fadeIn("500, 0")
+
+});
+$(".dclose").click(function () {
+$(".dmenu").slideUp("500, 0")
+$(".mlines").css("opacity","1")
+
+});
+
+$(".zoom").click(function () {
+$(".fade").toggleClass("transition")
+
+});
+
+
+
+
+
+
+
+
+
 </script>
 
 </body>
-</html>
+</html> 
