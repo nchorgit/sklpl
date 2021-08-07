@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="page-group">
+        <div class="page" id="p01">
+            <div class="inner p01">
+                <div class="page-front">
+                    <img src="/flip/pages/1.jpg">
+                </div>
+                <div class="page-back">
+                    <img src="/flip/pages/2.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="page" id="p02">
+            <div class="inner p02">
+                <div class="page-front">
+                    <img src="/flip/pages/3.jpg">
+                </div>
+                <div class="page-back">
+                    <img src="/flip/pages/4.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="p03">
+            <div class="inner p03">
+                <div class="page-front">
+                    <img src="/flip/pages/5.jpg">
+                </div>
+                <div class="page-back">
+                    <img src="/flip/pages/6.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="page" id="p04">
+            <div class="inner p04">
+                <div class="page-front">
+                    <img src="/flip/pages/7.jpg">
+                </div>
+                <div class="page-back">
+                    <img src="/flip/pages/8.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        background: #eee;
+    }
+    .page-group {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .page {
+    background-color: transparent;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #f1f1f1;
+    perspective: 4000px;
+    margin: 0 auto;
+    position: absolute;
+    left: 25%;
+}
+
+    /* This container is needed to position the front and back side */
+    .inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .turn {
+        transform: rotateY(-180deg);
+
+    }
+    .index1 {
+        z-index: 100;
+    }
+    .index0 {
+        z-index: 0;
+    }
+
+    /* Position the front and back side */
+    .page-front,
+    .page-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        left: 50%;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .page-front {
+        background-color: #bbb;
+        color: black;
+    }
+
+    /* Style the back side */
+    .page-back {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+
+    img {
+        max-width: 600px;
+        height: auto;
+    }
+</style>
+<script>
+    $(".inner").hide();
+$(".p01").addClass("index1").show();
+
+
+
+
+
+ 
+
+    $(".p01").click(function () {
+        $(this).toggleClass("turn");
+       
+    });
+
+
+    
+
+  
+
+
+
+    
+</script>
+
+</html>
