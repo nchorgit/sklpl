@@ -1,269 +1,316 @@
-
-
-
-<!DOCTYPE html
-<html>
+<!DOCTYPE html <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<style>
-* {box-sizing: border-box}
-body {
-    font-family: arial;
-    margin: 0;
-    background: #f2f2f2;
-    overflow-y: hidden;
-}
-.tophead {
-    background: #fff;
-    height: 50px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+    body {
+      font-family: arial;
+      margin: 0;
+      background: #f2f2f2;
+      overflow-y: hidden;
+    }
+    .pprev {
+      left: -70px;
+    }
+    .pprev img {
+      float: none;
+      transform: rotateY(180deg);
+      margin-left: 3px;
+    }
+    .pnext img {
+      float: none;
+      margin-left: 3px;
+    }
+    .pnext {
+      right: -70px;
+    }
+    .pnext,
+    .pprev {
+      position: absolute;
+      background: #e4e4e4;
+      width: 50px;
+      height: 50px;
+      
+      top: 50%;
+      display: flex;
+      padding: 12px;
+      border-radius: 50%;
+      align-content: center;
+      transition: all .2s;
+    }
+    .pprev:hover,
+    .pnext:hover {
+      background: #ddd;
+      transition: all .2s;
+      cursor: pointer;
+    }
+    .pprev img:hover,
+    .pnext img:hover {
+      filter: invert(0);
+    }
+    .tophead {
+      background: #fff;
+      height: 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 101;
+    }
+    .menu {
+      padding: 0px 15px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .mlines {
+      width: 30px;
+      height: 18px;
+      position: relative;
+    }
+    .mlines:hover {
+      cursor: pointer;
+    }
+    .logo {
+      width: 200px;
+    }
+    p.topp {
+      background: #004548;
+      padding: 8px 15px;
+      border-radius: 4px;
+      color: #ffde73;
+    }
+    p.ppage {
+      background: #eee;
+      padding: 8px 15px;
+      border-radius: 4px;
+      margin-left: -15px;
+      display: flex;
+      align-items: center;
+    }
 
-.menu {
-    padding: 0px 15px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+    .ppage img {
+      margin: 0 10px 0 -5px;
+      opacity: .5;
+    }
+    .dmenu {
+      position: fixed;
+      background: #444;
+      height: 100%;
+      z-index: 102;
+      top: 50px;
+      display: none;
+    }
+    .dmenu div {
+      padding: 10px 30px;
+    }
+    .dmenu a {
+      text-decoration: none;
+      color: #eee;
+      display: block;
+      padding: 15px;
+      border-bottom: 1px solid #555;
+    }
+    .dmenu a:hover {
+      background: #555;
+    }
+    .zoom {
+      float: right;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 15px;
+    }
+    .transition {
+      transform: scale(120%);
+    }
+    img {
+      vertical-align: middle;
+    }
+    .fade:nth-child(n+2)::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: -webkit-linear-gradient(0deg, rgb(185 182 182 / 8%) 0%, rgb(255 255 255 / 0%) 33%, rgb(255 255 255 / 0%) 84%, rgb(138 138 140 / 31%) 95.5%, rgb(0 0 0 / 28%) 100%);
+    }
+    .fade:nth-child(n+2)::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      top: 0;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      background-image: -webkit-linear-gradient(0deg, rgb(6 6 6 / 19%) 0%, rgb(255 255 255 / 0%) 13%, rgb(255 255 255 / 0%) 84%, rgb(138 138 140 / 15%) 95.5%, rgb(0 0 0 / 13%) 100%);
+    }
+    .fade img {
+      width: 50%;
+    }
+    .first img {
+      border: 2px solid #e4e4e4;
+    }
+    .first::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      top: 0;
+      bottom: 0;
+      left: 25% !important;
+      right: 0;
+      background-image: -webkit-linear-gradient(0deg, rgb(70 70 70 / 87%) 0%, rgb(218 218 218 / 71%) 2%, rgb(255 255 255 / 0%) 10%, rgb(138 138 140 / 31%) 90.5%, rgb(0 0 0 / 34%) 100%) !important;
+    }
+    .first::after {
+      background-image: none !important;
+    }
+    .katalogos {
+      border: 2px solid #e4e4e4;
+    }
+    .first {
+      border: 0px !important;
+    }
+    .katalogos-pages {
+      max-width: 1400px;
+      position: relative;
+      margin: 80px auto;
+      z-index: 100;
+    }
+    .dot {
+      cursor: pointer;
+      height: 35px;
+      width: 60px;
+      margin: 0;
+      background-color: #ddd;
+      border-radius: 4px;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      line-height: 35px;
+    }
+    .dot2 {
+      cursor: pointer;
+      height: 35px;
+      width: 35px;
+      margin: 0;
+      background-color: #ddd;
+      border-radius: 4px;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      line-height: 35px;
+    }
+    .active {
+      background-color: #f47920;
+      color: #fff;
+      font-weight: bold;
+    }
+    .dot:hover,
+    .dot2:hover {
+      background-color: #bbb;
+    }
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+      transition: all .4s ease-in-out;
+    }
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+    svg {
+      height: 14px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .dots1,
+    .dots2,
+    .dots3,
+    .dots4 {
+      text-align: center;
+      margin: -100px auto;
+      height: 35px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 5px;
+      padding: 0 15px;
+      max-width: 1100px;
+    }
+    .penone {
+      pointer-events: none;
+      background: transparent;
+      color: #666;
+    }
 
-.mlines {
-   
-    width: 30px;
-    height: 18px;
-    position: relative;
-}
-.mlines:hover {
-  cursor: pointer;
-
-}
-.logo {
-    width: 200px;
-}
-p.topp {
-    background: #004548;
-    padding: 8px 15px;
-    border-radius: 4px;
-    color: #ffde73;
-}
-
-p.ppage {
-    background: #eee;
-    padding: 8px 15px;
-    border-radius: 4px;
-    margin-left: -15px;
-    display: flex;
-}
-
-.dmenu {
-    position: fixed;
-    background: #444;
-    height: 100%;
-    z-index: 400;
-    top: 50px;
-    display: none;
-}
-.dmenu div {
-  padding: 10px 30px;
-}
-.dmenu a {text-decoration: none;
-    color: #eee;
-    display: block;
-    padding: 15px;
-    border-bottom: 1px solid #555;
-}
-
-.dmenu a:hover {
-  background: #555;
-}
-.zoom {
-    float: right;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 15px;
-}
-.transition {
-   
-    transform: scale(120%);
-}
-img {vertical-align: middle;}
-.fade:nth-child(n+2)::before{
-content: "";
-position: absolute;
- width:50%;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background-image: -webkit-linear-gradient( 
-0deg
-, rgb(185 182 182 / 8%) 0%, rgb(255 255 255 / 0%) 33%, rgb(255 255 255 / 0%) 84%, rgb(138 138 140 / 31%) 95.5%, rgb(0 0 0 / 28%) 100%);
-   } 
-.fade:nth-child(n+2)::after {
-content: "";
-position: absolute;
-        width:50%;
-top: 0;
-bottom: 0;
-left: auto;
-right: 0;
-background-image: -webkit-linear-gradient( 
-0deg
- , rgb(6 6 6 / 19%) 0%, rgb(255 255 255 / 0%) 13%, rgb(255 255 255 / 0%) 84%, rgb(138 138 140 / 15%) 95.5%, rgb(0 0 0 / 13%) 100%);
-}
-
-
-.katalogos-pages {
-    max-width: 1400px;
-    position: relative;
-    margin: 80px auto;
-  border: 2px solid #e4e4e4;
-    z-index: 200;
-}
-
-.prev, .next {
-  cursor: pointer;
+.dclose {
   position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: #ddd;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  display:none;
+  top: -50px;
+  left: -5px;
+  background: #545454;
+  height: 50px;
+  width: 53px;
+  padding: 0;
+  transition: .2s;
 }
 
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.dclose:hover {
+  cursor: pointer;
+  transition: .2s;
+  background: #da1a32
 }
-
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-
-
-.dot {
-    cursor: pointer;
-    height: 35px;
-    width: 60px;
-    margin: 0;
-    background-color: #ddd;
-    border-radius: 4px;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    line-height: 35px;
-}
-
-.dot2 {
-    cursor: pointer;
-    height: 35px;
-    width: 35px;
-    margin: 0;
-    background-color: #ddd;
-    border-radius: 4px;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    line-height: 35px;
-}
-.active {
-    background-color: #f47920;
-    color: #fff;
-    font-weight: bold;
-}
-
-.dot:hover, .dot2:hover {
-  background-color: #bbb;
-}
-
-
-
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-  transition: all .4s ease-in-out;
-}
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-svg {
-  height:14px;
-  position:absolute;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
-  margin:auto;
-}
-.dots1, .dots2, .dots3, .dots4 {
-  text-align: center;
-    margin: -100px auto;
-    height: 35px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 5px;
-    padding:0 15px;
-    max-width: 1100px;
-}
-.penone {
-  pointer-events: none;
-  background: transparent;
-  color: #666;
-}
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-img:nth-child(odd) {float:left;}
-
-
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-</style>
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+      to {
+        opacity: 1
+      }
+    }
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+      to {
+        opacity: 1
+      }
+    }
+    img:nth-child(odd) {
+      float: left;
+    }
+    @media only screen and (max-width: 300px) {}
+  </style>
 </head>
 <body>
-<div class="tophead">
-<div class="menu">
-  <div class="mlines">
-    <div style="
+
+  <div class="tophead">
+    <div class="menu">
+      <div class="mlines">
+        <div style="
        width: 30px;
        height: 2px;
        background: #000;
        margin-bottom: 6px;
    "></div>
-       <div style="
+        <div style="
        width: 30px;
        height: 2px;
        background: #000;
@@ -275,137 +322,222 @@ img:nth-child(odd) {float:left;}
        background: #000;
        /* margin-bottom: 6px; */
    "></div>
-   </div>
-<div class="logo"><img src="https://www.sklavenitis.gr/assets/Media/sklavenitis-logo.svg" alt=""></div>
-<p class="topp">Σπίτι και Κήπος 2021</p>
-<p class="ppage"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17" style="
-  position: relative;
-  /* top: 2px; */
-  opacity: .5;
-  height: 16px;
-  left: -5px;
-">&gt;
- <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
- </svg> <span>Εξώφυλλο</span></p>
- <div class="zoom">Μεγέθυνση<img src="https://image.flaticon.com/icons/png/512/104/104690.png" style="
-  width: 32px;
+      </div>
+      <div class="logo"><img src="https://www.sklavenitis.gr/assets/Media/sklavenitis-logo.svg" alt=""></div>
+      <p class="topp">Σπίτι και Κήπος 2021</p>
+      <p class="ppage"><img src="/katalogos/page.svg"> <span>Εξώφυλλο</span></p>
+      <div class="zoom">Μεγέθυνση<img src="/katalogos/zoom.svg" style="
+  width: 23px;
   margin-left: 10px;
 "></div>
+    </div>
   </div>
-  
-</div>
-<div class="dmenu"> 
-  <div class="dclose" style="
-  position: absolute;
-  top: -50px;
-  left: 0px;
-  background: #545454;
-  height: 50px;
-  width: 55px;
-  padding: 0;
-"> 
-<img src="/katalogos/close.svg"  style="width: 40px;height: 40px;position: absolute;left: 15px; top: 10px;">
-
-</div>
-  <br>
-  <div><p style="
+  <div class="dmenu">
+    <div class="dclose">
+      <img src="/katalogos/close.svg" style="width: 40px;height: 40px;position: absolute;left: 20px; top: 10px;">
+    </div>
+    <br>
+    <div>
+      <p style="
     padding: 15px;
     background: #ffdf72;
     color: #004548;
     font-weight: bold;
     border-left: 6px solid #85b94f;
     border-radius: 4px;
-">ΠΕΡΙΕΧΟΜΕΝΑ</p></div>
-  <div><a href="#">	Έπιπλα εξωτερικού χώρου & μαξιλάρια σελ. 4	</a></div>
-<div><a href="#">	Κιόσκια & ομπρέλες εξωτερικού χώρου σελ. 28	</a></div>
-<div><a href="#">	Είδη Bbq & διακόσμηση κήπου σελ. 30	</a></div>
-<div><a href="#">	Είδη camping & παραλίας σελ. 36	</a></div>
-<div><a href="#">	Παιχνίδια εξωτερικού χώρου σελ. 44	</a></div>
-<div><a href="#">	Οικιακά είδη - Αποθnκευσn & τακτοποίηση σελ. 48	</a></div>
-<div><a href="#">	Ηλεκτρικές μικροσυσκευές σελ. 58	</a></div>
-<div><a href="#">	Λευκά είδη & Είδη μπάνιου σελ. 62	</a></div></div>
-<div style="
-    padding: 20px;
+">ΠΕΡΙΕΧΟΜΕΝΑ</p>
+    </div>
+    <div class="bu3"><a href="#"> Έπιπλα εξωτερικού χώρου & μαξιλάρια σελ. 4 </a></div>
+    <div><a href="#"> Κιόσκια & ομπρέλες εξωτερικού χώρου σελ. 28 </a></div>
+    <div><a href="#"> Είδη Bbq & διακόσμηση κήπου σελ. 30 </a></div>
+    <div><a href="#"> Είδη camping & παραλίας σελ. 36 </a></div>
+    <div><a href="#"> Παιχνίδια εξωτερικού χώρου σελ. 44 </a></div>
+    <div><a href="#"> Οικιακά είδη - Αποθnκευσn & τακτοποίηση σελ. 48 </a></div>
+    <div><a href="#"> Ηλεκτρικές μικροσυσκευές σελ. 58 </a></div>
+    <div><a href="#"> Λευκά είδη & Είδη μπάνιου σελ. 62 </a></div>
+  </div>
+  <div style="
+    padding: 20px 80px;
     margin-top: -20px;
 ">
-<div class="katalogos-pages">
+    <div class="katalogos-pages">
+     
+      <div class="pnext bne1"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne2"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne3"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne4"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne5"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne6"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne7"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne8"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne9"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne10"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne11"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne12"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne13"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne14"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne15"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne16"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne17"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne18"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne19"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne20"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne21"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne22"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne23"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne24"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne25"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne26"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne27"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne28"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne29"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne30"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne31"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne32"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne33"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne34"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne35"><img src="/katalogos/arrow.svg"></div>
+    <div class="pnext bne36"><img src="/katalogos/arrow.svg"></div>
+    
 
-<div class="first katalogos fade p1">
-<img src="https://sklavenitis-pl.tk/katalogos/pages/1.jpg" style="width:50%;margin:auto; display:flex; float:none;">
-
-</div>
-
-<div class="katalogos fade p2"><img src="https://sklavenitis-pl.tk/katalogos/pages/2.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/3.jpg" style="width:50%"></div>
-<div class="katalogos fade p3"><img src="https://sklavenitis-pl.tk/katalogos/pages/4.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/5.jpg" style="width:50%"></div>
-<div class="katalogos fade p4"><img src="https://sklavenitis-pl.tk/katalogos/pages/6.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/7.jpg" style="width:50%"></div>
-<div class="katalogos fade p5"><img src="https://sklavenitis-pl.tk/katalogos/pages/8.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/9.jpg" style="width:50%"></div>
-<div class="katalogos fade p6"><img src="https://sklavenitis-pl.tk/katalogos/pages/10.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/11.jpg" style="width:50%"></div>
-<div class="katalogos fade p7"><img src="https://sklavenitis-pl.tk/katalogos/pages/12.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/13.jpg" style="width:50%"></div>
-<div class="katalogos fade p8"><img src="https://sklavenitis-pl.tk/katalogos/pages/14.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/15.jpg" style="width:50%"></div>
-<div class="katalogos fade p9"><img src="https://sklavenitis-pl.tk/katalogos/pages/16.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/17.jpg" style="width:50%"></div>
-<div class="katalogos fade p10"><img src="https://sklavenitis-pl.tk/katalogos/pages/18.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/19.jpg" style="width:50%"></div>
-<div class="katalogos fade p11"><img src="https://sklavenitis-pl.tk/katalogos/pages/20.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/21.jpg" style="width:50%"></div>
-<div class="katalogos fade p12"><img src="https://sklavenitis-pl.tk/katalogos/pages/22.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/23.jpg" style="width:50%"></div>
-<div class="katalogos fade p13"><img src="https://sklavenitis-pl.tk/katalogos/pages/24.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/25.jpg" style="width:50%"></div>
-<div class="katalogos fade p14"><img src="https://sklavenitis-pl.tk/katalogos/pages/26.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/27.jpg" style="width:50%"></div>
-<div class="katalogos fade p15"><img src="https://sklavenitis-pl.tk/katalogos/pages/28.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/29.jpg" style="width:50%"></div>
-<div class="katalogos fade p16"><img src="https://sklavenitis-pl.tk/katalogos/pages/30.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/31.jpg" style="width:50%"></div>
-<div class="katalogos fade p17"><img src="https://sklavenitis-pl.tk/katalogos/pages/32.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/33.jpg" style="width:50%"></div>
-<div class="katalogos fade p18"><img src="https://sklavenitis-pl.tk/katalogos/pages/34.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/35.jpg" style="width:50%"></div>
-<div class="katalogos fade p19"><img src="https://sklavenitis-pl.tk/katalogos/pages/36.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/37.jpg" style="width:50%"></div>
-<div class="katalogos fade p20"><img src="https://sklavenitis-pl.tk/katalogos/pages/38.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/39.jpg" style="width:50%"></div>
-<div class="katalogos fade p21"><img src="https://sklavenitis-pl.tk/katalogos/pages/40.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/41.jpg" style="width:50%"></div>
-<div class="katalogos fade p22"><img src="https://sklavenitis-pl.tk/katalogos/pages/42.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/43.jpg" style="width:50%"></div>
-<div class="katalogos fade p23"><img src="https://sklavenitis-pl.tk/katalogos/pages/44.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/45.jpg" style="width:50%"></div>
-<div class="katalogos fade p24"><img src="https://sklavenitis-pl.tk/katalogos/pages/46.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/47.jpg" style="width:50%"></div>
-<div class="katalogos fade p25"><img src="https://sklavenitis-pl.tk/katalogos/pages/48.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/49.jpg" style="width:50%"></div>
-<div class="katalogos fade p26"><img src="https://sklavenitis-pl.tk/katalogos/pages/50.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/51.jpg" style="width:50%"></div>
-<div class="katalogos fade p27"><img src="https://sklavenitis-pl.tk/katalogos/pages/52.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/53.jpg" style="width:50%"></div>
-<div class="katalogos fade p28"><img src="https://sklavenitis-pl.tk/katalogos/pages/54.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/55.jpg" style="width:50%"></div>
-<div class="katalogos fade p29"><img src="https://sklavenitis-pl.tk/katalogos/pages/56.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/57.jpg" style="width:50%"></div>
-<div class="katalogos fade p30"><img src="https://sklavenitis-pl.tk/katalogos/pages/58.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/59.jpg" style="width:50%"></div>
-<div class="katalogos fade p31"><img src="https://sklavenitis-pl.tk/katalogos/pages/60.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/61.jpg" style="width:50%"></div>
-<div class="katalogos fade p32"><img src="https://sklavenitis-pl.tk/katalogos/pages/62.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/63.jpg" style="width:50%"></div>
-<div class="katalogos fade p33"><img src="https://sklavenitis-pl.tk/katalogos/pages/64.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/65.jpg" style="width:50%"></div>
-<div class="katalogos fade p34"><img src="https://sklavenitis-pl.tk/katalogos/pages/66.jpg" style="width:50%"><img src="https://sklavenitis-pl.tk/katalogos/pages/67.jpg" style="width:50%"></div>
-
-<div class="katalogos fade p35">
-<img src="https://sklavenitis-pl.tk/katalogos/pages/68.jpg" style="width:50%;margin:auto; display:flex; float:none;">
-
-</div>
-
-
-</div>
-</div>
-<br>
-
-<div class="dots1">
-  <span class="dot bu1 active">1</span>
-  <span class="dot bu2">2-3</span>
-  <span class="dot bu3">4-5</span>
-  <span class="dot bu4">6-7</span>
-  <span class="dot bu5">8-9</span>
-  <span class="dot bu6">10-11</span>
-  <span class="dot bu7">12-13</span>
-  <span class="dot bu8">14-15</span>
-  <span class="dot bu9">16-17</span>
-  <span class="dot bu10">18-19</span>
-  <span class="dot2 penone">&bull;&bull;&bull;</span>
-  <span class="dot2 b2" style="position:relative; top:0px;"><svg 
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="12px" height="17px" viewBox="0 0 12 17">>
-   <path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-    d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "/>
-   </svg></span>
-</div>
-
-
-<div class="dots2">
-  <span class="dot2 b3" style="position:relative;top:0px;transform: rotate(180deg);">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
-    <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
-    </svg></span>
+    <div class="pprev bpr1"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr2"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr3"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr4"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr5"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr6"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr7"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr8"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr9"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr10"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr11"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr12"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr13"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr14"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr15"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr16"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr17"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr18"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr19"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr20"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr21"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr22"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr23"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr24"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr25"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr26"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr27"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr28"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr29"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr30"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr31"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr32"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr33"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr34"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr35"><img src="/katalogos/arrow.svg"></div>
+    <div class="pprev bpr36"><img src="/katalogos/arrow.svg"></div>
+      <div class="first katalogos fade p1">
+        <img src="https://sklavenitis-pl.tk/katalogos/pages/1.jpg"
+          style="width:50%;margin:auto; display:flex; float:none;">
+      </div>
+      <div class="katalogos fade p2"><img src="https://sklavenitis-pl.tk/katalogos/pages/2.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/3.jpg"></div>
+      <div class="katalogos fade p3"><img src="https://sklavenitis-pl.tk/katalogos/pages/4.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/5.jpg"></div>
+      <div class="katalogos fade p4"><img src="https://sklavenitis-pl.tk/katalogos/pages/6.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/7.jpg"></div>
+      <div class="katalogos fade p5"><img src="https://sklavenitis-pl.tk/katalogos/pages/8.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/9.jpg"></div>
+      <div class="katalogos fade p6"><img src="https://sklavenitis-pl.tk/katalogos/pages/10.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/11.jpg"></div>
+      <div class="katalogos fade p7"><img src="https://sklavenitis-pl.tk/katalogos/pages/12.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/13.jpg"></div>
+      <div class="katalogos fade p8"><img src="https://sklavenitis-pl.tk/katalogos/pages/14.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/15.jpg"></div>
+      <div class="katalogos fade p9"><img src="https://sklavenitis-pl.tk/katalogos/pages/16.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/17.jpg"></div>
+      <div class="katalogos fade p10"><img src="https://sklavenitis-pl.tk/katalogos/pages/18.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/19.jpg"></div>
+      <div class="katalogos fade p11"><img src="https://sklavenitis-pl.tk/katalogos/pages/20.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/21.jpg"></div>
+      <div class="katalogos fade p12"><img src="https://sklavenitis-pl.tk/katalogos/pages/22.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/23.jpg"></div>
+      <div class="katalogos fade p13"><img src="https://sklavenitis-pl.tk/katalogos/pages/24.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/25.jpg"></div>
+      <div class="katalogos fade p14"><img src="https://sklavenitis-pl.tk/katalogos/pages/26.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/27.jpg"></div>
+      <div class="katalogos fade p15"><img src="https://sklavenitis-pl.tk/katalogos/pages/28.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/29.jpg"></div>
+      <div class="katalogos fade p16"><img src="https://sklavenitis-pl.tk/katalogos/pages/30.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/31.jpg"></div>
+      <div class="katalogos fade p17"><img src="https://sklavenitis-pl.tk/katalogos/pages/32.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/33.jpg"></div>
+      <div class="katalogos fade p18"><img src="https://sklavenitis-pl.tk/katalogos/pages/34.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/35.jpg"></div>
+      <div class="katalogos fade p19"><img src="https://sklavenitis-pl.tk/katalogos/pages/36.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/37.jpg"></div>
+      <div class="katalogos fade p20"><img src="https://sklavenitis-pl.tk/katalogos/pages/38.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/39.jpg"></div>
+      <div class="katalogos fade p21"><img src="https://sklavenitis-pl.tk/katalogos/pages/40.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/41.jpg"></div>
+      <div class="katalogos fade p22"><img src="https://sklavenitis-pl.tk/katalogos/pages/42.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/43.jpg"></div>
+      <div class="katalogos fade p23"><img src="https://sklavenitis-pl.tk/katalogos/pages/44.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/45.jpg"></div>
+      <div class="katalogos fade p24"><img src="https://sklavenitis-pl.tk/katalogos/pages/46.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/47.jpg"></div>
+      <div class="katalogos fade p25"><img src="https://sklavenitis-pl.tk/katalogos/pages/48.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/49.jpg"></div>
+      <div class="katalogos fade p26"><img src="https://sklavenitis-pl.tk/katalogos/pages/50.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/51.jpg"></div>
+      <div class="katalogos fade p27"><img src="https://sklavenitis-pl.tk/katalogos/pages/52.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/53.jpg"></div>
+      <div class="katalogos fade p28"><img src="https://sklavenitis-pl.tk/katalogos/pages/54.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/55.jpg"></div>
+      <div class="katalogos fade p29"><img src="https://sklavenitis-pl.tk/katalogos/pages/56.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/57.jpg"></div>
+      <div class="katalogos fade p30"><img src="https://sklavenitis-pl.tk/katalogos/pages/58.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/59.jpg"></div>
+      <div class="katalogos fade p31"><img src="https://sklavenitis-pl.tk/katalogos/pages/60.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/61.jpg"></div>
+      <div class="katalogos fade p32"><img src="https://sklavenitis-pl.tk/katalogos/pages/62.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/63.jpg"></div>
+      <div class="katalogos fade p33"><img src="https://sklavenitis-pl.tk/katalogos/pages/64.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/65.jpg"></div>
+      <div class="katalogos fade p34"><img src="https://sklavenitis-pl.tk/katalogos/pages/66.jpg"><img
+          src="https://sklavenitis-pl.tk/katalogos/pages/67.jpg"></div>
+      <div class="katalogos fade p35">
+        <img src="https://sklavenitis-pl.tk/katalogos/pages/68.jpg"
+          style="width:50%;margin:auto; display:flex; float:none;">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="dots1">
+    <span class="dot bu1 active">1</span>
+    <span class="dot bu2">2-3</span>
+    <span class="dot bu3">4-5</span>
+    <span class="dot bu4">6-7</span>
+    <span class="dot bu5">8-9</span>
+    <span class="dot bu6">10-11</span>
+    <span class="dot bu7">12-13</span>
+    <span class="dot bu8">14-15</span>
+    <span class="dot bu9">16-17</span>
+    <span class="dot bu10">18-19</span>
+    <span class="dot2 penone">&bull;&bull;&bull;</span>
+    <span class="dot2 b2" style="position:relative; top:0px;"><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">>
+        <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+          fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 " />
+      </svg></span>
+  </div>
+  <div class="dots2">
+    <span class="dot2 b3" style="position:relative;top:0px;transform: rotate(180deg);">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px"
+        viewBox="0 0 12 17">&gt;
+        <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+          fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+      </svg></span>
     <span class="dot2 penone">&bull;&bull;&bull;</span>
     <span class="dot bu11 active">20-21</span>
     <span class="dot bu12">22-23</span>
@@ -419,17 +551,19 @@ img:nth-child(odd) {float:left;}
     <span class="dot bu20">38-39</span>
     <span class="dot2 penone">&bull;&bull;&bull;</span>
     <span class="dot2 b4" style="position:relative;top:0px;">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
-      <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px"
+        viewBox="0 0 12 17">&gt;
+        <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+          fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
       </svg></span>
-    
-</div>
-
-<div class="dots3">
-  <span class="dot2 b5" style="position:relative;top:0px;transform: rotate(180deg);">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
-    <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
-    </svg></span>
+  </div>
+  <div class="dots3">
+    <span class="dot2 b5" style="position:relative;top:0px;transform: rotate(180deg);">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px"
+        viewBox="0 0 12 17">&gt;
+        <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+          fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+      </svg></span>
     <span class="dot2 penone">&bull;&bull;&bull;</span>
     <span class="dot bu21 active">40-41</span>
     <span class="dot bu22">42-43</span>
@@ -442,362 +576,1097 @@ img:nth-child(odd) {float:left;}
     <span class="dot bu29">56-57</span>
     <span class="dot bu30">58-59</span>
     <span class="dot2 penone">&bull;&bull;&bull;</span>
-    <span class="dot2 b6" style="position:relative; top:0px;"><svg 
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      width="12px" height="17px" viewBox="0 0 12 17">>
-     <path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-      d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "/>
-     </svg></span>
-</div>
-
-<div class="dots4">
-  <span class="dot2 b7" style="position:relative;top:0px;transform: rotate(180deg);">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">&gt;
-    <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
-    </svg></span> 
+    <span class="dot2 b6" style="position:relative; top:0px;"><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px" viewBox="0 0 12 17">>
+        <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+          fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 " />
+      </svg></span>
+  </div>
+  <div class="dots4">
+    <span class="dot2 b7" style="position:relative;top:0px;transform: rotate(180deg);">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="17px"
+        viewBox="0 0 12 17">&gt;
+        <path fill-rule="evenodd" stroke="rgb(0, 0, 0)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+          fill="none" d="M3.000,1.000 L10.000,8.000 L3.000,15.000 "></path>
+      </svg></span>
     <span class="dot2 penone">&bull;&bull;&bull;</span>
     <span class="dot bu31 active">60-61</span>
     <span class="dot bu32">62-63</span>
     <span class="dot bu33">64-65</span>
     <span class="dot bu34">66-67</span>
     <span class="dot bu35">68</span>
-</div>
+  </div>
+  <script>
+    
+    $(".bne1").show()
+    $(".fade").hide()
+    $(".dots1, .dots2, .dots3, .dots4").hide()
+    $(".p1").show()
+    $(".dots1").show()
 
+    $(".bu1").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p1").show()
+      $(".pprev, .pnext").hide()
+$(".bne1").show()
+    });
+    $(".bu2").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p2").show()
+      $(".pprev, .pnext").hide()
+$(".bpr1, .bne2").show()
+    });
+    $(".bu3").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p3").show()
+      $(".pprev, .pnext").hide()
+$(".bpr2, .bne3").show()
+      $(".ppage span").text("Έπιπλα εξωτερικού χώρου & μαξιλάρια")
+    });
+    $(".bu4").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p4").show()
+      $(".pprev, .pnext").hide()
+$(".bpr3, .bne4").show()
+    });
+    $(".bu5").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p5").show()
+      $(".pprev, .pnext").hide()
+$(".bpr4, .bne5").show()
+    });
+    $(".bu6").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p6").show()
+      $(".pprev, .pnext").hide()
+$(".bpr5, .bne6").show()
+    });
+    $(".bu7").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p7").show()
+      $(".pprev, .pnext").hide()
+$(".bpr5, .bne7").show()
+    });
+    $(".bu8").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p8").show()
+      $(".pprev, .pnext").hide()
+$(".bpr7, .bne8").show()
+    });
+    $(".bu9").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p9").show()
+      $(".pprev, .pnext").hide()
+$(".bpr8, .bne9").show()
+    });
+    $(".bu10").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p10").show()
+      $(".pprev, .pnext").hide()
+$(".bpr9, .bne10").show()
+    });
+    $(".b2").click(function () {
+      $(".dots1").hide()
+      $(".dots2").show()
+      $(".fade").hide()
+      $(".p11").show()
+      $(".dot").removeClass("active")
+      $(".bu11").addClass("active")
+    });
+    $(".b3").click(function () {
+      $(".dots1").show()
+      $(".dots2").hide()
+      $(".fade").hide()
+      $(".p1").show()
+      $(".dot").removeClass("active")
+      $(".bu1").addClass("active")
+    });
+    $(".bu11").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p11").show()
+      $(".pprev, .pnext").hide()
+$(".bpr10, .bne11").show()
+    });
+    $(".bu12").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p12").show()
+      $(".pprev, .pnext").hide()
+$(".bpr11, .bne12").show()
+    });
+    $(".bu13").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p13").show()
+      $(".pprev, .pnext").hide()
+$(".bpr12, .bne13").show()
+    });
+    $(".bu14").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p14").show()
+      $(".pprev, .pnext").hide()
+$(".bpr13, .bne14").show()
+    });
+    $(".bu15").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p15").show()
+      $(".pprev, .pnext").hide()
+$(".bpr14, .bne15").show()
+    });
+    $(".bu16").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p16").show()
+      $(".pprev, .pnext").hide()
+$(".bpr15, .bne16").show()
+    });
+    $(".bu17").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p17").show()
+      $(".pprev, .pnext").hide()
+$(".bpr16, .bne17").show()
+    });
+    $(".bu18").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p18").show()
+      $(".pprev, .pnext").hide()
+$(".bpr17, .bne18").show()
+    });
+    $(".bu19").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p19").show()
+      $(".pprev, .pnext").hide()
+$(".bpr18, .bne19").show()
+    });
+    $(".bu20").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p20").show()
+      $(".pprev, .pnext").hide()
+$(".bpr19, .bne20").show()
+    });
+    $(".b4").click(function () {
+      $(".dots2").hide()
+      $(".dots3").show()
+      $(".fade").hide()
+      $(".p21").show()
+      $(".dot").removeClass("active")
+      $(".bu21").addClass("active")
+    });
+    $(".b5").click(function () {
+      $(".dots2").show()
+      $(".dots3").hide()
+      $(".fade").hide()
+      $(".p11").show()
+      $(".dot").removeClass("active")
+      $(".bu11").addClass("active")
+    });
+    $(".bu21").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p21").show()
+      $(".pprev, .pnext").hide()
+$(".bpr20, .bne21").show()
+    });
+    $(".bu22").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p22").show()
+      $(".pprev, .pnext").hide()
+$(".bpr21, .bne22").show()
+    });
+    $(".bu23").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p23").show()
+      $(".pprev, .pnext").hide()
+$(".bpr22, .bne23").show()
+    });
+    $(".bu24").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p24").show()
+      $(".pprev, .pnext").hide()
+$(".bpr23, .bne24").show()
+    });
+    $(".bu25").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p25").show()
+      $(".pprev, .pnext").hide()
+$(".bpr24, .bne25").show()
+    });
+    $(".bu26").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p26").show()
+      $(".pprev, .pnext").hide()
+$(".bpr25, .bne26").show()
+    });
+    $(".bu27").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p27").show()
+      $(".pprev, .pnext").hide()
+$(".bpr26, .bne27").show()
+    });
+    $(".bu28").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p28").show()
+      $(".pprev, .pnext").hide()
+$(".bpr27, .bne28").show()
+    });
+    $(".bu29").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p29").show()
+      $(".pprev, .pnext").hide()
+$(".bpr28, .bne29").show()
+    });
+    $(".bu30").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p30").show()
+      $(".pprev, .pnext").hide()
+$(".bpr29, .bne30").show()
+    });
+    $(".b6").click(function () {
+      $(".dots3").hide()
+      $(".dots4").show()
+      $(".fade").hide()
+      $(".p31").show()
+      $(".dot").removeClass("active")
+      $(".bu31").addClass("active")
+    });
+    $(".b7").click(function () {
+      $(".dots3").show()
+      $(".dots4").hide()
+      $(".fade").hide()
+      $(".p21").show()
+      $(".dot").removeClass("active")
+      $(".bu21").addClass("active")
+    });
+    $(".bu31").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p31").show()
+      $(".pprev, .pnext").hide()
+$(".bpr30, .bne31").show()
+    });
+    $(".bu32").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p32").show()
+      $(".pprev, .pnext").hide()
+$(".bpr31, .bne32").show()
+    });
+    $(".bu33").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p33").show()
+      $(".pprev, .pnext").hide()
+$(".bpr32, .bne33").show()
+    });
+    $(".bu34").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p34").show()
+      $(".pprev, .pnext").hide()
+$(".bpr33, .bne34").show()
+    });
+    $(".bu35").click(function () {
+      $(".dot").removeClass("active")
+      $(this).addClass("active")
+      $(".fade").hide()
+      $(".p35").show()
+      $(".pprev, .pnext").hide()
+$(".bpr34, .bne35").show()
+    });
+    $(".mlines").click(function () {
+      $(".dmenu").slideDown("slow")
+      $(".mlines").css("opacity", "0")
+      $(".dclose").fadeIn("500, 0")
+    });
+    $(".dclose").click(function () {
+      $(".dmenu").slideUp("slow")
+      $(".mlines").css("opacity", "1")
+    });
+    $(".zoom").click(function () {
+      $(".fade").toggleClass("transition")
+    });
 
-<script>
-$(".fade").hide()
-$(".dots1, .dots2, .dots3, .dots4").hide()
-$(".p1").show()
-$(".dots1").show()
-
-$(".bu1").click(function () {
+//NEXT
+$(".bne1").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
-$(".fade").hide()
-$(".p1").show()
-});
-
-$(".bu2").click(function () {
-$(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu2").addClass("active")
 $(".fade").hide()
 $(".p2").show()
+$(".bne2, .bpr1").show()
 });
 
-$(".bu3").click(function () {
+$(".bne2").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu3").addClass("active")
 $(".fade").hide()
 $(".p3").show()
-$(".ppage span").text("Έπιπλα εξωτερικού χώρου & μαξιλάρια")
+$(".bne3, .bpr2").show()
 });
 
-$(".bu4").click(function () {
+$(".bne3").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu4").addClass("active")
 $(".fade").hide()
 $(".p4").show()
+$(".bne4, .bpr3").show()
 });
 
-$(".bu5").click(function () {
+$(".bne4").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu5").addClass("active")
 $(".fade").hide()
 $(".p5").show()
+$(".bne5, .bpr4").show()
 });
 
-$(".bu6").click(function () {
+$(".bne5").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu6").addClass("active")
 $(".fade").hide()
 $(".p6").show()
+$(".bne6, .bpr5").show()
 });
 
-$(".bu7").click(function () {
+$(".bne6").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu7").addClass("active")
 $(".fade").hide()
 $(".p7").show()
+$(".bne7, .bpr6").show()
 });
 
-$(".bu8").click(function () {
+$(".bne7").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu8").addClass("active")
 $(".fade").hide()
 $(".p8").show()
+$(".bne8, .bpr7").show()
 });
 
-$(".bu9").click(function () {
+$(".bne8").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu9").addClass("active")
 $(".fade").hide()
 $(".p9").show()
+$(".bne9, .bpr8").show()
 });
 
-$(".bu10").click(function () {
+$(".bne9").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu10").addClass("active")
 $(".fade").hide()
 $(".p10").show()
+$(".bne10, .bpr9").show()
 });
 
-$(".b2").click(function () {
-$(".dots1").hide()
-$(".dots2").show()
-$(".fade").hide()
-$(".p11").show()
+$(".bne10").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
 $(".bu11").addClass("active")
-});
-
-$(".b3").click(function () {
-$(".dots1").show()
-$(".dots2").hide()
-$(".fade").hide()
-$(".p1").show()
-$(".dot").removeClass("active")
-$(".bu1").addClass("active")
-});
-
-$(".bu11").click(function () {
-$(".dot").removeClass("active")
-$(this).addClass("active")
 $(".fade").hide()
 $(".p11").show()
+$(".bne11, .bpr10").show()
 });
 
-$(".bu12").click(function () {
+$(".bne11").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu12").addClass("active")
 $(".fade").hide()
 $(".p12").show()
+$(".bne12, .bpr11").show()
 });
 
-$(".bu13").click(function () {
+$(".bne12").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu13").addClass("active")
 $(".fade").hide()
 $(".p13").show()
+$(".bne13, .bpr12").show()
 });
 
-$(".bu14").click(function () {
+$(".bne13").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu14").addClass("active")
 $(".fade").hide()
 $(".p14").show()
+$(".bne14, .bpr13").show()
 });
 
-$(".bu15").click(function () {
+$(".bne14").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu15").addClass("active")
 $(".fade").hide()
 $(".p15").show()
+$(".bne15, .bpr14").show()
 });
 
-$(".bu16").click(function () {
+$(".bne15").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu16").addClass("active")
 $(".fade").hide()
 $(".p16").show()
+$(".bne16, .bpr15").show()
 });
 
-$(".bu17").click(function () {
+$(".bne16").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu17").addClass("active")
 $(".fade").hide()
 $(".p17").show()
+$(".bne17, .bpr16").show()
 });
 
-$(".bu18").click(function () {
+$(".bne17").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu18").addClass("active")
 $(".fade").hide()
 $(".p18").show()
+$(".bne18, .bpr17").show()
 });
 
-$(".bu19").click(function () {
+$(".bne18").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu19").addClass("active")
 $(".fade").hide()
 $(".p19").show()
+$(".bne19, .bpr18").show()
 });
 
-$(".bu20").click(function () {
+$(".bne19").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu20").addClass("active")
 $(".fade").hide()
 $(".p20").show()
+$(".bne20, .bpr19").show()
 });
 
-$(".b4").click(function () {
-$(".dots2").hide()
-$(".dots3").show()
-$(".fade").hide()
-$(".p21").show()
+$(".bne20").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
 $(".bu21").addClass("active")
-});
-
-$(".b5").click(function () {
-$(".dots2").show()
-$(".dots3").hide()
-$(".fade").hide()
-$(".p11").show()
-$(".dot").removeClass("active")
-$(".bu11").addClass("active")
-});
-
-$(".bu21").click(function () {
-$(".dot").removeClass("active")
-$(this).addClass("active")
 $(".fade").hide()
 $(".p21").show()
+$(".bne21, .bpr20").show()
 });
 
-$(".bu22").click(function () {
+$(".bne21").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu22").addClass("active")
 $(".fade").hide()
 $(".p22").show()
+$(".bne22, .bpr21").show()
 });
 
-$(".bu23").click(function () {
+$(".bne22").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu23").addClass("active")
 $(".fade").hide()
 $(".p23").show()
+$(".bne23, .bpr22").show()
 });
 
-$(".bu24").click(function () {
+$(".bne23").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu24").addClass("active")
 $(".fade").hide()
 $(".p24").show()
+$(".bne24, .bpr23").show()
 });
 
-$(".bu25").click(function () {
+$(".bne24").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu25").addClass("active")
 $(".fade").hide()
 $(".p25").show()
+$(".bne25, .bpr24").show()
 });
 
-$(".bu26").click(function () {
+$(".bne25").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu26").addClass("active")
 $(".fade").hide()
 $(".p26").show()
+$(".bne26, .bpr25").show()
 });
 
-$(".bu27").click(function () {
+$(".bne26").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu27").addClass("active")
 $(".fade").hide()
 $(".p27").show()
+$(".bne27, .bpr26").show()
 });
 
-$(".bu28").click(function () {
+$(".bne27").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu28").addClass("active")
 $(".fade").hide()
 $(".p28").show()
+$(".bne28, .bpr27").show()
 });
 
-$(".bu29").click(function () {
+$(".bne28").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu29").addClass("active")
 $(".fade").hide()
 $(".p29").show()
+$(".bne29, .bpr28").show()
 });
 
-$(".bu30").click(function () {
+$(".bne29").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu30").addClass("active")
 $(".fade").hide()
 $(".p30").show()
+$(".bne30, .bpr29").show()
 });
 
-$(".b6").click(function () {
-$(".dots3").hide()
-$(".dots4").show()
-$(".fade").hide()
-$(".p31").show()
+$(".bne30").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
 $(".bu31").addClass("active")
-});
-
-$(".b7").click(function () {
-$(".dots3").show()
-$(".dots4").hide()
-$(".fade").hide()
-$(".p21").show()
-$(".dot").removeClass("active")
-$(".bu21").addClass("active")
-});
-
-$(".bu31").click(function () {
-$(".dot").removeClass("active")
-$(this).addClass("active")
 $(".fade").hide()
 $(".p31").show()
+$(".bne31, .bpr30").show()
 });
 
-$(".bu32").click(function () {
+$(".bne31").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu32").addClass("active")
 $(".fade").hide()
 $(".p32").show()
+$(".bne32, .bpr31").show()
 });
 
-$(".bu33").click(function () {
+$(".bne32").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu33").addClass("active")
 $(".fade").hide()
 $(".p33").show()
+$(".bne33, .bpr32").show()
 });
 
-$(".bu34").click(function () {
+$(".bne33").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu34").addClass("active")
 $(".fade").hide()
 $(".p34").show()
+$(".bne34, .bpr33").show()
 });
 
-$(".bu35").click(function () {
+$(".bne34").click(function () {
+$(this).hide()
 $(".dot").removeClass("active")
-$(this).addClass("active")
+$(".bu35").addClass("active")
 $(".fade").hide()
 $(".p35").show()
+$(".bne35, .bpr34").show()
 });
 
-$(".mlines").click(function () {
-$(".dmenu").slideDown("500, 0")
-
-$(".mlines").css("opacity","0")
-$(".dclose").fadeIn("500, 0")
-
-});
-$(".dclose").click(function () {
-$(".dmenu").slideUp("500, 0")
-$(".mlines").css("opacity","1")
-
+$(".bne35").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu36").addClass("active")
+$(".fade").hide()
+$(".p36").show()
+$(".bne36, .bpr35").show()
 });
 
-$(".zoom").click(function () {
-$(".fade").toggleClass("transition")
+$(".bne36").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu37").addClass("active")
+$(".fade").hide()
+$(".p37").show()
+$(".bne37, .bpr36").show()
+});
 
+$(".bne37").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu38").addClass("active")
+$(".fade").hide()
+$(".p38").show()
+$(".bne38, .bpr37").show()
+});
+
+$(".bne38").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu39").addClass("active")
+$(".fade").hide()
+$(".p39").show()
+$(".bne39, .bpr38").show()
+});
+
+
+//PREVIUS
+$(".bpr1").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu1").addClass("active")
+$(".fade").hide()
+$(".p1").show()
+$(".pprev, .pnext").hide()
+$(".bne1").show()
+});
+
+$(".bpr2").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu2").addClass("active")
+$(".fade").hide()
+$(".p2").show()
+$(".pprev, .pnext").hide()
+$(".bpr1, .bne2").show()
+});
+
+$(".bpr3").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu3").addClass("active")
+$(".fade").hide()
+$(".p3").show()
+$(".pprev, .pnext").hide()
+$(".bpr2, .bne3").show()
+});
+
+$(".bpr4").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu4").addClass("active")
+$(".fade").hide()
+$(".p4").show()
+$(".pprev, .pnext").hide()
+$(".bpr3, .bne4").show()
+});
+
+$(".bpr5").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu5").addClass("active")
+$(".fade").hide()
+$(".p5").show()
+$(".pprev, .pnext").hide()
+$(".bpr4, .bne5").show()
+});
+
+$(".bpr6").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu6").addClass("active")
+$(".fade").hide()
+$(".p6").show()
+$(".pprev, .pnext").hide()
+$(".bpr5, .bne6").show()
+});
+
+$(".bpr7").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu7").addClass("active")
+$(".fade").hide()
+$(".p7").show()
+$(".pprev, .pnext").hide()
+$(".bpr6, .bne7").show()
+});
+
+$(".bpr8").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu8").addClass("active")
+$(".fade").hide()
+$(".p8").show()
+$(".pprev, .pnext").hide()
+$(".bpr7, .bne8").show()
+});
+
+$(".bpr9").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu9").addClass("active")
+$(".fade").hide()
+$(".p9").show()
+$(".pprev, .pnext").hide()
+$(".bpr8, .bne9").show()
+});
+
+$(".bpr10").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu10").addClass("active")
+$(".fade").hide()
+$(".p10").show()
+$(".pprev, .pnext").hide()
+$(".bpr9, .bne10").show()
+});
+
+$(".bpr11").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu11").addClass("active")
+$(".fade").hide()
+$(".p11").show()
+$(".pprev, .pnext").hide()
+$(".bpr10, .bne11").show()
+});
+
+$(".bpr12").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu12").addClass("active")
+$(".fade").hide()
+$(".p12").show()
+$(".pprev, .pnext").hide()
+$(".bpr11, .bne12").show()
+});
+
+$(".bpr13").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu13").addClass("active")
+$(".fade").hide()
+$(".p13").show()
+$(".pprev, .pnext").hide()
+$(".bpr12, .bne13").show()
+});
+
+$(".bpr14").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu14").addClass("active")
+$(".fade").hide()
+$(".p14").show()
+$(".pprev, .pnext").hide()
+$(".bpr13, .bne14").show()
+});
+
+$(".bpr15").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu15").addClass("active")
+$(".fade").hide()
+$(".p15").show()
+$(".pprev, .pnext").hide()
+$(".bpr14, .bne15").show()
+});
+
+$(".bpr16").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu16").addClass("active")
+$(".fade").hide()
+$(".p16").show()
+$(".pprev, .pnext").hide()
+$(".bpr15, .bne16").show()
+});
+
+$(".bpr17").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu17").addClass("active")
+$(".fade").hide()
+$(".p17").show()
+$(".pprev, .pnext").hide()
+$(".bpr16, .bne17").show()
+});
+
+$(".bpr18").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu18").addClass("active")
+$(".fade").hide()
+$(".p18").show()
+$(".pprev, .pnext").hide()
+$(".bpr17, .bne18").show()
+});
+
+$(".bpr19").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu19").addClass("active")
+$(".fade").hide()
+$(".p19").show()
+$(".pprev, .pnext").hide()
+$(".bpr18, .bne19").show()
+});
+
+$(".bpr20").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu20").addClass("active")
+$(".fade").hide()
+$(".p20").show()
+$(".pprev, .pnext").hide()
+$(".bpr19, .bne20").show()
+});
+
+$(".bpr21").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu21").addClass("active")
+$(".fade").hide()
+$(".p21").show()
+$(".pprev, .pnext").hide()
+$(".bpr20, .bne21").show()
+});
+
+$(".bpr22").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu22").addClass("active")
+$(".fade").hide()
+$(".p22").show()
+$(".pprev, .pnext").hide()
+$(".bpr21, .bne22").show()
+});
+
+$(".bpr23").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu23").addClass("active")
+$(".fade").hide()
+$(".p23").show()
+$(".pprev, .pnext").hide()
+$(".bpr22, .bne23").show()
+});
+
+$(".bpr24").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu24").addClass("active")
+$(".fade").hide()
+$(".p24").show()
+$(".pprev, .pnext").hide()
+$(".bpr23, .bne24").show()
+});
+
+$(".bpr25").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu25").addClass("active")
+$(".fade").hide()
+$(".p25").show()
+$(".pprev, .pnext").hide()
+$(".bpr24, .bne25").show()
+});
+
+$(".bpr26").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu26").addClass("active")
+$(".fade").hide()
+$(".p26").show()
+$(".pprev, .pnext").hide()
+$(".bpr25, .bne26").show()
+});
+
+$(".bpr27").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu27").addClass("active")
+$(".fade").hide()
+$(".p27").show()
+$(".pprev, .pnext").hide()
+$(".bpr26, .bne27").show()
+});
+
+$(".bpr28").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu28").addClass("active")
+$(".fade").hide()
+$(".p28").show()
+$(".pprev, .pnext").hide()
+$(".bpr27, .bne28").show()
+});
+
+$(".bpr29").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu29").addClass("active")
+$(".fade").hide()
+$(".p29").show()
+$(".pprev, .pnext").hide()
+$(".bpr28, .bne29").show()
+});
+
+$(".bpr30").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu30").addClass("active")
+$(".fade").hide()
+$(".p30").show()
+$(".pprev, .pnext").hide()
+$(".bpr29, .bne30").show()
+});
+
+$(".bpr31").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu31").addClass("active")
+$(".fade").hide()
+$(".p31").show()
+$(".pprev, .pnext").hide()
+$(".bpr30, .bne31").show()
+});
+
+$(".bpr32").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu32").addClass("active")
+$(".fade").hide()
+$(".p32").show()
+$(".pprev, .pnext").hide()
+$(".bpr31, .bne32").show()
+});
+
+$(".bpr33").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu33").addClass("active")
+$(".fade").hide()
+$(".p33").show()
+$(".pprev, .pnext").hide()
+$(".bpr32, .bne33").show()
+});
+
+$(".bpr34").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu34").addClass("active")
+$(".fade").hide()
+$(".p34").show()
+$(".pprev, .pnext").hide()
+$(".bpr33, .bne34").show()
+});
+
+$(".bpr35").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu35").addClass("active")
+$(".fade").hide()
+$(".p35").show()
+$(".pprev, .pnext").hide()
+$(".bpr34, .bne35").show()
+});
+
+$(".bpr36").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu36").addClass("active")
+$(".fade").hide()
+$(".p36").show()
+$(".pprev, .pnext").hide()
+$(".bpr35, .bne36").show()
+});
+
+$(".bpr37").click(function () {
+$(this).hide()
+$(".dot").removeClass("active")
+$(".bu37").addClass("active")
+$(".fade").hide()
+$(".p37").show()
+$(".pprev, .pnext").hide()
+$(".bpr36, .bne37").show()
 });
 
 
 
-
-
-
-
-
-
-</script>
-
+$(".pprev, .pnext").hide()
+$(".bne1").show()
+  </script>
 </body>
-</html> 
+</html>
+
+

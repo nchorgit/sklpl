@@ -1,4 +1,13 @@
 @font-face {
+    font-family: PF DinDisplay Pro;
+    src:url(/fonts/PFDinDisplayPro-Bold.woff) format("woff");
+    src:url(/fonts/PFDinDisplayPro-Bold.woff2) format("woff2")
+
+    font-weight: 500;
+    font-style: normal
+  }
+
+@font-face {
    font-family: cfasty;
   src: url(cfastystd-book-webfont.eot);
 }

@@ -1,53 +1,205 @@
-<link href="/all.css" rel="stylesheet" type="text/css">
-<div class="pagination">
-            <div class="pnum1">
-                
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">></a>
-                
-              </div>
-              <div class="pnum2">
-                <a href="#"><</a>
-                <a href="#" class="active">6</a>
-                <a href="#">7</a>
-                <a href="#">8</a>
-                <a href="#">9</a>
-                <a href="#">10</a>
-                <a href="#">></a>
-                
-              </div>
-              <div class="pnum3">
-                <a href="#"><</a>
-                <a href="#" class="active">11</a>
-                <a href="#">12</a>
-                <a href="#">13</a>
-                <a href="#">14</a>
-                <a href="#">15</a>
-                <a href="#">></a>
-                
-              </div>
-              <div class="pnum4">
-                <a href="#"><</a>
-                <a href="#" class="active">16</a>
-                <a href="#">17</a>
-                <a href="#">18</a>
-                <a href="#">19</a>
-                <a href="#">20</a>
-                <a href="#">></a>
-                
-              </div>
-
-
-            
-            <p>ΣΕΛΙΔΑ <strong>1</strong> ΑΠΟ <strong>7</strong></p>
-</div>
-
 <style>
- .pagination a:nth-child(1), .pagination a:last-child {
-    display:block
-}
+  .mat-tab-header,
+  .mat-tab-group.mat-background-accent .mat-tab-links,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-header,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-links {
+    background-color: #ff4081
+  }
+
+  .mat-tab-group.mat-background-accent .mat-tab-label,
+  .mat-tab-group.mat-background-accent .mat-tab-link,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-label,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-link {
+    color: #fff
+  }
+
+  .mat-tab-group.mat-background-accent .mat-tab-label.mat-tab-disabled,
+  .mat-tab-group.mat-background-accent .mat-tab-link.mat-tab-disabled,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-label.mat-tab-disabled,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-link.mat-tab-disabled {
+    color: hsla(0, 0%, 100%, .4)
+  }
+
+  .mat-tab-group.mat-background-accent .mat-tab-header-pagination-chevron,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-chevron {
+    border-color: #fff
+  }
+
+  .mat-tab-group.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,
+  .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+    border-color: hsla(0, 0%, 100%, .4)
+  }
+
+  .mat-tab-group.mat-background-accent .mat-ripple-element,
+  .mat-tab-nav-bar.mat-background-accent .mat-ripple-element {
+    background-color: hsla(0, 0%, 100%, .12)
+  }
+
+  .mat-tab-group.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),
+  .mat-tab-group.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+  .mat-tab-group.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+  .mat-tab-group.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled),
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+    background-color: rgba(255, 205, 210, .3)
+  }
+
+  .mat-tab-group.mat-background-warn .mat-tab-header,
+  .mat-tab-group.mat-background-warn .mat-tab-links,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-header,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-links {
+    background-color: #f44336
+  }
+
+  .mat-tab-group.mat-background-warn .mat-tab-label,
+  .mat-tab-group.mat-background-warn .mat-tab-link,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-label,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-link {
+    color: #fff
+  }
+
+  .mat-tab-group.mat-background-warn .mat-tab-label.mat-tab-disabled,
+  .mat-tab-group.mat-background-warn .mat-tab-link.mat-tab-disabled,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-label.mat-tab-disabled,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-link.mat-tab-disabled {
+    color: hsla(0, 0%, 100%, .4)
+  }
+
+  .mat-tab-group.mat-background-warn .mat-tab-header-pagination-chevron,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-chevron {
+    border-color: #fff
+  }
+
+  .mat-tab-group.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,
+  .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+    border-color: hsla(0, 0%, 100%, .4)
+  }
+
+  .mat-tab-group.mat-background-warn .mat-ripple-element,
+  .mat-tab-nav-bar.mat-background-warn .mat-ripple-element {
+    background-color: hsla(0, 0%, 100%, .12)
+  }
+
+  .mat-toolbar {
+    background: #f5f5f5;
+    color: rgba(0, 0, 0, .87)
+  }
+
+  .mat-toolbar.mat-primary {
+    background: #3f51b5;
+    color: #fff
+  }
+
+  .mat-toolbar.mat-accent {
+    background: #ff4081;
+    color: #fff
+  }
+
+  .mat-toolbar.mat-warn {
+    background: #f44336;
+    color: #fff
+  }
+
+  .mat-toolbar .mat-focused .mat-form-field-ripple,
+  .mat-toolbar .mat-form-field-ripple,
+  .mat-toolbar .mat-form-field-underline {
+    background-color: currentColor
+  }
+
+  .mat-toolbar .mat-focused .mat-form-field-label,
+  .mat-toolbar .mat-form-field-label,
+  .mat-toolbar .mat-form-field.mat-focused .mat-select-arrow,
+  .mat-toolbar .mat-select-arrow,
+  .mat-toolbar .mat-select-value {
+    color: inherit
+  }
+
+  .mat-toolbar .mat-input-element {
+    caret-color: currentColor
+  }
+
+  .mat-tooltip {
+    background: rgba(97, 97, 97, .9)
+  }
+
+  .mat-tree {
+    background: #fff
+  }
+
+  .mat-nested-tree-node,
+  .mat-tree-node {
+    color: rgba(0, 0, 0, .87)
+  }
+
+  .mat-snack-bar-container {
+    color: hsla(0, 0%, 100%, .7);
+    background: #323232;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12)
+  }
+
+  .mat-simple-snackbar-action {
+    color: #ff4081
+  }
+
+  @font-face {
+    font-family: PF DinDisplay Pro;
+    src: url(images/PFDinDisplayPro-Regular.f92694cd0a98f6b582bbd2372b962e1f.eot);
+    src: url(images/PFDinDisplayPro-Regular.f92694cd0a98f6b582bbd2372b962e1f.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Regular.840952ed9468a2c7444f89b6f748e734.woff2) format("woff2"), url(images/PFDinDisplayPro-Regular.21be48ba435316c8a4cd39438cd89083.woff) format("woff"), url(icons/PFDinDisplayPro-Regular.492c9c0e57391455be090c368f110159.svg#PFDinDisplayPro-Regular) format("svg");
+    font-weight: 400;
+    font-style: normal
+  }
+
+  @font-face {
+    font-family: PF DinDisplay Pro;
+    src: url(images/PFDinDisplayPro-Medium.0797b347986eae5c614fbb0bdef19a00.eot);
+    src: url(images/PFDinDisplayPro-Medium.0797b347986eae5c614fbb0bdef19a00.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Medium.61e7fd90675f0eb31beed62b660edde2.woff2) format("woff2"), url(images/PFDinDisplayPro-Medium.3ff30429317b30c83e51bb3917dcd746.woff) format("woff"), url(icons/PFDinDisplayPro-Medium.880c53c6060e552d6298cd6d00c53475.svg#PFDinDisplayPro-Medium) format("svg");
+    font-weight: 500;
+    font-style: normal
+  }
+
+  @font-face {
+    font-family: PF DinDisplay Pro;
+    src: url(images/PFDinDisplayPro-Bold.3ecf6802a017e0bb0231c889e64d6cd5.eot);
+    src: url(images/PFDinDisplayPro-Bold.3ecf6802a017e0bb0231c889e64d6cd5.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Bold.97f76d8aeaf843ff0dc265092c4d465b.woff2) format("woff2"), url(images/PFDinDisplayPro-Bold.2096941a0421ea274fe3c5a229094a07.woff) format("woff"), url(icons/PFDinDisplayPro-Bold.c9f8a3f38731ed291ce98d40017a1221.svg#PFDinDisplayPro-Bold) format("svg");
+    font-weight: 700;
+    font-style: normal
+  }
+
+  @font-face {
+    font-family: PF DinDisplay Pro;
+    src: url(images/PFDinDisplayPro-Light.ac63e8c39541863607d41d5fb9ca1c4e.eot);
+    src: url(images/PFDinDisplayPro-Light.ac63e8c39541863607d41d5fb9ca1c4e.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Light.23cdddacd0d56977093551f2faea9a13.woff2) format("woff2"), url(images/PFDinDisplayPro-Light.9a5171a196de11651813859c360f195f.woff) format("woff"), url(icons/PFDinDisplayPro-Light.f8200a5e53e2ba0f6b4a4a92c6d26e08.svg#PFDinDisplayPro-Light) format("svg");
+    font-weight: 300;
+    font-style: normal
+  }
+
+  @font-face {
+    font-family: ibredesign;
+    src: url(images/ibredesign.8ac67cffcdb9742054b4846cd636dfcb.eot);
+    src: url(images/ibredesign.8ac67cffcdb9742054b4846cd636dfcb.eot?#iefix) format("embedded-opentype"), url(images/ibredesign.f37dbd23cb060e9131882e3a972bc670.woff) format("woff"), url(images/ibredesign.3ccdfd1d0692750144494cd89b56cded.ttf) format("truetype"), url(icons/ibredesign.5170d75ce2cc052224839012ce48c433.svg#ibredesign) format("svg");
+    font-weight: 400;
+    font-style: normal
+  }
+
+  [data-icon]:before {
+    font-family: ibredesign !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+  }
+
+  [class^=cx-icon]:before {
+    content: "" !important
+  }
+
+  [class*="
+icon-"]:before,[class^=icon-]:before{font-family:ibredesign!important;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;speak:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-copy:before{content:"\61"}
 </style>
