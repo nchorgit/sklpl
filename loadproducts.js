@@ -25,7 +25,7 @@ $(".sload1").load("/products/anthela/ladia/anthela-elaiolado-1l.html .product");
  $(".sload25").load("/products/barron/trofes-zwwn/barron-kshra-trofh-gia-gates-me-mosxari-2kg.html .product");
  $(".sload26").load("/products/barron/trofes-zwwn/barron-kshra-trofh-gia-skylous-me-kotopoulo-3kg.html .product");
  $(".sload27").load("/products/barron/trofes-zwwn/barron-kshra-trofh-gia-skylous-me-mosxari-3kg.html .product");
- $(".sload28").load("/products/barron/trofes-zwwn/barron-kshra-trofh-gia-skylous-me-mosxari-10kg.html .product");
+ $(".sload28").load("/products/barron/trofes-zwwn/barron-kshra-trofh-gia-skylous-me-mosxari-10kg.html .product ");
  $(".sload29").load("/products/barron/trofes-zwwn/barron-mous-me-kotopoulo-gia-gates-85g.html .product");
  $(".sload30").load("/products/barron/trofes-zwwn/barron-mous-me-mosxari-gia-gates-85g.html .product");
  $(".sload31").load("/products/barron/trofes-zwwn/barron-mpoukitses-me-kotopoulo-gia-gates-400g.html .product");
