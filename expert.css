@@ -21,12 +21,16 @@ display: none;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 18px;
+    grid-gap: 24px 18px;
     margin-top: 60px;
     padding: 0;
 }
 .lprod table {display: none;}
-.lprod li {list-style-type: none;}
+.lprod li {
+    list-style-type: none;
+    border: 2px solid #eee;
+    border-radius: 6px;
+}
 .lprod .product {
 padding: 0;
 background-color: #fff;
@@ -99,16 +103,16 @@ font-size: 13px;
 opacity: .6;
 margin-right: 4px;
 }
-.explist1 :hover {
-opacity: .95;
+.lprod li:hover {
+opacity: .85;
 transition: all .3s
 }
 
-.explist1 {
+.lprod li {
 
 transition: all .3s
 }
-.explist1 a {
+.product-url a {
 text-decoration: none;
 transition: all .3s
 }
