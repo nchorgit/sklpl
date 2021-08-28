@@ -22,7 +22,7 @@ body {
 body.marata {
     background: #fff;
 }
-
+ .pnum2, .pnum3, .pnum4 {display: none;}
 .stitle {
     font-size: 25px;
     font-weight: 800;
