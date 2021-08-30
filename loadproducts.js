@@ -721,3 +721,8 @@ $(".sload1").load("/products/anthela/ladia/anthela-elaiolado-1l.html h3, #varos,
  $(".sload721").load("/products/toni/tonoi/toni-tonosalata-me-kalampoki-170g.html h3, #varos, #barcode, .pimg, .plabels");
  $(".sload722").load("/products/toni/tonoi/toni-tonosalata-meksikana-170g.html h3, #varos, #barcode, .pimg, .plabels");
  $(".sload723").load("/products/toni/tonoi/toni-tonosalata-mesogeiakh-170g.html h3, #varos, #barcode, .pimg, .plabels");
+ $(".sload724").load("/products/sklavenitis/kshroi-karpoi/sklavenitis-amygdala-psixa-pshmena-mh-alatismena-200g.html h3, #varos, #barcode, .pimg, .plabels");
+ $(".sload725").load("/products/sklavenitis/kshroi-karpoi/sklavenitis-amygdala-psixa-apofloiwmena-pshmena-mh-alatismena-200g.html h3, #varos, #barcode, .pimg, .plabels");
+ $(".sload726").load("/products/sklavenitis/kshroi-karpoi/sklavenitis-amygdala-psixa-pshmena-alatismena-200g.html h3, #varos, #barcode, .pimg, .plabels");
+ $(".sload727").load("/products/sklavenitis/kshroi-karpoi/sklavenitis-amygdala-psixa-apofloiwmena-200g.html h3, #varos, #barcode, .pimg, .plabels");
+ $(".sload728").load("/products/sklavenitis/kshroi-karpoi/sklavenitis-amygdala-psixa-wma-200g.html h3, #varos, #barcode, .pimg, .plabels");
