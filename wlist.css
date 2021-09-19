@@ -16,8 +16,8 @@
     height: 88px;
     width: auto;
     position: absolute;
-    top: 2px;
-    left: 4px;
+    top: 0px;
+    left: 2px;
     border-right: 2px solid #eee;
 }
 .wlist li {

@@ -19,7 +19,7 @@
             autoScroll:             false,           //boolean: scroll to top of the container if a user clicks on a pagination link
             scope:                  '',             //which elements to target
             pagePosition:       ['top'],     //defines where the pagination will be displayed
-            containerTag:           'div',
+            containerTag:           'ul',
             paginationTag:          'div',
             itemTag:                'div',
             linkTag:                'a',

@@ -3,6 +3,8 @@
 <head>
 <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 <title>Σκλαβενίτης: Προϊόντα στην ετικέτα Σκλαβενίτης</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,19 +12,18 @@
 <link href="/all.css" rel="stylesheet" type="text/css">
 <link href="/expert.css" rel="stylesheet" type="text/css">
 <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
-<link href="/wlist.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-<div class="hload"><div class="progress-container">
-  <div class="progress-bar" id="myBar"></div>
-  </div></div>
+<div class="hload"></div>
+<div class="cattitle"><b>190</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Σκλαβενίτης</strong>
+    </div>
 
-<div class="cattitle"><b>190</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Σκλαβενίτης</strong></div>
 <div class="wrapper">
 <div class="top">
 <div class="views">
-<!--<a class="aorder" href="#">alpha</a>
-<a class="sort" href="#">A</a>-->
+<a class="aorder" href="#">alpha</a>
+<a class="sort" href="#">A</a>
 <a class="wnormal pointers" href="#">
 <img width="24" height="24" src="/media/svg/gridlist.svg" alt="">
 </a>
@@ -32,19 +33,19 @@
 </div>
 </div>
 <ul class="lprod"></ul>
-<p style="
-    padding: 15px;
-    text-align: center;
-    background: #ffffff;
-    border: 2px solid #eee;
-    border-radius: 4px;
-">Φτάσατε στο τέλος</p>
+<ul id="pagin" class="browsethearchive-pagination">
+         
+</ul>
+<p class="result">
+<span>190</span> από 190 προϊόντα</p>
 </div>
+
+
 <div class="fload"></div>
 <script>
 $(".fload").load("/footer.html");
 $(".hload").load("/header.html");
-$(".lprod").load("/experts/testexp.html .sklavenitis").fadeIn(500, 0);
+
 $("li").fadeIn(500, 0);
 
 $(".wnormal").addClass("views-active");
@@ -68,6 +69,20 @@ $(".wnormal").click(function () {
     $(".wlistes").removeClass("views-active")
   });
 
+  $(".aorder").click(function() {
+  var $sortedDiv = $('.lprod li').sort(function(a,b){
+     var text1 = $(a).find('li').text();
+     var text2 = $(b).find('li').text();
+     return String.prototype.localeCompare.call(text1.toLowerCase(),text2.toLowerCase());
+  });
+  $('.lprod').html($sortedDiv);
+  $(".lprod").hide();
+   
+    $(".lprod").stop().fadeIn(500);
+    $(".aorder").addClass("aorderout");
+});
+$(".aorderout").click(function() { return false; });
+
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
 
@@ -77,10 +92,67 @@ function myFunction() {
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
 }
+
+/*$(document).ready(function() {
+  
+  var show_per_page = 12;
+  var number_of_items = $(".lprod").find('li').length;
+  var number_of_pages = Math.ceil(number_of_items / show_per_page);
+  
+  $('.cattitle').after('<div class=cout><div class=controls></div></div><input id=current_page type=hidden><input id=show_per_page type=hidden>');
+  
+  $('.cattitle b').append('<input id=current_title type=show>');
+  $('.cout').append('<input id=current type=show><input id=current_pages type=show>');
+  $('#current_title').val(number_of_items);
+  $('#current_title').val(number_of_items);
+  $('#show_per_page').val(show_per_page);
+  $('#current_pages').val(number_of_pages);
+  
+  var navigation_html = '<a class="prev" onclick="previous()">‹</a>';
+  var current_link = 0;
+  while (number_of_pages > current_link) {
+    navigation_html += '<a class="page" onclick="go_to_page(' + current_link + ')" longdesc="' + current_link + '">' + (current_link + 1) + '</a>';
+    current_link++;
+  }
+  navigation_html += '<a class="next" onclick="next()">›</a>';
+  
+  $('.controls').html(navigation_html);
+  $('.controls .page:first').addClass('active');
+  
+ 
+  
+  $(".lprod").find("li").css('display', 'none');
+  $(".lprod").find("li").slice(0, show_per_page).css('display', 'block');
+  
+  });*/
+
+  $(".lprod").load("/experts/testexp.html")
 </script>
 
 </body>
 <style>
+    .wrapper {
+    max-width: 1300px;
+    padding: 15px;
+    margin: -25px auto !important;
+    overflow: auto;
+}
+.result {
+    padding: 15px;
+    text-align: center;
+    background: #efdcca;
+    border: 0px solid #eee;
+    border-radius: 4px;
+}
+
+.result span {
+    padding: 5px 20px;
+    background: #d91a32;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 5px;
+}
 .product-url a {
     text-decoration: none;
 }
@@ -102,5 +174,7 @@ function myFunction() {
   background: #d91a32;
   width: 0%;
 }
+
+
 </style>
 </html>
