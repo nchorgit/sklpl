@@ -5,78 +5,51 @@
     grid-gap: 18px;
     margin-top: 60px;
 }
-.wlist .explist {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    max-width: 100%;
-    background: #fff;
-}
-.wlist .exptitle {
-    display: flex;
-    padding: 20px 20px 20px 110px;
-    text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    font-size: 19px;
-    height: 45px;
+.wlist h3.post-title.entry-title {
+    padding: 20px 20px 20px 115px;
     text-align: left;
-    align-items: center;
     justify-content: left;
-    letter-spacing: -.3px;
-    background: #fff;
+    border-bottom: 2px solid #eee;
+    background: transparent;
 }
-.wlist .expbc {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #eeee;
-    font-size: 17px;
-    background: white;
-    color: #444;
-    width: 50%;
-    float: left;
-}
-.wlist .expsize {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-left: 2px solid #eee;
-    font-size: 17px;
-    background: white;
-    color: #444;
+.wlist .pimg img {
+    height: 88px;
     width: auto;
-}
-.wlist .expimage img {
-    width: 85px;
-    height: auto;
-    background: white;
-    margin: 0;
-    padding-top: 0;
     position: absolute;
-    left: 0;
-    top: 0;
+    top: 2px;
+    left: 4px;
     border-right: 2px solid #eee;
 }
-
-.wlist .explabel {
-    background: transparent;
-    padding: 10px;
-    display: flex;
-    text-align: center;
-    justify-content: left;
-    border-radius: 0 0 4px 4px;
-    margin: 0;
-    width: 100%;
+.wlist li {
+    list-style-type: none;
+    position: relative;
 }
-.wlist .explabel span a {
-    padding: 7px 8px;
-    background: #eeeeee;
-    text-decoration: none;
-    color: #444;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 2px;
+.wlist #barcode, .wlist #varos {
+    background: #fff;
+    border-bottom: 0px solid #eeee;
+    display: flex;
+    float: left;
+    height: 40px;
+    padding: 0px;
+    width: 50%;
+}
+.wlist #barcode {
+    border-right: 2px solid #eeee;
+    box-sizing: border-box;
+}
+.wlist .plabels {
+    padding: 5px;
+    justify-content: left;
+    background: #fff;
+    border: 2px solid #eee;
+}
+.wlist a.plabel, .wlist a.pcategory {
+    background: #eee;
+    color: #333;
+}
+.wlist a:hover.plabel, .wlist a:hover.pcategory {
+    background: #ddd;
+    color: #333;
 }
 @media screen and (max-width:740px) {
     .wlist {

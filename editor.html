@@ -3,12 +3,28 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i" rel="stylesheet">
    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+   
     
   <script type="text/javascript">
+  
   tinymce.init({
+    /*setup: function(editor) {
+      editor.on('init', function(e) {
+        editor.execCommand('mceFullScreen');
+      });
+    },*/
+ 
     selector: '#myTextarea',
+    plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
+ 
+  images_upload_base_path: '/media/images',
+  language: 'el',
       fontsize_formats: "6px 8px 9px 10px 11px 12px 13px 14px 15px 16px 17px 18px 19px 20px 22px 24px 25px 26px 28px 30px 32px 34px 36px 40px 44px 48px 50px",
       toolbar_mode: 'wrap',
+      skin: "snow",
+    icons: "thin",
        content_css: "/sklcssframework.css",
       entity_encoding : "raw",
       importcss_append: true,
@@ -21,13 +37,13 @@
 pagebreak_separator: "<!--more-->",
     
     plugins: [
-      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+      'tinydrive advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
       'searchreplace wordcount visualblocks visualchars codesample code fullscreen insertdatetime media nonbreaking',
-      'table emoticons template paste help fullpage importcss'
+      'table emoticons template paste help fullpage importcss imagetools'
     ],
     
     toolbar: 'undo redo | styleselect | fontsizeselect | bold italic underline removeformat codesample | forecolor backcolor emoticons charmap | alignleft aligncenter alignright alignjustify | ' +
-      'bullist numlist outdent indent table pagebreak | link image | print preview code media fullpage | ' +
+      'bullist numlist outdent indent table pagebreak | link image insertfile | print preview code media fullpage | ' +
       '| help',
     menu: {
       favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons '}
@@ -72,7 +88,9 @@ tinymce.activeEditor.dom.removeClass(tinymce.activeEditor.dom.select('p'), 'fimg
 </head>
 
 <body>
-    
+    <div class="top"><div class="logopl">
+        <a href="/index.html"><img src="/media/svg/skllogo-white.svg" alt=""></a>
+    </div></div> 
 
   <textarea id="myTextarea">
  <!DOCTYPE html>
@@ -272,17 +290,33 @@ tinymce.activeEditor.dom.removeClass(tinymce.activeEditor.dom.select('p'), 'fimg
 </html>
     </textarea>
 <style>
-
+.top {
+    background: #333;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    height: 51px;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+.top img {
+    width: auto;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 15px;
+}
 body {
-  margin: 20px auto;
+    margin: 20px auto;
     font-family: google sans;
-    max-width: 1300px
-   
+    overflow: hidden;
 }
     .pblue a {text-decoration: none; padding: 10px; color: white; background: #357ae8; display: block; margin-top:-10px; }
     .pblue a:hover {background: tomato; display: block;}
-.tox.tox-tinymce {
+    .tox.tox-tinymce {
     height: 100vh !important;
+    margin: -1px -1px;
 }
 h2 {
     background: #4d356a;

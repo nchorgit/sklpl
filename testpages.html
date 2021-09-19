@@ -1,205 +1,106 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Σκλαβενίτης: Προϊόντα στην ετικέτα Σκλαβενίτης</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
+<link href="/all.css" rel="stylesheet" type="text/css">
+<link href="/expert.css" rel="stylesheet" type="text/css">
+<link href="/sklcssframework.css" rel="stylesheet" type="text/css">
+<link href="/wlist.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="hload"><div class="progress-container">
+  <div class="progress-bar" id="myBar"></div>
+  </div></div>
+
+<div class="cattitle"><b>190</b> Προϊόντα στην ετικέτα: <strong><i class="fas fa-tags"></i>Σκλαβενίτης</strong></div>
+<div class="wrapper">
+<div class="top">
+<div class="views">
+<!--<a class="aorder" href="#">alpha</a>
+<a class="sort" href="#">A</a>-->
+<a class="wnormal pointers" href="#">
+<img width="24" height="24" src="/media/svg/gridlist.svg" alt="">
+</a>
+<a class="wlistes" href="#">
+<img width="24" height="20" src="/media/svg/wlist.svg" alt="">
+</a>
+</div>
+</div>
+<ul class="lprod"></ul>
+<p style="
+    padding: 15px;
+    text-align: center;
+    background: #ffffff;
+    border: 2px solid #eee;
+    border-radius: 4px;
+">Φτάσατε στο τέλος</p>
+</div>
+<div class="fload"></div>
+<script>
+$(".fload").load("/footer.html");
+$(".hload").load("/header.html");
+$(".lprod").load("/experts/testexp.html .sklavenitis").fadeIn(500, 0);
+$("li").fadeIn(500, 0);
+
+$(".wnormal").addClass("views-active");
+$(".wlistes").click(function () {
+    $(".lprod").addClass("wlist");
+    $(".lprod").hide();
+    $(".lprod").stop().fadeIn(500);
+    $(".wnormal").removeClass("pointers");
+    $(".wlistes").addClass("pointers");
+    $(".wlistes").addClass("views-active");
+    $(".wnormal").removeClass("views-active");
+    
+});
+$(".wnormal").click(function () {
+    $(".lprod").removeClass("wlist");
+    $(".lprod").hide();
+    $(".lprod").stop().fadeIn(500);
+    $(".wlistes").removeClass("pointers");
+    $(".wnormal").addClass("views-active");
+    $(".wnormal").addClass("pointers");
+    $(".wlistes").removeClass("views-active")
+  });
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+
+</body>
 <style>
-  .mat-tab-header,
-  .mat-tab-group.mat-background-accent .mat-tab-links,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-header,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-links {
-    background-color: #ff4081
-  }
+.product-url a {
+    text-decoration: none;
+}
 
-  .mat-tab-group.mat-background-accent .mat-tab-label,
-  .mat-tab-group.mat-background-accent .mat-tab-link,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-label,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-link {
-    color: #fff
-  }
+.top {
+    position: relative;
+}
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: transparent;
+    position: absolute;
+    bottom: -8px;
+}
 
-  .mat-tab-group.mat-background-accent .mat-tab-label.mat-tab-disabled,
-  .mat-tab-group.mat-background-accent .mat-tab-link.mat-tab-disabled,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-label.mat-tab-disabled,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-link.mat-tab-disabled {
-    color: hsla(0, 0%, 100%, .4)
-  }
-
-  .mat-tab-group.mat-background-accent .mat-tab-header-pagination-chevron,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-chevron {
-    border-color: #fff
-  }
-
-  .mat-tab-group.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,
-  .mat-tab-nav-bar.mat-background-accent .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
-    border-color: hsla(0, 0%, 100%, .4)
-  }
-
-  .mat-tab-group.mat-background-accent .mat-ripple-element,
-  .mat-tab-nav-bar.mat-background-accent .mat-ripple-element {
-    background-color: hsla(0, 0%, 100%, .12)
-  }
-
-  .mat-tab-group.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),
-  .mat-tab-group.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-  .mat-tab-group.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-  .mat-tab-group.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled),
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-    background-color: rgba(255, 205, 210, .3)
-  }
-
-  .mat-tab-group.mat-background-warn .mat-tab-header,
-  .mat-tab-group.mat-background-warn .mat-tab-links,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-header,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-links {
-    background-color: #f44336
-  }
-
-  .mat-tab-group.mat-background-warn .mat-tab-label,
-  .mat-tab-group.mat-background-warn .mat-tab-link,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-label,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-link {
-    color: #fff
-  }
-
-  .mat-tab-group.mat-background-warn .mat-tab-label.mat-tab-disabled,
-  .mat-tab-group.mat-background-warn .mat-tab-link.mat-tab-disabled,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-label.mat-tab-disabled,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-link.mat-tab-disabled {
-    color: hsla(0, 0%, 100%, .4)
-  }
-
-  .mat-tab-group.mat-background-warn .mat-tab-header-pagination-chevron,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-chevron {
-    border-color: #fff
-  }
-
-  .mat-tab-group.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,
-  .mat-tab-nav-bar.mat-background-warn .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
-    border-color: hsla(0, 0%, 100%, .4)
-  }
-
-  .mat-tab-group.mat-background-warn .mat-ripple-element,
-  .mat-tab-nav-bar.mat-background-warn .mat-ripple-element {
-    background-color: hsla(0, 0%, 100%, .12)
-  }
-
-  .mat-toolbar {
-    background: #f5f5f5;
-    color: rgba(0, 0, 0, .87)
-  }
-
-  .mat-toolbar.mat-primary {
-    background: #3f51b5;
-    color: #fff
-  }
-
-  .mat-toolbar.mat-accent {
-    background: #ff4081;
-    color: #fff
-  }
-
-  .mat-toolbar.mat-warn {
-    background: #f44336;
-    color: #fff
-  }
-
-  .mat-toolbar .mat-focused .mat-form-field-ripple,
-  .mat-toolbar .mat-form-field-ripple,
-  .mat-toolbar .mat-form-field-underline {
-    background-color: currentColor
-  }
-
-  .mat-toolbar .mat-focused .mat-form-field-label,
-  .mat-toolbar .mat-form-field-label,
-  .mat-toolbar .mat-form-field.mat-focused .mat-select-arrow,
-  .mat-toolbar .mat-select-arrow,
-  .mat-toolbar .mat-select-value {
-    color: inherit
-  }
-
-  .mat-toolbar .mat-input-element {
-    caret-color: currentColor
-  }
-
-  .mat-tooltip {
-    background: rgba(97, 97, 97, .9)
-  }
-
-  .mat-tree {
-    background: #fff
-  }
-
-  .mat-nested-tree-node,
-  .mat-tree-node {
-    color: rgba(0, 0, 0, .87)
-  }
-
-  .mat-snack-bar-container {
-    color: hsla(0, 0%, 100%, .7);
-    background: #323232;
-    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12)
-  }
-
-  .mat-simple-snackbar-action {
-    color: #ff4081
-  }
-
-  @font-face {
-    font-family: PF DinDisplay Pro;
-    src: url(images/PFDinDisplayPro-Regular.f92694cd0a98f6b582bbd2372b962e1f.eot);
-    src: url(images/PFDinDisplayPro-Regular.f92694cd0a98f6b582bbd2372b962e1f.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Regular.840952ed9468a2c7444f89b6f748e734.woff2) format("woff2"), url(images/PFDinDisplayPro-Regular.21be48ba435316c8a4cd39438cd89083.woff) format("woff"), url(icons/PFDinDisplayPro-Regular.492c9c0e57391455be090c368f110159.svg#PFDinDisplayPro-Regular) format("svg");
-    font-weight: 400;
-    font-style: normal
-  }
-
-  @font-face {
-    font-family: PF DinDisplay Pro;
-    src: url(images/PFDinDisplayPro-Medium.0797b347986eae5c614fbb0bdef19a00.eot);
-    src: url(images/PFDinDisplayPro-Medium.0797b347986eae5c614fbb0bdef19a00.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Medium.61e7fd90675f0eb31beed62b660edde2.woff2) format("woff2"), url(images/PFDinDisplayPro-Medium.3ff30429317b30c83e51bb3917dcd746.woff) format("woff"), url(icons/PFDinDisplayPro-Medium.880c53c6060e552d6298cd6d00c53475.svg#PFDinDisplayPro-Medium) format("svg");
-    font-weight: 500;
-    font-style: normal
-  }
-
-  @font-face {
-    font-family: PF DinDisplay Pro;
-    src: url(images/PFDinDisplayPro-Bold.3ecf6802a017e0bb0231c889e64d6cd5.eot);
-    src: url(images/PFDinDisplayPro-Bold.3ecf6802a017e0bb0231c889e64d6cd5.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Bold.97f76d8aeaf843ff0dc265092c4d465b.woff2) format("woff2"), url(images/PFDinDisplayPro-Bold.2096941a0421ea274fe3c5a229094a07.woff) format("woff"), url(icons/PFDinDisplayPro-Bold.c9f8a3f38731ed291ce98d40017a1221.svg#PFDinDisplayPro-Bold) format("svg");
-    font-weight: 700;
-    font-style: normal
-  }
-
-  @font-face {
-    font-family: PF DinDisplay Pro;
-    src: url(images/PFDinDisplayPro-Light.ac63e8c39541863607d41d5fb9ca1c4e.eot);
-    src: url(images/PFDinDisplayPro-Light.ac63e8c39541863607d41d5fb9ca1c4e.eot?#iefix) format("embedded-opentype"), url(images/PFDinDisplayPro-Light.23cdddacd0d56977093551f2faea9a13.woff2) format("woff2"), url(images/PFDinDisplayPro-Light.9a5171a196de11651813859c360f195f.woff) format("woff"), url(icons/PFDinDisplayPro-Light.f8200a5e53e2ba0f6b4a4a92c6d26e08.svg#PFDinDisplayPro-Light) format("svg");
-    font-weight: 300;
-    font-style: normal
-  }
-
-  @font-face {
-    font-family: ibredesign;
-    src: url(images/ibredesign.8ac67cffcdb9742054b4846cd636dfcb.eot);
-    src: url(images/ibredesign.8ac67cffcdb9742054b4846cd636dfcb.eot?#iefix) format("embedded-opentype"), url(images/ibredesign.f37dbd23cb060e9131882e3a972bc670.woff) format("woff"), url(images/ibredesign.3ccdfd1d0692750144494cd89b56cded.ttf) format("truetype"), url(icons/ibredesign.5170d75ce2cc052224839012ce48c433.svg#ibredesign) format("svg");
-    font-weight: 400;
-    font-style: normal
-  }
-
-  [data-icon]:before {
-    font-family: ibredesign !important;
-    content: attr(data-icon);
-    font-style: normal !important;
-    font-weight: 400 !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-  }
-
-  [class^=cx-icon]:before {
-    content: "" !important
-  }
-
-  [class*="
-icon-"]:before,[class^=icon-]:before{font-family:ibredesign!important;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;speak:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-copy:before{content:"\61"}
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #d91a32;
+  width: 0%;
+}
 </style>
+</html>
