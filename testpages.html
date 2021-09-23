@@ -19,7 +19,22 @@
 </div>
 <div class="wrapper">
 <div class="top">
-  
+<div class="topcumb">
+<p>Φίλτρα</p>
+<div class="fcat">
+<p class="fcattext">Κατηγορίες</p>
+<div class="fcatdrop">
+<a href="test"></a>
+<a href="test"></a>
+<a href="test"></a>
+<a href="test"></a>
+<a href="test"></a>
+<a href="test"></a>
+<a href="test"></a>
+
+</div>
+</div>
+</div> 
 <div class="views">
 <a class="aorder" href="#">alpha</a>
 <a class="sort" href="#">A</a>
@@ -32,9 +47,37 @@
 </div>
 </div>
 <ul class="lprod"></ul>
-<p class="result">
-    <span>24</span> από 190 προϊόντα <span class="more" style="margin-left: 40px;margin-right:0;background: #fff;color: #6f6056;">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-right"></i>
-    </span></p>
+<p class="result res1">
+<span class="pshow">24</span> από 190 προϊόντα <span class="more">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-down"></i>
+</span></p>
+
+<p class="result res2">
+<span class="pshow">48</span> από 190 προϊόντα <span class="more">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-down"></i>
+</span></p>
+<p class="result res3">
+<span class="pshow">72</span> από 190 προϊόντα <span class="more">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-down"></i>
+</span></p>
+
+<p class="result res4">
+<span class="pshow">96</span> από 190 προϊόντα <span class="more">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-down"></i>
+</span></p>
+
+<p class="result res5">
+<span class="pshow">120</span> από 190 προϊόντα <span class="more">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-down"></i>
+</span></p>
+
+<p class="result res6">
+<span class="pshow">144</span> από 190 προϊόντα <span class="more">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-down"></i>
+</span></p>
+
+<p class="result res7">
+<span class="pshow">188</span> από 190 προϊόντα <span class="more">Περισσότερα <i style="margin-left: 10px;font-size: 14px;opacity: .5;" class="fas fa-arrow-down"></i>
+</span></p>
+
+<p class="result resall">
+<span class="pshow">190</span> από 190 προϊόντα</p>
+
+
 </div>
 <div class="fload"></div>
 <script>
@@ -42,33 +85,33 @@ $(".fload").load("/footer.html");
 $(".hload").load("/header.html");
 $(".wnormal").addClass("views-active");
 $(".wlistes").click(function () {
-    $(".lprod").addClass("wlist");
-    $(".lprod").hide();
-    $(".lprod").stop().fadeIn(500);
-    $(".wnormal").removeClass("pointers");
-    $(".wlistes").addClass("pointers");
-    $(".wlistes").addClass("views-active");
-    $(".wnormal").removeClass("views-active");
+$(".lprod").addClass("wlist");
+$(".lprod").hide();
+$(".lprod").stop().fadeIn(500);
+$(".wnormal").removeClass("pointers");
+$(".wlistes").addClass("pointers");
+$(".wlistes").addClass("views-active");
+$(".wnormal").removeClass("views-active");
 });
 $(".wnormal").click(function () {
-    $(".lprod").removeClass("wlist");
-    $(".lprod").hide();
-    $(".lprod").stop().fadeIn(500);
-    $(".wlistes").removeClass("pointers");
-    $(".wnormal").addClass("views-active");
-    $(".wnormal").addClass("pointers");
-    $(".wlistes").removeClass("views-active")
+$(".lprod").removeClass("wlist");
+$(".lprod").hide();
+$(".lprod").stop().fadeIn(500);
+$(".wlistes").removeClass("pointers");
+$(".wnormal").addClass("views-active");
+$(".wnormal").addClass("pointers");
+$(".wlistes").removeClass("views-active")
   });
   $(".aorder").click(function() {
   var $sortedDiv = $('.lprod li').sort(function(a,b){
-     var text1 = $(a).find('li').text();
-     var text2 = $(b).find('li').text();
-     return String.prototype.localeCompare.call(text1.toLowerCase(),text2.toLowerCase());
+ var text1 = $(a).find('li').text();
+ var text2 = $(b).find('li').text();
+ return String.prototype.localeCompare.call(text1.toLowerCase(),text2.toLowerCase());
   });
   $('.lprod').html($sortedDiv);
   $(".lprod").hide();
-    $(".lprod").stop().fadeIn(500);
-    $(".aorder").addClass("aorderout");
+$(".lprod").stop().fadeIn(500);
+$(".aorder").addClass("aorderout");
 });
 $(".aorderout").click(function() { return false; });
 // When the user scrolls the page, execute myFunction
@@ -80,59 +123,130 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 $(".lprod").load("/experts/testexp2.html .sklavenitis")
+$(".result").hide()
+$(".res1").show()
+
+/* PAGE1 */
+$(".res1").click(function() {
+$(this).hide()
+$(".res2").show()
+$(".lprod li:nth-child(-n+48)").show()
+});
+
+/* PAGE2 */
+$(".res2").click(function() {
+$(this).hide()
+$(".res3").show()
+$(".lprod li:nth-child(-n+72)").show()
+});
+
+/* PAGE3 */
+$(".res3").click(function() {
+$(this).hide()
+$(".res4").show()
+$(".lprod li:nth-child(-n+96)").show()
+});
+
+/* PAGE4 */
+$(".res4").click(function() {
+$(this).hide()
+$(".res5").show()
+$(".lprod li:nth-child(-n+120)").show()
+});
+
+/* PAGE5 */
+$(".res5").click(function() {
+$(this).hide()
+$(".res6").show()
+$(".lprod li:nth-child(-n+144)").show()
+});
+
+/* PAGE6 */
+$(".res6").click(function() {
+$(this).hide()
+$(".res7").show()
+$(".lprod li:nth-child(-n+188)").show()
+});
+
+/* PAGE7 ALL */
+$(".res7").click(function() {
+$(this).hide()
+$(".resall").show()
+$(".lprod li:nth-child(-n+212)").show()
+}); 
+
+$(".result").hide()
+$(".res1").show()
 
 
 </script>
 </body>
 <style>
-    .sklavenitis:nth-child(n+25) {display: none;}
-.showf12:nth-child(-n+25) {
-        display: block;
-}
-.hidea12:nth-child(n+25) {
-        display: none;
-}
-    .wrapper {
-    max-width: 1300px;
-    padding: 15px;
-    margin: -25px auto !important;
-    overflow: auto;
+
+ .lprod li:nth-child(n+25) {display: none;}
+ 
+.wrapper {
+max-width: 1300px;
+padding: 15px;
+margin: -25px auto !important;
+overflow: auto;
 }
 .result {
-    padding: 15px;
-    text-align: center;
-    background: #efdcca;
-    border: 0px solid #eee;
-    border-radius: 4px;
-    margin-bottom: 60px;
-    margin-top: 25px;
+padding: 15px;
+text-align: center;
+background: #efdcca;
+border: 2px solid #efdcca;
+border-radius: 4px;
+margin-bottom: 60px;
+margin-top: 25px;
+box-sizing: border-box;
 }
-.result span {
-    padding: 5px 20px;
-    background: #d91a32;
-    border-radius: 4px;
-    color: #fff;
-    font-weight: bold;
-    margin-right: 5px;
+.pshow {
+padding: 5px 20px;
+background: #d91a32;
+border-radius: 4px;
+color: #fff;
+font-weight: bold;
+margin-right: 5px;
 }
+
 .product-url a {
-    text-decoration: none;
+text-decoration: none;
 }
 .top {
-    position: relative;
+position: relative;
+display: flex;
 }
 .progress-container {
-    width: 100%;
-    height: 8px;
-    background: transparent;
-    position: absolute;
-    bottom: -8px;
+width: 100%;
+height: 8px;
+background: transparent;
+position: absolute;
+bottom: -8px;
 }
 /* The progress bar (scroll indicator) */
 .progress-bar {
   height: 8px;
   background: #d91a32;
   width: 0%;
+}
+.more {
+ margin-left: 40px;
+ margin-right:0;
+ background: #fff;
+ color: #6f6056;
+ padding: 5px 20px;
+font-weight: bold;
+border-radius: 4px;
+transition: all .3s;
+ }
+.more:hover {
+cursor: pointer;
+background: rgb(18, 155, 0);
+color: #fff;
+}
+.topcumb {
+    display: flex;
 }
 </style>
 </html>
