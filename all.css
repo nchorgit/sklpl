@@ -7,13 +7,21 @@
     font-style: normal
   }
 
-@font-face {
-   font-family: cfasty;
-  src: url(cfastystd-book-webfont.eot);
-}
+  @font-face {
+    font-family: 'csans';
+    src: url(/fonts/GoogleSans-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'csans';
+    src: url(/fonts/GoogleSans-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+    }
 body {
     margin: 0 auto;
-    font-family: cfasty, google sans, Arial, Helvetica, sans-serif;
+    font-family: csans, google sans, Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     font-size: 17.5px;
     color: #444;
