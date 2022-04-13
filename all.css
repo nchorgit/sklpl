@@ -32,12 +32,12 @@ body.marata {
 }
 
 .dropm-out {
-    position: absolute;
-    top: 70px;
+    position: relative;
+    top: 15px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #444;
+    background: #333;
     border-top: 2px solid #676767;
     display: none;
   }
@@ -46,10 +46,10 @@ body.marata {
     gap: 20px;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 15px 15px 30px 15px;
   }
   .dcat {
-    background: #444;
+    background: transparent;
     width: 100%;
     color: #eee;
   }
@@ -57,7 +57,7 @@ body.marata {
     display: flex;
     align-items: center;
     padding: 10px;
-    background: #676767;
+    background: #444;
     border-radius: 4px;
   }
   .etitle span {
@@ -951,14 +951,14 @@ a:hover.pcategory {
 }
 
 .pimg2 img {
-    width: 100%;
+    width: auto;
     margin: 50px auto;
     display: flex;
     animation-name: example;
     animation-duration: 1s;
     position: relative;
     top: 0px;
-    max-width: 750px;
+    height: calc(40vw - 10px);
     border-radius: 6px;
 }
 
@@ -994,9 +994,9 @@ a:hover.pcategory {
     left: 15px;
     width: auto;
     height: 100%;
-    max-height: 800px;
+   
     display: none;
-    max-width: 800px;
+    
     margin: 0 auto;
     z-index: 2;
 
@@ -1945,3 +1945,6 @@ div#disqus_thread {
             
                 }
             }            
+            html {
+                scroll-behavior: smooth;
+                }
