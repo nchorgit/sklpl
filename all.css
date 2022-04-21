@@ -27,6 +27,19 @@ body {
     color: #444;
 }
 
+.my-navigation div a {
+    background: red;
+    margin-right: 2px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+}
+
+.my-navigation {
+    display: flex;
+}
 body.marata {
     background: #fff;
 }

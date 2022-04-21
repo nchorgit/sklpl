@@ -1,92 +1,282 @@
-// pagination script w/ support from @biberman on stackoverflow - big thanks!
+/*!
+ * jQuery pagination plugin v1.2.4
+ * http://esimakin.github.io/twbs-pagination/
+ *
+ * Copyright 2014, Eugene Simakin
+ * Released under Apache 2.0 license
+ * http://apache.org/licenses/LICENSE-2.0.html
+ */
+;
+(function ($, window, document, undefined) {
 
+    'use strict';
 
-let startPage;
-const pageSize = 6;
-const totalSlidePage = 5;
-const pageCount = Math.ceil($(".product-url").length / pageSize);
-const slideRange = Math.floor(totalSlidePage / 2); 
+    var old = $.fn.twbsPagination;
 
-slide = function() {
-startPage = $("#pagin li a.current").parent().index();
-let paginationStart = (startPage - slideRange) < 0 ? 0 :
-(startPage >= (pageCount - slideRange) ? (pageCount - totalSlidePage) :
-(startPage - slideRange));
+    // PROTOTYPE AND CONSTRUCTOR
 
-$("#pagin li").hide();
-for (let t = paginationStart; t < (paginationStart + totalSlidePage); t++) {
-$("#pagin li").eq(t + 1).show();
-}
+    var TwbsPagination = function (element, options) {
+        this.$element = $(element);
+        this.options = $.extend({}, $.fn.twbsPagination.defaults, options);
 
-next.show();
-prev.show();
+        if (this.options.startPage < 1 || this.options.startPage > this.options.totalPages) {
+            throw new Error('Start page option is incorrect');
+        }
 
-if (startPage == 1) {
-prev.hide();
-}
-else if (startPage == pageCount ) {
-next.hide();
-}
-}
+        this.options.totalPages = parseInt(this.options.totalPages);
+        if (isNaN(this.options.totalPages)) {
+            throw new Error('Total pages option is not correct!');
+        }
 
-showPage = function() {
-console.log(startPage);
-$(".product-url").hide();
-$(".product-url").each(function(n) {
-if (n >= pageSize * (startPage - 1) && n < pageSize * startPage)
-$(this).show();
-});
-}
+        this.options.visiblePages = parseInt(this.options.visiblePages);
+        if (isNaN(this.options.visiblePages)) {
+            throw new Error('Visible pages option is not correct!');
+        }
 
-for (let i = 0 ; i < pageCount; i++) {
-$("#pagin").append('<li><a href="#">' + (i + 1) + '</a></li> ');
+        if (this.options.totalPages < this.options.visiblePages) {
+            this.options.visiblePages = this.options.totalPages;
+        }
 
-if (i > pageSize) {
-$("#pagin li").eq(i).hide();
-}
-}
+        if (this.options.onPageClick instanceof Function) {
+            this.$element.first().bind('page', this.options.onPageClick);
+        }
 
-let prev = $("<li/>").addClass("prev").html("Prev").click(function() {
-let prevLi = $("#pagin li a.current").parent().prev().find("a");
+        if (this.options.href) {
+            var m, regexp = this.options.href.replace(/[-\/\\^$*+?.|[\]]/g, '\\$&');
+            regexp = regexp.replace(this.options.hrefVariable, '(\\d+)');
+            if ((m = new RegExp(regexp, 'i').exec(window.location.href)) != null) {
+                this.options.startPage = parseInt(m[1], 10);
+            }
+        }
 
-if (prevLi[0]) {
-$("#pagin li a.current").removeClass("current");
-prevLi.addClass("current");
-}
+        var tagName = (typeof this.$element.prop === 'function') ?
+            this.$element.prop('tagName') : this.$element.attr('tagName');
 
-slide();
+        if (tagName === 'UL') {
+            this.$listContainer = this.$element;
+        } else {
+            this.$listContainer = $('<ul></ul>');
+        }
 
-if (startPage != 0) {
-showPage();
-}
-});
+        this.$listContainer.addClass(this.options.paginationClass);
 
-let next = $("<li/>").addClass("next").html("Next").click(function() {
-let nextLi = $("#pagin li a.current").parent().next().find("a");
+        if (tagName !== 'UL') {
+            this.$element.append(this.$listContainer);
+        }
 
-if (nextLi[0]) {
-$("#pagin li a.current").removeClass("current");
-nextLi.addClass("current");
-}
+        this.render(this.getPages(this.options.startPage));
+        this.setupEvents();
 
-slide();
+        return this;
+    };
 
-if (startPage <= pageCount) {
-showPage();
-}
-});
+    TwbsPagination.prototype = {
 
-$("#pagin").prepend(prev).append(next);
+        constructor: TwbsPagination,
 
-$("#pagin li a").click(function() {
-$('#pagin li a').removeClass('current');
-$(this).addClass('current');
+        destroy: function () {
+            this.$element.empty();
+            this.$element.removeData('twbs-pagination');
+            this.$element.unbind('page');
+            return this;
+        },
 
-slide();
-showPage();
-});
+        show: function (page) {
+            if (page < 1 || page > this.options.totalPages) {
+                throw new Error('Page is incorrect.');
+            }
 
-$("#pagin li a").eq(0).addClass("current");
+            this.render(this.getPages(page));
+            this.setupEvents();
 
-slide();
-showPage();
+            this.$element.trigger('page', page);
+            return this;
+        },
+
+        buildListItems: function (pages) {
+            var $listItems = $();
+
+            if (this.options.first) {
+                $listItems = $listItems.add(this.buildItem('first', 1));
+            }
+
+            if (this.options.prev) {
+                var prev = pages.currentPage > 1 ? pages.currentPage - 1 : this.options.loop ? this.options.totalPages  : 1;
+                $listItems = $listItems.add(this.buildItem('prev', prev));
+            }
+
+            for (var i = 0; i < pages.numeric.length; i++) {
+                $listItems = $listItems.add(this.buildItem('page', pages.numeric[i]));
+            }
+
+            if (this.options.next) {
+                var next = pages.currentPage < this.options.totalPages ? pages.currentPage + 1 : this.options.loop ? 1 : this.options.totalPages;
+                $listItems = $listItems.add(this.buildItem('next', next));
+            }
+
+            if (this.options.last) {
+                $listItems = $listItems.add(this.buildItem('last', this.options.totalPages));
+            }
+
+            return $listItems;
+        },
+
+        buildItem: function (type, page) {
+            var itemContainer = $('<li></li>'),
+                itemContent = $('<a></a>'),
+                itemText = null;
+
+            switch (type) {
+                case 'page':
+                    itemText = page;
+                    itemContainer.addClass(this.options.pageClass);
+                    break;
+                case 'first':
+                    itemText = this.options.first;
+                    itemContainer.addClass(this.options.firstClass);
+                    break;
+                case 'prev':
+                    itemText = this.options.prev;
+                    itemContainer.addClass(this.options.prevClass);
+                    break;
+                case 'next':
+                    itemText = this.options.next;
+                    itemContainer.addClass(this.options.nextClass);
+                    break;
+                case 'last':
+                    itemText = this.options.last;
+                    itemContainer.addClass(this.options.lastClass);
+                    break;
+                default:
+                    break;
+            }
+
+            itemContainer.data('page', page);
+            itemContainer.data('page-type', type);
+            itemContainer.append(itemContent.attr('href', this.makeHref(page)).html(itemText));
+            return itemContainer;
+        },
+
+        getPages: function (currentPage) {
+            var pages = [];
+
+            var half = Math.floor(this.options.visiblePages / 2);
+            var start = currentPage - half + 1 - this.options.visiblePages % 2;
+            var end = currentPage + half;
+
+            // handle boundary case
+            if (start <= 0) {
+                start = 1;
+                end = this.options.visiblePages;
+            }
+            if (end > this.options.totalPages) {
+                start = this.options.totalPages - this.options.visiblePages + 1;
+                end = this.options.totalPages;
+            }
+
+            var itPage = start;
+            while (itPage <= end) {
+                pages.push(itPage);
+                itPage++;
+            }
+
+            return {"currentPage": currentPage, "numeric": pages};
+        },
+
+        render: function (pages) {
+            this.$listContainer.children().remove();
+            this.$listContainer.append(this.buildListItems(pages));
+
+            var children = this.$listContainer.children();
+            children.filter(function () {
+                return $(this).data('page') === pages.currentPage;
+            }).addClass(this.options.activeClass);
+
+            children.filter(function () {
+                return $(this).data('page-type') === 'first';
+            }).toggleClass(this.options.disabledClass, pages.currentPage === 1);
+
+            children.filter(function () {
+                return $(this).data('page-type') === 'last';
+            }).toggleClass(this.options.disabledClass, pages.currentPage === this.options.totalPages);
+
+            children.filter(function () {
+                return $(this).data('page-type') === 'prev';
+            }).toggleClass(this.options.disabledClass, !this.options.loop && pages.currentPage === 1);
+
+            children.filter(function () {
+                return $(this).data('page-type') === 'next';
+            }).toggleClass(this.options.disabledClass, !this.options.loop && pages.currentPage === this.options.totalPages);
+        },
+
+        setupEvents: function () {
+            var base = this;
+            this.$listContainer.find('li').each(function () {
+                var $this = $(this);
+                $this.off();
+                if ($this.hasClass(base.options.disabledClass) || $this.hasClass(base.options.activeClass)) {
+                    $this.click(function (evt) {
+                        evt.preventDefault();
+                    });
+                    return;
+                }
+                $this.click(function (evt) {
+                    // Prevent click event if href is not set.
+                    !base.options.href && evt.preventDefault();
+                    base.show(parseInt($this.data('page'), 10));
+                });
+            });
+        },
+
+        makeHref: function (c) {
+            return this.options.href ? this.options.href.replace(this.options.hrefVariable, c) : "#";
+        }
+
+    };
+
+    // PLUGIN DEFINITION
+
+    $.fn.twbsPagination = function (option) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        var methodReturn;
+
+        var $this = $(this);
+        var data = $this.data('twbs-pagination');
+        var options = typeof option === 'object' && option;
+
+        if (!data) $this.data('twbs-pagination', (data = new TwbsPagination(this, options) ));
+        if (typeof option === 'string') methodReturn = data[ option ].apply(data, args);
+
+        return ( methodReturn === undefined ) ? $this : methodReturn;
+    };
+
+    $.fn.twbsPagination.defaults = {
+        totalPages: 0,
+        startPage: 1,
+        visiblePages: 5,
+        href: false,
+        hrefVariable: '{{number}}',
+        first: 'First',
+        prev: 'Previous',
+        next: 'Next',
+        last: 'Last',
+        loop: false,
+        onPageClick: null,
+        paginationClass: 'pagination',
+        nextClass: 'next',
+        prevClass: 'prev',
+        lastClass: 'last',
+        firstClass: 'first',
+        pageClass: 'page',
+        activeClass: 'active',
+        disabledClass: 'disabled'
+    };
+
+    $.fn.twbsPagination.Constructor = TwbsPagination;
+
+    $.fn.twbsPagination.noConflict = function () {
+        $.fn.twbsPagination = old;
+        return this;
+    };
+
+})(jQuery, window, document);
