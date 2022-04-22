@@ -1325,7 +1325,7 @@ footer {
     padding: 15px;
     margin-bottom: -15px !important;
 }
-.pagination {
+/*.pagination {
     width: 100%;
     margin: 15px 0 120px 0px;
 }
@@ -1422,7 +1422,7 @@ pagination a:hover:not(.current) {
     color: #333;
     font-weight: bold;
     border: 2px solid #ddd;
-}
+}*/
 
 a.page:hover:not(.current) {
     background-color: #ddd;
