@@ -12,6 +12,14 @@
     border-bottom: 2px solid #eee;
     background: transparent;
 }
+
+.wlist h3.post-title {
+    padding: 20px 20px 20px 115px;
+    text-align: left;
+    justify-content: left;
+    border-bottom: 2px solid #eee;
+    background: transparent;
+}
 .wlist .pimg img {
     height: 88px;
     width: auto;

@@ -273,13 +273,7 @@ a.next:hover {
     top: 0;
 }
 
-.views {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 150px;
-    top: 15px;
-}
+
 
 .pagouter {
     width: auto;
@@ -293,9 +287,7 @@ a.next:hover {
 .views {
     display: flex;
     align-items: center;
-    position: absolute;
-    right: 0px;
-    top: 0px;
+   
 }
 
 a.wnormal {
@@ -454,6 +446,7 @@ a.wlistes:hover {
     padding: 15px;
     margin: 50px auto !important;
     overflow: auto;
+    position: relative;
 }
 
 .lprod #drtable {
