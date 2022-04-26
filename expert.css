@@ -10,13 +10,16 @@ input#current_title {
     width: 30px;
     outline: none;
 }
+
 .left {
     float: none !important;
     width: 100% !important;
 }
+
 .lprod .pyah {
-display: none;
+    display: none;
 }
+
 .lprod {
     display: grid;
     width: 100%;
@@ -25,6 +28,7 @@ display: none;
     margin-top: 60px;
     padding: 0;
 }
+
 .iprod {
     display: grid;
     width: 100%;
@@ -33,156 +37,220 @@ display: none;
     margin-top: 0;
     padding: 0;
 }
-.lprod table {display: none;}
+
+.lprod table {
+    display: none;
+}
+
 .lprod li {
     list-style-type: none;
     border: 2px solid #eee;
     border-radius: 6px;
 }
+
 .lprod .product {
-padding: 0;
-background-color: #fff;
-padding: 0 0 5px 0;
+    padding: 0;
+    background-color: #fff;
+    padding: 0 0 5px 0;
 }
-.lprod h3.post-title.entry-title {
-display: flex;
-padding: 20px;
-text-decoration: none;
-color: #444;
-font-weight: bold;
-font-size: 17.5px;
-height: 50px;
-text-align: center;
-align-items: center;
-justify-content: center;
-letter-spacing: -.3px;
-margin: -2px -2px 0 -2px;
-background: #eee;
-border-radius: 4px 4px 0 0;
+
+.lprod h3.post-title {
+    display: flex;
+    padding: 20px;
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    font-size: 17.5px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -.3px;
+    margin: -2px -2px 0 -2px;
+    /* background: #eee; */
+    border-radius: 4px 4px 0 0;
+    border-bottom: 2px solid #eee;
 }
-.product div {display: none;}
+
+.product div {
+    display: none;
+}
+
 .lprod .pimg {
     display: block !important;
 }
-.lprod p, .lprod br {
+
+.lprod p,
+.lprod br {
     display: none;
 }
-.lprod #sistatika {display: none;}
-.lprod .alltext {display: none;}
-.lprod #loipa {display: none;}
-.lprod #flag {display: none;}
-.lprod #diatable {display: none;}
-.lprod #kivotio {display: none;}
-.lprod #barcode, .lprod #varos {
-background: #fff;
-border-bottom: 2px solid #eeee;
-display: flex;
-float: left;
-height: 40px;
-padding: 0px;
-width: 100%;
+
+.lprod #sistatika {
+    display: none;
 }
-.lprod #bartext, .lprod #varostext {
-font-size: 17.5px;
-margin-left: 0px;
-font-weight: 300;
+
+.lprod .alltext {
+    display: none;
 }
-.lprod #barimage1, .lprod #varosimage1, .lprod #varosimage, .lprod #dimimg, .lprod #powerimage, .lprod #temimg  {background-color: #fff; display: block;}
-.lprod .plabels {background: #ff5500;
-padding: 15px 0;
-display: flex;
-text-align: center;
-justify-content: center;
-border-radius: 0 0 4px 4px;
-margin: 0px -2px -7px -2px;}
-.lprod a.plabel, .lprod a.pcategory {
-padding: 7px 8px;
-background: #e64d00;
-text-decoration: none;
-color: #fff;
-font-size: 14px;
-font-weight: 500;
-border-radius: 2px;
-margin: 0px;
+
+.lprod #loipa {
+    display: none;
 }
-.lprod a.plabel {margin-right: 5px;}
+
+.lprod #flag {
+    display: none;
+}
+
+.lprod #diatable {
+    display: none;
+}
+
+.lprod #kivotio {
+    display: none;
+}
+
+.lprod #barcode,
+.lprod #varos {
+    background: #fff;
+    border-bottom: 2px solid #eeee;
+    display: flex;
+    float: left;
+    height: 40px;
+    padding: 0px;
+    width: 100%;
+}
+
+.lprod #bartext,
+.lprod #varostext {
+    font-size: 17.5px;
+    margin-left: 0px;
+    font-weight: 300;
+}
+
+.lprod #barimage1,
+.lprod #varosimage1,
+.lprod #varosimage,
+.lprod #dimimg,
+.lprod #powerimage,
+.lprod #temimg {
+    background-color: #fff;
+    display: block;
+}
+
+.lprod .plabels {
+    background: #ff5500;
+    padding: 15px 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0 0 4px 4px;
+    margin: 0px -2px -7px -2px;
+}
+
+.lprod a.plabel,
+.lprod a.pcategory {
+    padding: 7px 8px;
+    background: #e64d00;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 2px;
+    margin: 0px;
+}
+
+.lprod a.plabel {
+    margin-right: 5px;
+}
+
 .lprod i {
-font-size: 13px;
-opacity: .6;
-margin-right: 4px;
+    font-size: 13px;
+    opacity: .6;
+    margin-right: 4px;
 }
+
 .lprod li:hover {
-opacity: .85;
-transition: all .3s
+    opacity: .85;
+    transition: all .3s
 }
 
 .lprod li {
 
-transition: all .3s
+    transition: all .3s
 }
+
 .product-url a {
-text-decoration: none;
-transition: all .3s
+    text-decoration: none;
+    transition: all .3s
 }
+
 .cout {
     background: #fff;
     margin: -20px auto -100px auto;
     padding: 10px;
     max-width: 1300px;
 }
+
 .cout2 {
-background: #fff;
-margin: 20px 0 20px 0;
-padding: 10px;
-border: 2px solid #efdcca;
-border-radius: 0 0 4px 4px;
+    background: #fff;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    border: 2px solid #efdcca;
+    border-radius: 0 0 4px 4px;
 }
-   .controls {
-text-align: left;
+
+.controls {
+    text-align: left;
 }
- 
-    .controls a {
-width: 40px;
-text-align: center;
-height: 40px;
-line-height: 40px;
-border-radius: 4px;
-color: #555;
-border: 2px solid #ddd;
-cursor: pointer;
-margin: 2px;
-text-decoration: none;
-/* float: left; */
-display: inline-block;
+
+.controls a {
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    color: #555;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    margin: 2px;
+    text-decoration: none;
+    /* float: left; */
+    display: inline-block;
 }
 
 .cout2 .controls a {
-width: 40px;
-text-align: center;
-height: 40px;
-line-height: 40px;
-border-radius: 4px;
-color: #555;
-border: 2px solid #fff;
-cursor: pointer;
-margin: 2px;
-text-decoration: none;
-background: #fff;
-display: inline-block;
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    color: #555;
+    border: 2px solid #fff;
+    cursor: pointer;
+    margin: 2px;
+    text-decoration: none;
+    background: #fff;
+    display: inline-block;
 }
-.controls a.active, .controls a.current {
-background-color: #ff5500;
-color: white;
-border: 2px solid #ff5500;
-font-weight: bold;
-line-height: ;
+
+.controls a.active,
+.controls a.current {
+    background-color: #ff5500;
+    color: white;
+    border: 2px solid #ff5500;
+    font-weight: bold;
+    line-height: ;
 }
-a.prev, a.next {
-font-size: 25px;
-line-height: 35px;
-display: none;
+
+a.prev,
+a.next {
+    font-size: 25px;
+    line-height: 35px;
+    display: none;
 }
-a.prev:hover, a.next:hover {
+
+a.prev:hover,
+a.next:hover {
     background-color: #ddd;
     color: #333;
     font-weight: bold;
@@ -195,7 +263,7 @@ a.prev:hover, a.next:hover {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     grid-gap: 18px;
     margin-top: 0px;
-overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .plines .pimg {
@@ -204,6 +272,7 @@ overflow-x: hidden;
     left: 0;
     top: 0;
 }
+
 .views {
     display: flex;
     align-items: center;
@@ -211,6 +280,7 @@ overflow-x: hidden;
     right: 150px;
     top: 15px;
 }
+
 .pagouter {
     width: auto;
     margin: 0px auto;
@@ -245,6 +315,7 @@ a.wnormal {
 .views-active {
     background: #ddd !important;
 }
+
 a.ordercat {
     background: #ddd;
     width: 40px;
@@ -257,6 +328,7 @@ a.ordercat {
     font-size: 20px;
     color: #555;
 }
+
 a.ordera {
     background: #fff;
     width: 40px;
@@ -282,7 +354,8 @@ a.wlistes {
     border-left: 0;
 }
 
-a.wnormal:hover, a.ordercat:hover {
+a.wnormal:hover,
+a.ordercat:hover {
     background: #ddd;
 
 
@@ -324,6 +397,7 @@ a.wlistes:hover {
     border-top: 2px solid transparent;
     margin-bottom: -95px;
 }
+
 .npages {
     position: relative;
     top: 29px;
@@ -331,6 +405,7 @@ a.wlistes:hover {
     margin: 0 auto;
     right: 15px;
 }
+
 .npages p {
     font-size: 15px;
     background: #eee;
@@ -342,6 +417,7 @@ a.wlistes:hover {
     border-radius: 4px;
     float: right;
 }
+
 .plines h3.post-title.entry-title {
     display: flex;
     padding: 20px 20px 20px 110px;
@@ -372,11 +448,14 @@ a.wlistes:hover {
 .plines #varos {
     border-bottom: 0 !important;
 }
+
 .wrapper {
     max-width: 1300px;
     padding: 15px;
     margin: 50px auto !important;
     overflow: auto;
 }
-.lprod #drtable 
-{display: none;}
+
+.lprod #drtable {
+    display: none;
+}
