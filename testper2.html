@@ -1,71 +1,131 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<title>Σκλαβενίτης: Ανθέλα Ελαιόλαδο 1L</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
-<!--link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css"-->
-<link href="/all.css" rel="stylesheet" type="text/css">
-<link href="/expert.css" rel="stylesheet" type="text/css">
-<link href="/sklcssframework.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="/wlist.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Σκλαβενίτης: Ανθέλα Ελαιόλαδο 1L</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://sites.google.com/site/sklplfiles/files/sklico.png" rel="shortcut icon" />
+  <!--link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css"-->
+  <link href="/all.css" rel="stylesheet" type="text/css">
+  <link href="/expert.css" rel="stylesheet" type="text/css">
+  <link href="/sklcssframework.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/wlist.css" rel="stylesheet" type="text/css">
+  <script src="/loadproducts.js"></script>
 </head>
 <body>
-<div class="hload"></div>
-<div class="metro4"></div>
-<script>
-    $(".metro4").load("/testper.html .metro4")
-</script>
-<script src="/metro.js"></script>
-<script>
-$(".hload").load("/header.html");
-$(".fload").load("/footer.html");
-$('.prev-page').text('<')
-$(document).ready(function(){
-$( ".list-bottom" ).insertBefore($( ".lprod" ));
-$( ".list-info" ).insertAfter($( ".lprod" ));
-});
-$(".taks").click()
-$(".taks").click(function () {
-$(".albut").toggle();
-});
-$(".albut").hide();
-/*$(".lprod").load("/experts/database.html li.pagwta");*/
-$(".wnormal").addClass("views-active");
-$(".wlistes").click(function () {
-$(".lprod").addClass("wlist");
-$(".lprod").hide();
-$(".lprod").stop().fadeIn(500);
-$(".wnormal").removeClass("pointers");
-$(".wlistes").addClass("pointers");
-$(".wlistes").addClass("views-active");
-$(".wnormal").removeClass("views-active");
-});
-$(".wnormal").click(function () {
-$(".lprod").removeClass("wlist");
-$(".lprod").hide();
-$(".lprod").stop().fadeIn(500);
-$(".wlistes").removeClass("pointers");
-$(".wnormal").addClass("views-active");
-$(".wnormal").addClass("pointers");
-$(".wlistes").removeClass("views-active")
-  });
-  document.getElementById('sall').innerHTML = document.querySelectorAll('.post-title').length;
-  $("#call").html($(".pcategory").html());
-  $("#pag").html($(".pagination").html());
-  $("button.button1").click(function () {
+  <div class="hload"></div>
+  <!--metro4-->
+  <script>
+    function sortList(col, dir) {
+      $('.lprod').data('list').sorting(col, dir, true)
+    }
+  </script>
+  <div class="cattitle"><b id="sall">3</b> Προϊόντα στην ετικέτα: <strong id="call"><i
+        class="fas fa-tags"></i>Ανθέλα</strong></div>
+  <div id="someDiv"></div>
+  <div class="wrapper">
+    <div class="pviews">
+      <p class="taks">Ταξινόμηση: <i class="fa-solid fa-angle-down"></i></p>
+      <div class="albut">
+        <button class="button1" onclick="sortList('pcategory','asc')">Ανα Κατηγορία <span
+            class="mif-arrow-up"></span></button>
+        <button class="button1 br4" onclick="sortList('plabel','asc')">Αλφαβητικά <span
+            class="mif-arrow-up"></span></button>
+      </div>
+      <div class="views">
+        <!--<a class="aorder" href="#">alpha</a>
+          <a class="sort" href="#">A</a>-->
+        <a class="wnormal pointers" href="#">
+          <img width="24" height="24" src="/media/svg/gridlist.svg" alt="">
+        </a>
+        <a class="wlistes" href="#">
+          <img width="24" height="20" src="/media/svg/wlist.svg" alt="">
+        </a></div>
+    </div>
+    <ul class="lprod" 
+    data-role="list" 
+    data-sort-class="plabel" 
+    data-sort-dir="asc"
+    data-show-pagination="true"
+    data-pagination-prev-title="<span>‹</span>" data-pagination-next-title="›"
+    data-items="12"
+    data-items-steps="12, 24, 48"
+    data-show-items-steps="false"
+    data-show-list-info="true"
+    data-list-info-title="<b>$2</b> από <b>$3</b> Προϊόντα">
+    </ul>
+  </div>
+  <div id="pag"></div>
+  <div class="fload"></div>
+  <script>
+    $(".hload").load("/header.html");
+    $(".fload").load("/footer.html");
+    $(".lprod").load("/experts/database.html .bonora")
+  </script>
+  <script src="/metro.js"></script>
+  <script>
+    $('.prev-page').text('<')
+    $(document).ready(function () {
+      $(".list-bottom").insertBefore($(".lprod"));
+      $(".list-info").insertAfter($(".lprod"));
+    });
+    $(".taks").click()
+    $(".taks").click(function () {
+      $(".albut").toggle();
+    });
     $(".albut").hide();
-  });
- $(document).ready(function(){
-  $(".list-info").on( "click", function() {
-    $( 'html, body' ).animate( { scrollTop: 0 }, 0 );
-});
-}); 
+    /*$(".lprod").load("/experts/database.html li.pagwta");*/
+    $(".wnormal").addClass("views-active");
+    $(".wlistes").click(function () {
+      $(".lprod").addClass("wlist");
+      $(".lprod").hide();
+      $(".lprod").stop().fadeIn(500);
+      $(".wnormal").removeClass("pointers");
+      $(".wlistes").addClass("pointers");
+      $(".wlistes").addClass("views-active");
+      $(".wnormal").removeClass("views-active");
+    });
+    $(".wnormal").click(function () {
+      $(".lprod").removeClass("wlist");
+      $(".lprod").hide();
+      $(".lprod").stop().fadeIn(500);
+      $(".wlistes").removeClass("pointers");
+      $(".wnormal").addClass("views-active");
+      $(".wnormal").addClass("pointers");
+      $(".wlistes").removeClass("views-active")
+    });
+    
+    $("button.button1").click(function () {
+      $(".albut").hide();
+    });
+    $(document).ready(function () {
+      $(".list-info").on("click", function () {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 0);
+        
+        
+    
+    /*$("#pag").html($(".list-bottom").html());*/
+      });
+    });
 
-</script>
+    
+  $(document).ready(function () {
+  $("#call").html($(".plabel").html());
+  $("#sall").html($(".list-info b:nth-child(2)").html());
+  
+});
+
+
+  </script>
+
+  <link rel="stylesheet" href="/categories.css">
+  
 </body>
 </html>

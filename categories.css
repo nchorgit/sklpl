@@ -1,0 +1,170 @@
+
+  
+    *, ::before, ::after {
+    box-sizing: unset;
+}
+p.taks {
+    padding: 0 20px;
+    border: 2px solid #eee;
+    line-height: 40px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all .3s;
+}
+*, :hover {
+}
+p.taks:hover, p.taks:focus {
+  background: #eee;
+  transition: all .3s;
+}
+.pviews {
+    display: flex;
+    position: absolute;
+    right: 15px;
+    align-items: center;
+    top: 0;
+}
+button.button1 {
+    line-height: 25px;
+    background: #eee;
+    border: 0;
+    padding: 0 20px;
+    border-radius: 0px;
+    height: 25px;
+    position: relative;
+    top: 20px;
+   width: 124px;
+    z-index: 50;
+    border-bottom: 2px solid #d2d2d2;
+    cursor: pointer;
+    transition: none;
+    font-family: inherit;
+    border-radius: 4px 4px 0 0;
+}
+.br4 {
+  border-radius: 0px 0px 4px 4px !important;
+  border: 0 !important;
+}
+button.button1:hover {
+  background: rgb(0, 110, 255);
+  color: #fff;
+  transition: all .3s;
+}
+.bactive {
+  background-color: #eee;
+}
+.albut {
+    display: grid;
+    position: absolute;
+    top: 40px;
+}
+.list-info {
+    background:#efdcca;
+    line-height: 40px;
+    padding: 0 20px;
+    border-radius: 4px;
+    padding: 5px;
+    border: 0px solid #eee;
+    margin-left: 0px;
+    text-align: center;
+    color: #6f6056;
+    font-size: 18px;
+}
+.list-info b {
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+.list-info b:nth-child(1) {
+  margin-right: 5px;
+  color: #fff;
+  background: #49ad01;
+}
+.list-info b:nth-child(2) {
+    color: #948272;
+    background: #ffffff;
+    margin: 0 5px;
+}
+.list-bottom {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: left;
+    grid-auto-flow: column;
+    margin-bottom: -40px;
+}
+ul.pagination {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.pagination {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none inside;
+  margin: 0 -0.25rem 1rem -0.25rem;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.pagination .page-item {
+  cursor: pointer;
+  display: list-item;
+  background-color: #ffffff;
+  color: #1d1d1d;
+  border: 0px solid #dfdfdf;
+  margin: 0 2px;
+  border: 2px solid #eee;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+.pagination .page-link {
+    display: block;
+    position: relative;
+    /* padding: 0.5rem 0.75rem; */
+    line-height: 1;
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    line-height: 40px;
+}
+.pagination .page-item:hover,
+.pagination .page-item.service:hover {
+  background-color: #eee;
+  border:2px solid #eee;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.pagination .page-item.no-link {
+  pointer-events: none;
+  cursor: default;
+  border-color: transparent;
+}
+.pagination .page-item.no-link:hover {
+  background-color: #ffffff !important;
+  border-color: transparent;
+  color: #1d1d1d;
+}
+.pagination .page-item.disabled {
+  pointer-events: none;
+  color: #e4e4e4;
+  display: none;
+}
+.pagination .page-item.active {
+  background-color: #ff5500;
+  border:2px solid #ff5500;
+  color: #fff;
+  font-weight: bold;
+}
